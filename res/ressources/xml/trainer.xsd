@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:trainer="https://jojokobi.lima-city.de/pokemine"
+	targetNamespace="https://jojokobi.lima-city.de/pokemine"
+	elementFormDefault="qualified" xmlns:Q1="https://jojokobi.lima-city.de/pokemine/pokemon_species">
+	
+	
+	
+
+    <import schemaLocation="pokemon/pokemon_species.xsd" namespace="https://jojokobi.lima-city.de/pokemine/pokemon_species"></import>
+    <complexType name="trainer">
+    	<sequence>
+    		<element name="name" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="rank" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+            <element name="money" type="int" minOccurs="0" maxOccurs="1"></element>
+            <element name="party" type="trainer:party" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="pc" type="trainer:pc" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="badges" type="trainer:badges" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="pokedex" type="trainer:pokedex" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <element name="trainer" type="trainer:trainer"></element>
+
+    <complexType name="party">
+    	<sequence>
+    		<element name="pokemon" type="trainer:pokemon" minOccurs="0" maxOccurs="6"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="pokemon">
+    	<sequence>
+    		<element name="species" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="name" type="string" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="level" type="int" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="ep" type="int" minOccurs="1" maxOccurs="1"></element>
+
+    		<element name="friendship" type="int" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="dvs" type="trainer:stat_values" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="fp" type="trainer:stat_values" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="moves" type="trainer:moves" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="health" type="int" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+
+    		<element name="prim_stat_change" type="string" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="shiny" type="boolean" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+
+    		<element name="walked_distance" type="double" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="item" type="trainer:item" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="selected_move" type="int" minOccurs="0" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="stat_values">
+    	<sequence>
+    		<element name="health" type="int" minOccurs="1" maxOccurs="1"></element>
+    		<element name="attack" type="int" minOccurs="1" maxOccurs="1"></element>
+    		<element name="defense" type="int" minOccurs="1" maxOccurs="1"></element>
+    		<element name="special_attack" type="int" minOccurs="1" maxOccurs="1"></element>
+    		<element name="special_attack" type="int" minOccurs="1" maxOccurs="1"></element>
+    		<element name="speed" type="int" minOccurs="1" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="pc">
+    		<sequence>
+    			<element name="pokemon" type="trainer:pokemon"></element>
+    		</sequence>
+    </complexType>
+
+    <complexType name="moves">
+    	<sequence>
+    		<element name="move" type="trainer:move" minOccurs="0" maxOccurs="4"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="move">
+    	<sequence>
+    		<element name="identifier" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="pp" type="int" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="maxpp" type="int" minOccurs="1" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="prim_stat_change">
+    	<sequence>
+    		<element name="round" type="int" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="duration" type="string" minOccurs="0" maxOccurs="1"></element>
+    	</sequence>
+    	<attribute name="name" type="string" use="required"></attribute>
+    </complexType>
+
+    <complexType name="badges">
+    	<sequence>
+    		<element name="badge" type="string" minOccurs="0" maxOccurs="18"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="badge">
+    	<sequence>
+    		<element name="type" type="Q1:type" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="level" type="int" minOccurs="1" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="item">
+    	<sequence>
+    		<element name="material" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="damage" type="int" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="amount" type="int" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="nbt" type="string" minOccurs="1" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+
+    <complexType name="pokedex">
+    	<sequence>
+    		<element name="entry" type="string" minOccurs="0" maxOccurs="unbounded"></element>
+    	</sequence>
+    </complexType>
+</schema>

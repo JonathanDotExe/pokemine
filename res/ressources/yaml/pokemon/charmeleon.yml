@@ -1,0 +1,216 @@
+species:
+  ==: at.jojokobi.pokemine.pokemon.PokemonSpecies
+  baseValues:
+    ==: at.jojokobi.pokemine.pokemon.PokemonValueSet
+    specialDefense: 65
+    defense: 58
+    attack: 64
+    health: 58
+    specialAttack: 80
+    speed: 80
+  color: red
+  description: It's very nervous and agressive. It's defeats it's enemies with it's
+    sharp claws and the fire on it's tail.
+  minLikeEquality: 0.5
+  maxDislikeEquality: 0.2
+  flySpeed: 0.0
+  spawns:
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 3
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - SAVANNA
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 2
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - SAVANNA_PLATEAU
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 2
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - SHATTERED_SAVANNA
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 2
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - SHATTERED_SAVANNA_PLATEAU
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 3
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - DESERT
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 2
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - DESERT_HILLS
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 2
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - DESERT_LAKES
+  levelSpeed: middle_slow
+  catchRate: 45
+  climbSpeed: 0.0
+  jumpSpeed: 0.5
+  surfSpeed: 0.0
+  eggCycles: 20
+  wildLevel: 21
+  legendary: false
+  lavaSurfSpeed: 1.0
+  loot:
+    ==: at.jojokobi.mcutil.loot.LootInventory
+    items:
+    - ==: at.jojokobi.mcutil.loot.LootItem
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 1968
+        type: FLINT
+      chance: 0.1
+      minCount: 1
+      maxCount: 1
+    - ==: at.jojokobi.mcutil.loot.LootItem
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 1968
+        type: BLAZE_ROD
+      chance: 0.01
+      minCount: 1
+      maxCount: 1
+    - ==: at.jojokobi.mcutil.loot.LootItem
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 1968
+        type: MAGMA_CREAM
+      chance: 0.01
+      minCount: 1
+      maxCount: 2
+  evolutions:
+  - ==: at.jojokobi.pokemine.pokemon.evolution.EvolutionCause
+    species:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: charizard
+    conditions:
+    - ==: at.jojokobi.pokemine.pokemon.evolution.LevelCondition
+      level: 36
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: charmeleon
+  walkSpeed: 1.1
+  types:
+  - Fire
+  maleChance: 0.875
+  eggGroups:
+  - monster
+  - dragon
+  formOf: null
+  index: 5
+  weight: 19.0
+  ep: 142
+  winEvs:
+    ==: at.jojokobi.pokemine.pokemon.PokemonValueSet
+    specialDefense: 0
+    defense: 0
+    attack: 0
+    health: 0
+    specialAttack: 1
+    speed: 1
+  size: 1.1
+  initialFriendship: 70
+  moves:
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: scratch
+    level: 1
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: growl
+    level: 1
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: ember
+    level: 1
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: ember
+    level: 7
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: dragon_rage
+    level: 17
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: scary_face
+    level: 21
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: fire_fang
+    level: 28
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: slash
+    level: 39
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: flamethrower
+    level: 43
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: brick_break
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: take_down
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: rock_slide
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: seismic_toss
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: dynamic_punch
+    level: 101
+  name: Charmeleon
+  category: Flame

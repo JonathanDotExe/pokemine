@@ -1,0 +1,235 @@
+species:
+  ==: at.jojokobi.pokemine.pokemon.PokemonSpecies
+  baseValues:
+    ==: at.jojokobi.pokemine.pokemon.PokemonValueSet
+    specialDefense: 64
+    defense: 65
+    attack: 48
+    health: 44
+    specialAttack: 50
+    speed: 43
+  color: blue
+  description: "A tiny turtle. One of the Starter Pokemon of Kanto."
+  flySpeed: 0.0
+  minLikeEquality: 0.5
+  maxDislikeEquality: 0.2
+  spawns:
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 6
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - BEACH
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 5
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - OCEAN
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 5
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - DEEP_OCEAN
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 5
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - PLAINS
+    - ==: at.jojokobi.pokemine.spawning.RainSpawnCondition
+      rain: true
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 5
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - SUNFLOWER_PLAINS
+    - ==: at.jojokobi.pokemine.spawning.RainSpawnCondition
+      rain: true
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 4
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - RIVER
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 4
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - SNOWY_TUNDRA
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 4
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - ICE_SPIKES
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 4
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - SNOWY_BEACH
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 4
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - SNOWY_MOUNTAINS
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 5
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - SWAMP
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 5
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - SWAMP_HILLS
+  levelSpeed: middle_slow
+  catchRate: 45
+  climbSpeed: 0.0
+  jumpSpeed: 0.5
+  surfSpeed: 1.0
+  eggCycles: 20
+  wildLevel: 12
+  legendary: false
+  lavaSurfSpeed: 0.0
+  loot:
+    ==: at.jojokobi.mcutil.loot.LootInventory
+    items:
+    - ==: at.jojokobi.mcutil.loot.LootItem
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 1968
+        type: SCUTE
+      chance: 0.1
+      minCount: 1
+      maxCount: 1
+    - ==: at.jojokobi.mcutil.loot.LootItem
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 1968
+        type: SEAGRASS
+      chance: 0.5
+      minCount: 1
+      maxCount: 3
+  evolutions:
+  - ==: at.jojokobi.pokemine.pokemon.evolution.EvolutionCause
+    species:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: wartortle
+    conditions:
+    - ==: at.jojokobi.pokemine.pokemon.evolution.LevelCondition
+      level: 16
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: squirtle
+  walkSpeed: 0.75
+  types:
+  - Water
+  maleChance: 0.875
+  eggGroups:
+  - monster
+  - water_1
+  formOf: null
+  index: 7
+  weight: 9.0
+  ep: 63
+  winEvs:
+    ==: at.jojokobi.pokemine.pokemon.PokemonValueSet
+    specialDefense: 0
+    defense: 1
+    attack: 0
+    health: 0
+    specialAttack: 0
+    speed: 0
+  size: 0.5
+  initialFriendship: 70
+  moves:
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: tackle
+    level: 1
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: tail_whip
+    level: 1
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: watergun
+    level: 7
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: bite
+    level: 16
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: waterwave
+    level: 25
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: aqua_tail
+    level: 28
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: iron_defense
+    level: 34
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: hydropump
+    level: 40
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: brick_break
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: take_down
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: seismic_toss
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: dynamic_punch
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: brine
+    level: 101
+  name: Squirtle
+  category: Tiny Turtle

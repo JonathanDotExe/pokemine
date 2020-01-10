@@ -1,0 +1,34 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 15
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: dual_chop
+  initializeProcedure: null
+  learningMethod: MOVE_TUTOR
+  accuracy: 0.9
+  maxPp: 24
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.ListProcedure
+    procedures:
+    - ==: at.jojokobi.pokemine.moves.procedures.DamageProcedure
+      performer: false
+      recoil: 1.4E-45
+      power:
+        ==: at.jojokobi.pokemine.moves.procedures.suppliers.MovePowerSupplier
+    - ==: at.jojokobi.pokemine.moves.procedures.DamageProcedure
+      performer: false
+      recoil: 1.4E-45
+      power:
+        ==: at.jojokobi.pokemine.moves.procedures.suppliers.MovePowerSupplier
+  type: Dragon
+  priority: 0
+  animation: hit
+  minLevel: 20
+  criticalRate: 1
+  preExecuteProcedure: null
+  damageClass: physical
+  price: 2000
+  name: Dual Chop
+  power: 40

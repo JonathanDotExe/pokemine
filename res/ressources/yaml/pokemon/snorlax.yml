@@ -1,0 +1,301 @@
+species:
+  ==: at.jojokobi.pokemine.pokemon.PokemonSpecies
+  baseValues:
+    ==: at.jojokobi.pokemine.pokemon.PokemonValueSet
+    specialDefense: 110
+    defense: 65
+    attack: 110
+    health: 160
+    specialAttack: 65
+    speed: 30
+  color: black
+  description: This pokemon eats 400 kilos of food everyday. The rest of its time
+    it spends sleeping.
+  minLikeEquality: 0.4
+  maxDislikeEquality: 0.1
+  flySpeed: 0.0
+  spawns:
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 1
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - PLAINS
+    - ==: at.jojokobi.pokemine.spawning.DaySpawnCondition
+      day: false
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 1
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - SUNFLOWER_PLAINS
+    - ==: at.jojokobi.pokemine.spawning.DaySpawnCondition
+      day: false
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 1
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - FOREST
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 2
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - FLOWER_FOREST
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 2
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - MOUNTAINS
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 1
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - WOODED_MOUNTAINS
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 2
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - GRAVELLY_MOUNTAINS
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 1
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - MODIFIED_GRAVELLY_MOUNTAINS
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 1
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - TAIGA
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 2
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - TAIGA_HILLS
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 2
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - TAIGA_MOUNTAINS
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 1
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - GIANT_TREE_TAIGA
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 1
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - GIANT_TREE_TAIGA_HILLS
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 2
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - GIANT_SPRUCE_TAIGA
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 2
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - GIANT_SPRUCE_TAIGA_HILLS
+  levelSpeed: slow
+  catchRate: 25
+  climbSpeed: 0.15
+  jumpSpeed: 0.75
+  surfSpeed: 0.3
+  eggCycles: 40
+  wildLevel: 45
+  legendary: false
+  lavaSurfSpeed: 0.0
+  loot:
+    ==: at.jojokobi.mcutil.loot.LootInventory
+    items:
+    - ==: at.jojokobi.mcutil.loot.LootItem
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 1968
+        type: COOKIE
+      chance: 0.5
+      minCount: 1
+      maxCount: 5
+    - ==: at.jojokobi.mcutil.loot.LootItem
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 1968
+        type: APPLE
+      chance: 0.5
+      minCount: 1
+      maxCount: 5
+    - ==: at.jojokobi.mcutil.loot.LootItem
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 1968
+        type: PUMPKIN_PIE
+      chance: 0.2
+      minCount: 1
+      maxCount: 2
+  evolutions: []
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: snorlax
+  walkSpeed: 0.8
+  types:
+  - Normal
+  maleChance: 0.875
+  eggGroups:
+  - monster
+  formOf: null
+  index: 143
+  weight: 460.0
+  ep: 189
+  winEvs:
+    ==: at.jojokobi.pokemine.pokemon.PokemonValueSet
+    specialDefense: 0
+    defense: 0
+    attack: 0
+    health: 2
+    specialAttack: 0
+    speed: 0
+  size: 2.1
+  initialFriendship: 70
+  moves:
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: tackle
+    level: 1
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: amnesia
+    level: 9
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: lick
+    level: 12
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: yawn
+    level: 20
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: bodyslam
+    level: 25
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: giga_impact
+    level: 35
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: crunch
+    level: 49
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: brick_break
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: flamethrower
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: psychic
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: solar_beam
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: hydropump
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: thunder
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: shaddow_ball
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: earthquake
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: iron_head
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: take_down
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: hyper_beam
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: rock_slide
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: seismic_toss
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: dynamic_punch
+    level: 101
+  name: Snorlax
+  category: Daydreamer

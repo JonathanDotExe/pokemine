@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/moves https://jojokobi.lima-city.de/pokemine/moves/move">
+	<name>Reversal</name>
+	<identifier>reversal</identifier>
+	<type>fighting</type>
+	<damage_class>physical</damage_class>
+	<learning_method>none</learning_method>
+	<price>0</price>
+	<min_level>0</min_level>
+	<power>0</power>
+	<accuracy>1.0</accuracy>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<animation>hit</animation>
+	<effects>
+		var dmg = 0;
+		var percent = performer.getHealthInPercent();
+		if (percent >= 0.71) {
+			dmg = 20;
+		}
+		else if (percent >= 0.36) {
+			dmg = 40;
+		}
+		else if (percent >= 0.21) {
+			dmg = 80;
+		}
+		else if (percent >= 0.11) {
+			dmg = 100;
+		}
+		else if (percent >= 0.5) {
+			dmg = 150;
+		}
+		else {
+			dmg = 200;
+		}
+		move.damage(defender, dmg);
+	</effects>
+</move>

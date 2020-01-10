@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/moves https://jojokobi.lima-city.de/pokemine/moves/move">
+	<name>Ember</name>
+	<identifier>ember</identifier>
+	<type>fire</type>
+	<damage_class>special</damage_class>
+	
+	<learning_method>none</learning_method>
+	<price>0</price>
+	<min_level>0</min_level>
+	
+	<power>40</power>
+	<accuracy>1.0</accuracy>
+	<pp>25</pp>
+	<maxpp>40</maxpp>
+	<animation>flame</animation>
+	<effects>
+		move.damage();
+		move.setStatus(defender,burn,0.1);
+	</effects>
+	<effects_old>
+		<damage></damage>
+		<burn target="defender" chance="0.1"></burn>
+	</effects_old>
+</move>

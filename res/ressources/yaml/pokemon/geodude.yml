@@ -1,0 +1,264 @@
+species:
+  ==: at.jojokobi.pokemine.pokemon.PokemonSpecies
+  baseValues:
+    ==: at.jojokobi.pokemine.pokemon.PokemonValueSet
+    specialDefense: 30
+    defense: 100
+    attack: 80
+    health: 40
+    specialAttack: 30
+    speed: 20
+  color: brown
+  description: This pokemon lives high up in the mountains. It's often mistaken with
+    rocks.
+  flySpeed: 0.0
+  minLikeEquality: 0.6
+  maxDislikeEquality: 0.2
+  spawns:
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 6
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - MOUNTAINS
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 6
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - WOODED_MOUNTAINS
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 7
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - GRAVELLY_MOUNTAINS
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 7
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - MODIFIED_GRAVELLY_MOUNTAINS
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 5
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - SAVANNA_PLATEAU
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 7
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - SHATTERED_SAVANNA_PLATEAU
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 7
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - SHATTERED_SAVANNA
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 5
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - GIANT_TREE_TAIGA
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 5
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - GIANT_TREE_TAIGA_HILLS
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 5
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - GIANT_SPRUCE_TAIGA
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 5
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - GIANT_SPRUCE_TAIGA_HILLS
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 5
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - BADLANDS
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 5
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - BADLANDS_PLATEAU
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 5
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - ERODED_BADLANDS
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 5
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - WOODED_BADLANDS_PLATEAU
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 5
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - MODIFIED_WOODED_BADLANDS_PLATEAU
+  levelSpeed: middle_slow
+  catchRate: 255
+  climbSpeed: 0.2
+  jumpSpeed: 0.5
+  surfSpeed: 0.0
+  eggCycles: 15
+  wildLevel: 15
+  legendary: false
+  lavaSurfSpeed: 0.0
+  loot:
+    ==: at.jojokobi.mcutil.loot.LootInventory
+    items:
+    - ==: at.jojokobi.mcutil.loot.LootItem
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 1968
+        type: COBBLESTONE
+      chance: 0.5
+      minCount: 1
+      maxCount: 3
+    - ==: at.jojokobi.mcutil.loot.LootItem
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 1968
+        type: DIRT
+      chance: 0.5
+      minCount: 1
+      maxCount: 3
+    - ==: at.jojokobi.mcutil.loot.LootItem
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 1968
+        type: GRAVEL
+      chance: 0.5
+      minCount: 1
+      maxCount: 3
+  evolutions:
+  - ==: at.jojokobi.pokemine.pokemon.evolution.EvolutionCause
+    species:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: graveler
+    conditions:
+    - ==: at.jojokobi.pokemine.pokemon.evolution.LevelCondition
+      level: 25
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: geodude
+  walkSpeed: 0.85
+  types:
+  - Rock
+  - Ground
+  maleChance: 0.5
+  eggGroups:
+  - mineral
+  formOf: null
+  index: 74
+  weight: 20.0
+  ep: 60
+  winEvs:
+    ==: at.jojokobi.pokemine.pokemon.PokemonValueSet
+    specialDefense: 0
+    defense: 1
+    attack: 0
+    health: 0
+    specialAttack: 0
+    speed: 0
+  size: 0.4
+  initialFriendship: 70
+  moves:
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: tackle
+    level: 1
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: rock_throw
+    level: 17
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: magnitude
+    level: 12
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: bulldoze
+    level: 22
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: earthquake
+    level: 34
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: stone_edge
+    level: 42
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: rock_tomb
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: brick_break
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: ancient_power
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: take_down
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: rock_slide
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: seismic_toss
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: dynamic_punch
+    level: 101
+  name: Geodude
+  category: Rock

@@ -1,0 +1,26 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 10
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: minimize
+  initializeProcedure: null
+  learningMethod: NONE
+  accuracy: 1.1
+  maxPp: 16
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.AddValueProcedure
+    stat: EVASAION
+    performer: true
+    value: 2
+  type: Normal
+  priority: 0
+  animation: posititve_status
+  minLevel: 0
+  criticalRate: 1
+  preExecuteProcedure: null
+  damageClass: status
+  price: 0
+  name: Minimize
+  power: 0

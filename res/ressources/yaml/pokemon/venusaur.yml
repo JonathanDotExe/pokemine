@@ -1,0 +1,235 @@
+species:
+  ==: at.jojokobi.pokemine.pokemon.PokemonSpecies
+  baseValues:
+    ==: at.jojokobi.pokemine.pokemon.PokemonValueSet
+    specialDefense: 100
+    defense: 83
+    attack: 82
+    health: 80
+    specialAttack: 100
+    speed: 80
+  color: green
+  description: It saves solar energy in its flower. On sunny days it's solar beams
+    are very strong.
+  minLikeEquality: 0.5
+  maxDislikeEquality: 0.2
+  flySpeed: 0.0
+  spawns:
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 2
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - FOREST
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 1
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - WOODED_HILLS
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 1
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - FLOWER_FOREST
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 1
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - PLAINS
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 1
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - SUNFLOWER_PLAINS
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 1
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - JUNGLE
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 1
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - JUNGLE_EDGE
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 2
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - JUNGLE_HILLS
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 1
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - MODIFIED_JUNGLE_EDGE
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 5
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - MODIFIED_JUNGLE
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 4
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - SAVANNA
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 4
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - SHATTERED_SAVANNA
+  levelSpeed: middle_slow
+  catchRate: 45
+  climbSpeed: 0.1
+  jumpSpeed: 0.5
+  surfSpeed: 0.0
+  eggCycles: 20
+  wildLevel: 40
+  legendary: false
+  lavaSurfSpeed: 0.0
+  loot:
+    ==: at.jojokobi.mcutil.loot.LootInventory
+    items:
+    - ==: at.jojokobi.mcutil.loot.LootItem
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 1968
+        type: WHEAT_SEEDS
+      chance: 1.0
+      minCount: 1
+      maxCount: 5
+    - ==: at.jojokobi.mcutil.loot.LootItem
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 1968
+        type: OAK_LEAVES
+      chance: 0.2
+      minCount: 1
+      maxCount: 3
+    - ==: at.jojokobi.mcutil.loot.LootItem
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 1968
+        type: POPPY
+      chance: 1.0
+      minCount: 1
+      maxCount: 5
+    - ==: at.jojokobi.mcutil.loot.LootItem
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 1968
+        type: CARROT
+      chance: 0.05
+      minCount: 1
+      maxCount: 1
+  evolutions: []
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: venusaur
+  walkSpeed: 1.2
+  types:
+  - Grass
+  - Poison
+  maleChance: 0.875
+  eggGroups:
+  - monster
+  - plant
+  formOf: null
+  index: 3
+  weight: 13.0
+  ep: 236
+  winEvs:
+    ==: at.jojokobi.pokemine.pokemon.PokemonValueSet
+    specialDefense: 1
+    defense: 0
+    attack: 0
+    health: 0
+    specialAttack: 2
+    speed: 0
+  size: 2.0
+  initialFriendship: 70
+  moves:
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: tackle
+    level: 1
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: leech_seed
+    level: 1
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: growl
+    level: 1
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: leech_seed
+    level: 7
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: vinewhip
+    level: 9
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: poison_powder
+    level: 13
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: sleep_powder
+    level: 13
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: take_down
+    level: 15
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: razor_leaf
+    level: 20
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: growth
+    level: 28
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: solar_beam
+    level: 44
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: hyper_beam
+    level: 101
+  name: Venusaur
+  category: Seeds

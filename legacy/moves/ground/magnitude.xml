@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/moves https://jojokobi.lima-city.de/pokemine/moves/move">
+	<name>Magnitude</name>
+	<identifier>magnitude</identifier>
+	<type>ground</type>
+	<damage_class>physical</damage_class>
+	<learning_method>none</learning_method>
+	<price>0</price>
+	<min_level>0</min_level>
+	<power>0</power>
+	<accuracy>1.0</accuracy>
+	<pp>30</pp>
+	<maxpp>48</maxpp>
+	<animation>break</animation>
+	<effects><![CDATA[
+		var f = 0;
+		var rand = Math.random ();
+		if (rand < 0.05) {
+			f = 0;
+			move.message ("Magnitude 4");
+		}
+		else if (rand < 0.15) {
+			f = 1;
+			move.message ("Magnitude 5");
+		}
+		else if (rand < 0.35) {
+			f = 2;
+			move.message ("Magnitude 6");
+		}
+		else if (rand < 0.65) {
+			f = 3;
+			move.message ("Magnitude 7");
+		}
+		else if (rand < 0.85) {
+			f = 4;
+			move.message ("Magnitude 8");
+		}
+		else if (rand < 0.95) {
+			f = 5;
+			move.message ("Magnitude 9");
+		}
+		else  {
+			f = 7;
+			move.message ("Magnitude 10");
+		}
+		move.damage(defender, 10 + f*20);
+		]]>
+	</effects>
+</move>

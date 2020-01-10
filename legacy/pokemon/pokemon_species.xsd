@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:pkmn="https://jojokobi.lima-city.de/pokemine/pokemon_species"
+	targetNamespace="https://jojokobi.lima-city.de/pokemine/pokemon_species"
+	elementFormDefault="qualified">
+
+
+    <element name="pokemon_species" type="pkmn:pokemon_species"></element>
+
+    <complexType name="pokemon_species">
+    	<sequence>
+    		<element name="pokedex" type="pkmn:pokedex" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="base_values" type="pkmn:base_values"
+    			minOccurs="1" maxOccurs="1">
+    		</element>
+    		<element name="moves" type="pkmn:moves" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="evolutions" type="pkmn:evolutions"
+    			minOccurs="0" maxOccurs="1">
+    		</element>
+    		<element name="fieldmoves" type="pkmn:fieldmoves"
+    			minOccurs="0" maxOccurs="1">
+    		</element>
+            <element name="loot" type="pkmn:loot" minOccurs="0" maxOccurs="1"></element>
+            <element name="win" type="pkmn:win" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+
+    		<element name="spawns" type="pkmn:spawns" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+        </sequence>
+    </complexType>
+    
+    
+
+    <complexType name="pokedex">
+    	<sequence>
+    		<element name="name" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="identifier" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="index" type="int" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="types" type="pkmn:types" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+
+    		<element name="male_chance" type="float" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="egg_group" type="string" minOccurs="1"
+    			maxOccurs="unbounded">
+    		</element>
+    		<element name="egg_steps" type="int" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="category" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="size" type="float" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="weight" type="float" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="color" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="description" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+
+    		<element name="legendary" type="boolean" minOccurs="0" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="base_values">
+    	<sequence>
+    		<element name="health" type="int" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="attack" type="int" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="defense" type="int" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="special_attack" type="int" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="special_defense" type="int" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="speed" type="int" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="friendship" type="int" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+
+    		<element name="catch_rate" type="int" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="level_ep" type="pkmn:level_speed"
+    			minOccurs="1" maxOccurs="1">
+    		</element>
+    		<element name="wild_level" type="int" minOccurs="1" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+    <simpleType name="type">
+    	<restriction base="string">
+    		<enumeration value="normal"/>
+    		<enumeration value="fire"/>
+    		<enumeration value="fighting"/>
+    		<enumeration value="water"/>
+    		<enumeration value="flying"/>
+    		<enumeration value="grass"/>
+    		<enumeration value="poison"/>
+    		<enumeration value="electric"/>
+    		<enumeration value="ground"/>
+    		<enumeration value="psychic"/>
+    		<enumeration value="rock"/>
+    		<enumeration value="ice"/>
+    		<enumeration value="bug"/>
+    		<enumeration value="dragon"/>
+    		<enumeration value="ghost"/>
+    		<enumeration value="dark"/>
+    		<enumeration value="steel"/>
+    		<enumeration value="fairy"/>
+    	</restriction>
+    </simpleType>
+    
+    <simpleType name="level_speed">
+    	<restriction base="string">
+    		<enumeration value="eratic"/>
+    		<enumeration value="fast"/>
+    		<enumeration value="middle_fast"/>
+    		<enumeration value="middle_slow"/>
+    		<enumeration value="slow"/>
+    		<enumeration value="flucating"/>
+    	</restriction>
+    </simpleType>
+
+    <complexType name="moves">
+    	<sequence>
+    		<element name="move" type="pkmn:move" minOccurs="1" maxOccurs="unbounded"></element>
+    	</sequence>
+    </complexType>
+    
+
+    <complexType name="move">
+    	<sequence>
+    		<element name="identifier" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="level" type="int" minOccurs="1" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="types">
+    	<sequence>
+    		<element name="type" type="pkmn:type" minOccurs="1" maxOccurs="unbounded"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="fieldmoves">
+    	<sequence>
+    		<element name="walking" type="float" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="flying" type="float" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="surfing" type="float" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="lava_surfing" type="float" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="jumping" type="float" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="climbing" type="float" minOccurs="1" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="win">
+    	<sequence>
+    		<element name="xp" type="int" minOccurs="1" maxOccurs="1"></element>
+            <element name="health" type="int" minOccurs="1" maxOccurs="1"></element>
+            <element name="attack" type="int" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="defense" type="int" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="special_attack" type="int" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="special_defense" type="int" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="speed" type="int" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="evolutions">
+    	<sequence>
+    		<element name="evolution" type="pkmn:evolution" minOccurs="0" maxOccurs="unbounded"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="evolution">
+    	<sequence>
+    		<element name="level" type="int" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="species" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="item" type="string" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="trade" type="boolean" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="friendship" type="int" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="held_item" type="string" minOccurs="0" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="spawns">
+    	<sequence>
+    		<element name="spawn" type="pkmn:spawn" minOccurs="0" maxOccurs="unbounded"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="spawn">
+    	<sequence>
+    		<element name="biome" type="string"></element>
+    		<element name="chance" type="int"></element>
+    		<element name="day" type="boolean"></element>
+    		<element name="rain" type="boolean"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="loot_item">
+    	<sequence>
+    		<element name="chance" type="double" minOccurs="1" maxOccurs="1"></element>
+            <element name="material" type="string" minOccurs="1" maxOccurs="1"></element>
+            <element name="minCount" type="int" minOccurs="0" maxOccurs="1"></element>
+    		<element name="maxCount" type="int" minOccurs="0" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="loot">
+    	<sequence>
+    		<element name="item" type="pkmn:loot_item" minOccurs="0" maxOccurs="unbounded"></element>
+    	</sequence>
+    </complexType>
+</schema>
+	

@@ -1,0 +1,35 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 10
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: assurance
+  learningMethod: NONE
+  accuracy: 1.0
+  maxPp: 16
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.DamageProcedure
+    performer: false
+    recoil: 1.4E-45
+    power:
+      ==: at.jojokobi.pokemine.moves.procedures.suppliers.ConditionalNumberSupplier
+      condition:
+        ==: at.jojokobi.pokemine.moves.procedures.conditions.DamageTakenCondition
+        performer: false
+      number1:
+        ==: at.jojokobi.pokemine.moves.procedures.suppliers.MultiplierSupplier
+        multiplier: 2.0
+        decorating:
+          ==: at.jojokobi.pokemine.moves.procedures.suppliers.MovePowerSupplier
+      number2:
+        ==: at.jojokobi.pokemine.moves.procedures.suppliers.MovePowerSupplier
+  type: Dark
+  priority: 0
+  animation: hit
+  minLevel: 0
+  criticalRate: 1
+  damageClass: physical
+  price: 0
+  name: Assurance
+  power: 60

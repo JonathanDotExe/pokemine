@@ -1,0 +1,21 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 10
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: double_slap
+  learningMethod: NONE
+  accuracy: 0.85
+  maxPp: 16
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.FuryAttackProcedure
+  type: Normal
+  priority: 0
+  animation: hit
+  minLevel: 0
+  criticalRate: 1
+  damageClass: physical
+  price: 0
+  name: Double Slap
+  power: 15

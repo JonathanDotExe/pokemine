@@ -1,0 +1,22 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 10
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: moonlight
+  learningMethod: NONE
+  accuracy: 1.1
+  maxPp: 16
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.HealWholePercentProcedure
+    percent: 0.5
+  type: Normal
+  priority: 0
+  animation: positive_status
+  minLevel: 0
+  criticalRate: 1
+  damageClass: status
+  price: 0
+  name: Moonlight
+  power: 0

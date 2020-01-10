@@ -1,0 +1,26 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 30
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: baby_doll_eyes
+  initializeProcedure: null
+  learningMethod: NONE
+  accuracy: 1.0
+  maxPp: 48
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.AddValueProcedure
+    stat: ATTACK
+    performer: false
+    value: -1
+  type: Fairy
+  priority: 1
+  animation: positive_status
+  minLevel: 0
+  criticalRate: 1
+  preExecuteProcedure: null
+  damageClass: status
+  price: 0
+  name: Baby-Doll Eyes
+  power: 0

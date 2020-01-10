@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/moves https://jojokobi.lima-city.de/pokemine/moves/move">
+	<name>Sheer Cold</name>
+	<identifier>sheer_cold</identifier>
+	<type>ice</type>
+	<damage_class>special</damage_class>
+	<learning_method>none</learning_method>
+	<price>0</price>
+	<min_level>0</min_level>
+	<power>0</power>
+	<accuracy>0.3</accuracy>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<animation>icebeam</animation>
+	<initialize><![CDATA[
+		init.setAccuracy((30 + performer.getLevel() - defender.getLevel())/100.0);
+		if (performer.getLevel() < defender.getLevel()) {
+			init.setFail(true);
+		}
+	]]></initialize>
+	<effects>
+		move.damage(defender,defender.getHealth(),hp);
+	</effects>
+</move>

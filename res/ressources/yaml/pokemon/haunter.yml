@@ -1,0 +1,213 @@
+species:
+  ==: at.jojokobi.pokemine.pokemon.PokemonSpecies
+  baseValues:
+    ==: at.jojokobi.pokemine.pokemon.PokemonValueSet
+    specialDefense: 55
+    defense: 45
+    attack: 50
+    health: 45
+    specialAttack: 115
+    speed: 95
+  color: purple
+  description: When you get licked by a Haunters tongue, your soul is in risk of beeing
+    eaten by it.
+  minLikeEquality: 0.7
+  maxDislikeEquality: 0.3
+  flySpeed: 1.0
+  spawns:
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 2
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - PLAINS
+    - ==: at.jojokobi.pokemine.spawning.DaySpawnCondition
+      day: false
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 1
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - SUNFLOWER_PLAINS
+    - ==: at.jojokobi.pokemine.spawning.DaySpawnCondition
+      day: false
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 3
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - FOREST
+    - ==: at.jojokobi.pokemine.spawning.DaySpawnCondition
+      day: false
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 2
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - FLOWER_FOREST
+    - ==: at.jojokobi.pokemine.spawning.DaySpawnCondition
+      day: false
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 2
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - WOODED_HILLS
+    - ==: at.jojokobi.pokemine.spawning.DaySpawnCondition
+      day: false
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 1
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - BIRCH_FOREST
+    - ==: at.jojokobi.pokemine.spawning.DaySpawnCondition
+      day: false
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 1
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - SAVANNA
+    - ==: at.jojokobi.pokemine.spawning.DaySpawnCondition
+      day: false
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 1
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - JUNGLE
+    - ==: at.jojokobi.pokemine.spawning.DaySpawnCondition
+      day: false
+  levelSpeed: middle_slow
+  catchRate: 90
+  climbSpeed: 0.0
+  jumpSpeed: 1.1
+  surfSpeed: 0.0
+  eggCycles: 20
+  wildLevel: 27
+  legendary: false
+  lavaSurfSpeed: 0.0
+  loot:
+    ==: at.jojokobi.mcutil.loot.LootInventory
+    items:
+    - ==: at.jojokobi.mcutil.loot.LootItem
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 1968
+        type: ENDER_PEARL
+      chance: 0.05
+      minCount: 1
+      maxCount: 2
+    - ==: at.jojokobi.mcutil.loot.LootItem
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 1968
+        type: BONE
+      chance: 0.2
+      minCount: 1
+      maxCount: 4
+  evolutions:
+  - ==: at.jojokobi.pokemine.pokemon.evolution.EvolutionCause
+    species:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: gengar
+    conditions:
+    - ==: at.jojokobi.pokemine.pokemon.evolution.TradeCondition
+    - ==: at.jojokobi.pokemine.pokemon.evolution.LevelCondition
+      level: 1
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: haunter
+  walkSpeed: 1.0
+  types:
+  - Ghost
+  - Poison
+  maleChance: 0.5
+  eggGroups:
+  - amorph
+  formOf: null
+  index: 93
+  weight: 0.1
+  ep: 142
+  winEvs:
+    ==: at.jojokobi.pokemine.pokemon.PokemonValueSet
+    specialDefense: 0
+    defense: 0
+    attack: 0
+    health: 0
+    specialAttack: 2
+    speed: 0
+  size: 1.6
+  initialFriendship: 70
+  moves:
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: shaddow_punch
+    level: 0
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: hypnosis
+    level: 1
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: lick
+    level: 1
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: mean_look
+    level: 8
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: curse
+    level: 12
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: night_shade
+    level: 15
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: confuse_ray
+    level: 19
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: sucker_punch
+    level: 22
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: shaddow_ball
+    level: 33
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: dream_eater
+    level: 39
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: scary_face
+    level: 101
+  name: Haunter
+  category: Gas

@@ -1,0 +1,48 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 10
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: curse
+  learningMethod: TM
+  accuracy: 1.1
+  maxPp: 16
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.ConditionalProcedure
+    condition:
+      ==: at.jojokobi.pokemine.moves.procedures.conditions.HasTypeCondition
+      performer: true
+      type: Ghost
+    elseProcedure:
+      ==: at.jojokobi.pokemine.moves.procedures.ListProcedure
+      procedures:
+      - ==: at.jojokobi.pokemine.moves.procedures.AddValueProcedure
+        stat: SPEED
+        performer: true
+        value: -1
+      - ==: at.jojokobi.pokemine.moves.procedures.AddValueProcedure
+        stat: ATTACK
+        performer: true
+        value: 1
+      - ==: at.jojokobi.pokemine.moves.procedures.AddValueProcedure
+        stat: DEFENSE
+        performer: true
+        value: 1
+    ifProcedure:
+      ==: at.jojokobi.pokemine.moves.procedures.ListProcedure
+      procedures:
+      - ==: at.jojokobi.pokemine.moves.procedures.AddSecondaryStatusProcedure
+        performer: false
+        statusChange: at.jojokobi.pokemine.pokemon.status.Cursed
+      - ==: at.jojokobi.pokemine.moves.procedures.DamageWholePercentProcedure
+        percent: 0.5
+  type: Ghost
+  priority: 0
+  animation: positive_status
+  minLevel: 0
+  criticalRate: 1
+  damageClass: status
+  price: 1500
+  name: Curse
+  power: 0

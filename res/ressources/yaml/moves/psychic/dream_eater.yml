@@ -1,0 +1,40 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 15
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: dream_eater
+  initializeProcedure: null
+  learningMethod: TM
+  accuracy: 1.0
+  maxPp: 24
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.HealHPPercentProcedure
+    hp:
+      ==: at.jojokobi.pokemine.moves.procedures.suppliers.MultiplierSupplier
+      multiplier: 0.5
+      decorating:
+        ==: at.jojokobi.pokemine.moves.procedures.DamageProcedure
+        performer: false
+        recoil: 1.4E-45
+        power:
+          ==: at.jojokobi.pokemine.moves.procedures.suppliers.MovePowerSupplier
+  type: Psychic
+  priority: 0
+  animation: psybeam
+  minLevel: 25
+  criticalRate: 1
+  preExecuteProcedure:
+    ==: at.jojokobi.pokemine.moves.procedures.ConditionalProcedure
+    condition:
+      ==: at.jojokobi.pokemine.moves.procedures.conditions.HasPrimaryStatusCondition
+      performer: false
+      statusChange: at.jojokobi.pokemine.pokemon.status.Sleep
+    elseProcedure:
+      ==: at.jojokobi.pokemine.moves.procedures.FailProcedure
+    ifProcedure: null
+  damageClass: special
+  price: 1500
+  name: Dream Eater
+  power: 100

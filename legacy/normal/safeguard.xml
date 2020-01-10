@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/moves https://jojokobi.lima-city.de/pokemine/moves/move">
+	<name>Safeguard</name>
+	<identifier>safeguard</identifier>
+	<type>normal</type>
+	<damage_class>status</damage_class>
+	<learning_method>tm</learning_method>
+	<price>2000</price>
+	<min_level>15</min_level>
+	<power>0</power>
+	<accuracy>1.1</accuracy>
+	<pp>25</pp>
+	<maxpp>40</maxpp>
+	<animation>positive_status</animation>
+	<effects>
+		move.addStatus(performer,safeguard);
+	</effects>
+</move>

@@ -1,0 +1,31 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 15
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: psywave
+  initializeProcedure: null
+  learningMethod: NONE
+  accuracy: 1.0
+  maxPp: 24
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.DamageHPProcedure
+    performer: false
+    hp:
+      ==: at.jojokobi.pokemine.moves.procedures.suppliers.RandomMultiplierSupplier
+      min: 0.5
+      max: 1.5
+      decorating:
+        ==: at.jojokobi.pokemine.moves.procedures.suppliers.FixedNumberSupplier
+        number: 0.0
+  type: Psychic
+  priority: 0
+  animation: psybeam
+  minLevel: 0
+  criticalRate: 1
+  preExecuteProcedure: null
+  damageClass: special
+  price: 0
+  name: Psywave
+  power: 0

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<trainer_rank xmlns="https://jojokobi.lima-city.de/pokemine/trainer_rank" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/trainer_rank trainer.xsd">
+	<name>Gym Leader</name>
+	<identifier>ice_leader</identifier>
+	<id>2</id>
+	<spawnable>false</spawnable>
+	<prize>115</prize>
+	<types>
+		<type>ice</type>
+	</types>
+	<names>
+		<name>Anna</name>
+		<name>Lena</name>
+		<name>Jennifer</name>
+		<name>Zoe</name>
+		<name>Carina</name>
+		<name>Martha</name>
+		<name>Verena</name>
+		<name>Michaela</name>
+		<name>Karin</name>
+	</names>
+	<used_pokemon>
+	</used_pokemon>
+	<start_texts>
+		<text>I need to train my Pokémon!</text>
+		<text>You want to battle? I warn you, I've been training my Pokémon for weeks.</text>
+	</start_texts>
+	<win_texts>
+		<text>Victory</text>
+		<text>Haha, I won!</text>
+	</win_texts>
+	<lose_texts>
+		<text>Oh no! Not again!</text>
+		<text>I need more practise!</text>
+	</lose_texts>
+	<badge>ice</badge>
+</trainer_rank>

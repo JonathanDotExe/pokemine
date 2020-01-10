@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<files xmlns="https://jojokobi.lima-city.de/pokemine/pokemon_species" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine https://jojokobi.lima-city.de/pokemine/indexes">
+	<file>trainer.xml</file>
+	<file>teenager.xml</file>
+	<file>lass.xml</file>
+	<file>developer.xml</file>
+	
+	<file>bug_leader.xml</file>
+	<file>dark_leader.xml</file>
+	<file>dragon_leader.xml</file>
+	<file>electric_leader.xml</file>
+	<file>fairy_leader.xml</file>
+	<file>fighting_leader.xml</file>
+	<file>fire_leader.xml</file>
+	<file>flying_leader.xml</file>
+	<file>ghost_leader.xml</file>
+	<file>grass_leader.xml</file>
+	<file>ground_leader.xml</file>
+	<file>ice_leader.xml</file>
+	<file>normal_leader.xml</file>
+	<file>poison_leader.xml</file>
+	<file>psychic_leader.xml</file>
+	<file>rock_leader.xml</file>
+	<file>steel_leader.xml</file>
+	<file>water_leader.xml</file>
+	
+	<file>beauty.xml</file>
+	<file>black_belt.xml</file>
+	<file>bug_catcher.xml</file>
+	<file>camper.xml</file>
+	<file>dragon_trainer.xml</file>
+	<file>medium.xml</file>
+	<file>super_nerd.xml</file>
+	<file>swimmer.xml</file>
+	<file>veteran.xml</file>
+	<file>worker.xml</file>
+</files>

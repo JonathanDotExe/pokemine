@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:idx="https://jojokobi.lima-city.de/pokemine"
+	targetNamespace="https://jojokobi.lima-city.de/pokemine"
+	elementFormDefault="qualified">
+	
+
+    <complexType name="files">
+    	<sequence>
+    		<element name="file" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="files" type="idx:files"></element>
+
+</schema>

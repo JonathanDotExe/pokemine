@@ -1,0 +1,35 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 25
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: bite
+  initializeProcedure: null
+  learningMethod: NONE
+  accuracy: 1.0
+  maxPp: 40
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.ListProcedure
+    procedures:
+    - ==: at.jojokobi.pokemine.moves.procedures.DamageProcedure
+      performer: false
+      recoil: 0.0
+      power:
+        ==: at.jojokobi.pokemine.moves.procedures.suppliers.MovePowerSupplier
+    - ==: at.jojokobi.pokemine.moves.procedures.ChanceProcedure
+      chance: 0.3
+      procedure:
+        ==: at.jojokobi.pokemine.moves.procedures.AddSecondaryStatusProcedure
+        performer: false
+        statusChange: at.jojokobi.pokemine.pokemon.status.Flinched
+  type: Dark
+  priority: 0
+  animation: hit
+  minLevel: 0
+  criticalRate: 1
+  preExecuteProcedure: null
+  damageClass: physical
+  price: 0
+  name: Bite
+  power: 60

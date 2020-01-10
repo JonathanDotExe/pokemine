@@ -1,0 +1,35 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 10
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: thunder
+  initializeProcedure: null
+  learningMethod: TM
+  accuracy: 0.7
+  maxPp: 16
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.ListProcedure
+    procedures:
+    - ==: at.jojokobi.pokemine.moves.procedures.DamageProcedure
+      performer: false
+      recoil: 1.4E-45
+      power:
+        ==: at.jojokobi.pokemine.moves.procedures.suppliers.MovePowerSupplier
+    - ==: at.jojokobi.pokemine.moves.procedures.ChanceProcedure
+      chance: 0.3
+      procedure:
+        ==: at.jojokobi.pokemine.moves.procedures.AddPrimaryStatusProcedure
+        performer: false
+        statusChange: at.jojokobi.pokemine.pokemon.status.Paralysis
+  type: Electric
+  priority: 0
+  animation: thunder
+  minLevel: 30
+  criticalRate: 1
+  preExecuteProcedure: null
+  damageClass: special
+  price: 4000
+  name: Thunder
+  power: 110

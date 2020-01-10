@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/moves https://jojokobi.lima-city.de/pokemine/moves/move">
+	<name>Growl</name>
+	<identifier>growl</identifier>
+	<type>normal</type>
+	<damage_class>status</damage_class>
+	<learning_method>none</learning_method>
+	<price>0</price>
+	<min_level>0</min_level>
+	<power>0</power>
+	<accuracy>1.0</accuracy>
+	<pp>40</pp>
+	<maxpp>64</maxpp>
+	<animation>music</animation>
+	<effects>
+		move.addValue(defender,-1,attack);
+	</effects>
+</move>

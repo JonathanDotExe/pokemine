@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/moves https://jojokobi.lima-city.de/pokemine/moves/move">
+	<name>Curse</name>
+	<identifier>curse</identifier>
+	<type>ghost</type>
+	<damage_class>status</damage_class>
+	
+	<learning_method>tm</learning_method>
+	<price>1500</price>
+	<min_level>0</min_level>
+	
+	<power>0</power>
+	<accuracy>1.1</accuracy>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<animation>positive_status</animation>
+	<effects>
+		if (performer.hasType("ghost")) {
+			move.addStatus(defender,cursed);
+			performer.setHealth(performer.getHealth() - performer.getMaxHealth()/2);
+		}
+		else {
+			move.addValue(performer,-1,speed);
+			move.addValue(performer,1,attack);
+			move.addValue(performer,1,defense);
+		}
+	</effects>
+</move>

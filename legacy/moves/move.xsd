@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:mv="https://jojokobi.lima-city.de/pokemine/moves"
+	targetNamespace="https://jojokobi.lima-city.de/pokemine/moves"
+	elementFormDefault="qualified" xmlns:Q1="https://jojokobi.lima-city.de/pokemine/pokemon_species">
+    <import schemaLocation="https://jojokobi.lima-city.de/pokemine/pokemon_species/pokemon_species.xsd" namespace="https://jojokobi.lima-city.de/pokemine/pokemon_species"></import>
+    <complexType name="move">
+    	<sequence>
+    		<element name="name" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="identifier" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="type" type="Q1:type" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="damage_class" type="mv:damage_class"
+    			minOccurs="1" maxOccurs="1">
+    		</element>
+    		<element name="learning_method" type="mv:learning_method"
+    			minOccurs="0" maxOccurs="1">
+    		</element>
+    		<element name="price" type="int" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+            <element name="min_level" type="int" minOccurs="0" maxOccurs="1"></element>
+            <element name="power" type="int" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="accuracy" type="float" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="pp" type="int" minOccurs="1" maxOccurs="1"></element>
+    		<element name="maxpp" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+
+    		<element name="priority" type="int" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="critical_rate" type="int" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="animation" type="mv:animation" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="initailize" type="string" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="pre_execute" type="string" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="effects" type="string" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+
+    	</sequence>
+    </complexType>
+    
+    <simpleType name="damage_class">
+    	<restriction base="string">
+    		<enumeration value="physical"/>
+    		<enumeration value="special"/>
+    		<enumeration value="status"/>
+    	</restriction>
+    </simpleType>
+    
+    <simpleType name="learning_method">
+    	<restriction base="string">
+    		<enumeration value="tm"/>
+    		<enumeration value="move_tutor"/>
+    		<enumeration value="none"/>
+    	</restriction>
+    </simpleType>
+    
+    <simpleType name="animation">
+    	<restriction base="string">
+    		<enumeration value="squirt"/>
+    		<enumeration value="hit"/>
+    		<enumeration value="thunder"/>
+    		<enumeration value="flame"/>
+    		<enumeration value="inferno"/>
+    		<enumeration value="solar"/>
+    		<enumeration value="leaf"/>
+    		<enumeration value="break"/>
+    		<enumeration value="psybeam"/>
+    		<enumeration value="dust"/>
+    		<enumeration value="icebeam"/>
+    		<enumeration value="snowball"/>
+    		<enumeration value="music"/>
+    		<enumeration value="positive_status"/>
+    	</restriction>
+    </simpleType>
+    
+    <element name="move" type="mv:move"></element>
+
+
+    <complexType name="effects">
+    	<sequence>
+    		<element name="add_attack" type="string"
+    			minOccurs="0" maxOccurs="unbounded">
+    		</element>
+    		<element name="add_defense" type="string"
+    			minOccurs="0" maxOccurs="unbounded">
+    		</element>
+    		<element name="add_special_attack"
+    			type="string" minOccurs="0"
+    			maxOccurs="unbounded">
+    		</element>
+    		<element name="add_special_defense"
+    			type="string" minOccurs="0"
+    			maxOccurs="unbounded">
+    		</element>
+    		<element name="add_speed" type="string"
+    			minOccurs="0" maxOccurs="unbounded">
+    		</element>
+    		<element name="damage" type="string" minOccurs="0"
+    			maxOccurs="unbounded">
+    		</element>
+    		<element name="paralysis" type="mv:status_command"
+    			minOccurs="0" maxOccurs="unbounded">
+    		</element>
+    		<element name="freeze" type="mv:status_command"
+    			minOccurs="0" maxOccurs="unbounded">
+    		</element>
+    		<element name="poison" type="mv:status_command"
+    			minOccurs="0" maxOccurs="unbounded">
+    		</element>
+    		<element name="heavy_poison" type="mv:status_command"
+    			minOccurs="0" maxOccurs="unbounded">
+    		</element>
+    		<element name="sleep" type="mv:status_command"
+    			minOccurs="0" maxOccurs="unbounded">
+    		</element>
+    		<element name="burn" type="mv:status_command"
+    			minOccurs="0" maxOccurs="unbounded">
+    		</element>
+    	</sequence>
+    </complexType>
+
+
+    <simpleType name="target">
+    	<restriction base="string">
+    		<enumeration value="performer"></enumeration>
+    		<enumeration value="defender"></enumeration>
+    	</restriction>
+    </simpleType>
+
+    <complexType name="status_command">
+    	<sequence></sequence>
+    	<attribute name="target" type="string"></attribute>
+    	<attribute name="chance" type="float"></attribute>
+    </complexType>
+</schema>

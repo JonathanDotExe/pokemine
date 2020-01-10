@@ -1,0 +1,225 @@
+species:
+  ==: at.jojokobi.pokemine.pokemon.PokemonSpecies
+  baseValues:
+    ==: at.jojokobi.pokemine.pokemon.PokemonValueSet
+    specialDefense: 50
+    defense: 43
+    attack: 52
+    health: 39
+    specialAttack: 60
+    speed: 65
+  color: red
+  description: I usually lives in hot regions. It lives as long as it's flame burns.
+  minLikeEquality: 0.5
+  maxDislikeEquality: 0.2
+  flySpeed: 0.0
+  spawns:
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 5
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - SAVANNA
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 5
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - SAVANNA_PLATEAU
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 5
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - SHATTERED_SAVANNA
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 5
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - SHATTERED_SAVANNA_PLATEAU
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 6
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - DESERT
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 6
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - DESERT_HILLS
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 5
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - DESERT_LAKES
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 5
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - PLAINS
+    - ==: at.jojokobi.pokemine.spawning.DaySpawnCondition
+      day: true
+    - ==: at.jojokobi.pokemine.spawning.RainSpawnCondition
+      rain: false
+  levelSpeed: middle_slow
+  catchRate: 45
+  climbSpeed: 0.0
+  jumpSpeed: 0.5
+  surfSpeed: 0.0
+  eggCycles: 20
+  wildLevel: 12
+  legendary: false
+  lavaSurfSpeed: 0.75
+  loot:
+    ==: at.jojokobi.mcutil.loot.LootInventory
+    items:
+    - ==: at.jojokobi.mcutil.loot.LootItem
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 1968
+        type: FLINT
+      chance: 0.1
+      minCount: 1
+      maxCount: 1
+    - ==: at.jojokobi.mcutil.loot.LootItem
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 1968
+        type: BLAZE_ROD
+      chance: 0.01
+      minCount: 1
+      maxCount: 1
+    - ==: at.jojokobi.mcutil.loot.LootItem
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 1968
+        type: MAGMA_CREAM
+      chance: 0.01
+      minCount: 1
+      maxCount: 2
+  evolutions:
+  - ==: at.jojokobi.pokemine.pokemon.evolution.EvolutionCause
+    species:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: charmeleon
+    conditions:
+    - ==: at.jojokobi.pokemine.pokemon.evolution.LevelCondition
+      level: 16
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: charmander
+  walkSpeed: 0.9
+  types:
+  - Fire
+  maleChance: 0.875
+  eggGroups:
+  - monster
+  - dragon
+  formOf: null
+  index: 4
+  weight: 8.5
+  ep: 62
+  winEvs:
+    ==: at.jojokobi.pokemine.pokemon.PokemonValueSet
+    specialDefense: 0
+    defense: 0
+    attack: 0
+    health: 0
+    specialAttack: 0
+    speed: 1
+  size: 0.6
+  initialFriendship: 70
+  moves:
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: scratch
+    level: 1
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: growl
+    level: 1
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: ember
+    level: 7
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: dragon_rage
+    level: 16
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: scary_face
+    level: 19
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: fire_fang
+    level: 25
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: slash
+    level: 34
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: flamethrower
+    level: 37
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: brick_break
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: take_down
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: rock_slide
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: seismic_toss
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: dynamic_punch
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: dragon_rush
+    level: 101
+  name: Charmander
+  category: Lizard

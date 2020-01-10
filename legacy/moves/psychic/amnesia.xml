@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/moves https://jojokobi.lima-city.de/pokemine/moves/move">
+	<name>Amnesia</name>
+	<identifier>amnesia</identifier>
+	<type>psychic</type>
+	<damage_class>status</damage_class>
+	<learning_method>none</learning_method>
+	<price>0</price>
+	<min_level>0</min_level>
+	<power>0</power>
+	<accuracy>1.1</accuracy>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<animation>positive_status</animation>
+	<effects>
+		move.addValue(performer,2,special_defense);
+	</effects>
+	<effects_old>
+		<add_special_defense target="performer" value="2" chance="1.0"/>
+	</effects_old>
+</move>

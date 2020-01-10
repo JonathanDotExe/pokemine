@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/moves https://jojokobi.lima-city.de/pokemine/moves/move">
+	<name>Double Slap</name>
+	<identifier>double_slap</identifier>
+	<type>normal</type>
+	<damage_class>physical</damage_class>
+	<learning_method>none</learning_method>
+	<price>0</price>
+	<min_level>0</min_level>
+	<power>15</power>
+	<accuracy>0.85</accuracy>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<animation>hit</animation>
+	<effects><![CDATA[
+		var hits = 0;
+		var random = Math.random();
+		if (random < 3.33) {
+			hits = 2;
+		}
+		else if (random < 6.66) {
+			hits = 3;
+		}
+		else if (random < 16.7) {
+			hits = 4;
+		}
+		else {
+			hits = 5;
+		}
+		for (var i = 0; i < hits; i++) {
+			move.damage();
+		}
+		move.message("Hit " + hits + " times!");
+	]]></effects>
+</move>

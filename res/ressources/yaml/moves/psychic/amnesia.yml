@@ -1,0 +1,26 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 20
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: amnesia
+  initializeProcedure: null
+  learningMethod: NONE
+  accuracy: 1.1
+  maxPp: 32
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.AddValueProcedure
+    stat: SPECIAL_DEFENSE
+    performer: true
+    value: 2
+  type: Psychic
+  priority: 0
+  animation: positive_status
+  minLevel: 0
+  criticalRate: 1
+  preExecuteProcedure: null
+  damageClass: status
+  price: 0
+  name: Amnesia
+  power: 0

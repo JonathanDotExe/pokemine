@@ -1,0 +1,41 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 15
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: fire_fang
+  initializeProcedure: null
+  learningMethod: NONE
+  accuracy: 0.95
+  maxPp: 24
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.ListProcedure
+    procedures:
+    - ==: at.jojokobi.pokemine.moves.procedures.DamageProcedure
+      performer: false
+      recoil: 1.4E-45
+      power:
+        ==: at.jojokobi.pokemine.moves.procedures.suppliers.MovePowerSupplier
+    - ==: at.jojokobi.pokemine.moves.procedures.ChanceProcedure
+      chance: 0.1
+      procedure:
+        ==: at.jojokobi.pokemine.moves.procedures.AddPrimaryStatusProcedure
+        performer: false
+        statusChange: at.jojokobi.pokemine.pokemon.status.Burn
+    - ==: at.jojokobi.pokemine.moves.procedures.ChanceProcedure
+      chance: 0.1
+      procedure:
+        ==: at.jojokobi.pokemine.moves.procedures.AddSecondaryStatusProcedure
+        performer: false
+        statusChange: at.jojokobi.pokemine.pokemon.status.Flinched
+  type: Fire
+  priority: 0
+  animation: hit
+  minLevel: 0
+  criticalRate: 1
+  preExecuteProcedure: null
+  damageClass: physical
+  price: 0
+  name: Fire Fang
+  power: 65

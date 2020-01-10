@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/moves https://jojokobi.lima-city.de/pokemine/moves/move">
+	<name>Mirror Coat</name>
+	<identifier>mirror_coat</identifier>
+	<type>psychic</type>
+	<damage_class>special</damage_class>
+	<learning_method>none</learning_method>
+	<price>0</price>
+	<min_level>0</min_level>
+	<power>0</power>
+	<accuracy>1.0</accuracy>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<animation>psybeam</animation>
+	<priority>-5</priority>
+	<effects>
+		<![CDATA[
+		var lastDamage = performer.getLastTakenDamage();
+		if (lastDamage && lastDamage.getDamageClass() == DamageClass.SPECIAL) {
+			move.damage(defender,lastDamage.getDamage() * 2, hp);
+		}
+		]]>
+	</effects>
+</move>

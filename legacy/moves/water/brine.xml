@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/moves https://jojokobi.lima-city.de/pokemine/moves/move">
+	<name>Brine</name>
+	<identifier>brine</identifier>
+	<type>water</type>
+	<damage_class>special</damage_class>
+	<learning_method>tm</learning_method>
+	<price>2000</price>
+	<min_level>18</min_level>
+	<power>65</power>
+	<accuracy>1.0</accuracy>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<animation>squirt</animation>
+	<effects><![CDATA[
+		if (defender.getHealth() < defender.getMaxHealth()/2.0) {
+			move.damage(defender,power*2);
+		}
+		else {
+			move.damage();
+		}
+	]]></effects>
+</move>

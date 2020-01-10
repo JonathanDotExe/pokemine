@@ -1,0 +1,21 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 10
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: stored_power
+  learningMethod: NONE
+  accuracy: 1.0
+  maxPp: 16
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.StoredPowerProcedure
+  type: Psychic
+  priority: 0
+  animation: psybeam
+  minLevel: 0
+  criticalRate: 1
+  damageClass: special
+  price: 0
+  name: Stored Power
+  power: 20

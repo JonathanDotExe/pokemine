@@ -1,0 +1,26 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 10
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: scary_face
+  initializeProcedure: null
+  learningMethod: NONE
+  accuracy: 1.0
+  maxPp: 16
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.AddValueProcedure
+    stat: SPEED
+    performer: false
+    value: -2
+  type: Normal
+  priority: 0
+  animation: psybeam
+  minLevel: 0
+  criticalRate: 1
+  preExecuteProcedure: null
+  damageClass: status
+  price: 0
+  name: Scary Face
+  power: 0

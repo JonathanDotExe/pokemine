@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/moves https://jojokobi.lima-city.de/pokemine/moves/move">
+	<name>Bodyslam</name>
+	<identifier>bodyslam</identifier>
+	<type>normal</type>
+	<damage_class>physical</damage_class>
+	<learning_method>tm</learning_method>
+	<price>2500</price>
+	<min_level>20</min_level>
+	<power>85</power>
+	<accuracy>1.0</accuracy>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<animation>hit</animation>
+	<effects>
+		move.damage();
+		move.setStatus(defender,paralysis,0.3);
+	</effects>
+</move>

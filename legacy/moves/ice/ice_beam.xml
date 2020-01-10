@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/moves https://jojokobi.lima-city.de/pokemine/moves/move">
+	<name>Ice Beam</name>
+	<identifier>ice_beam</identifier>
+	<type>ice</type>
+	<damage_class>special</damage_class>
+	<learning_method>tm</learning_method>
+	<price>3000</price>
+	<min_level>25</min_level>
+	<power>90</power>
+	<accuracy>1.0</accuracy>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<animation>icebeam</animation>
+	<effects>
+		move.damage();
+		move.setStatus(defender,freeze,0.1);
+	</effects>
+</move>

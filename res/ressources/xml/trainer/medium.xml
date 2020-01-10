@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<trainer_rank xmlns="https://jojokobi.lima-city.de/pokemine/trainer_rank" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/trainer_rank trainer.xsd">
+	<name>Medium</name>
+	<identifier>medium</identifier>
+	<id>2</id>
+	<spawnable>true</spawnable>
+	<prize>48</prize>
+	<types>
+		<type>psychic</type>
+		<type>ghost</type>
+		<type>poison</type>
+	</types>
+	<names>
+		<name>Sieglinde</name>
+		<name>Valpurga</name>
+		<name>Dorothea</name>
+		<name>Anastasia</name>
+	</names>
+	<used_pokemon>
+	</used_pokemon>
+	<start_texts>
+		<text>Uahh! The ghosts are comming!</text>
+	</start_texts>
+	<win_texts>
+		<text>I finally have something to sacrifie.</text>
+	</win_texts>
+	<lose_texts>
+		<text>I'm free!</text>
+	</lose_texts>
+</trainer_rank>

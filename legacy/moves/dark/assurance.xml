@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/moves https://jojokobi.lima-city.de/pokemine/moves/move">
+	<name>Assurance</name>
+	<identifier>assurance</identifier>
+	<type>dark</type>
+	<damage_class>physical</damage_class>
+	<learning_method>none</learning_method>
+	<price>0</price>
+	<min_level>0</min_level>
+	<power>60</power>
+	<accuracy>1.0</accuracy>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<animation>hit</animation>
+</move>

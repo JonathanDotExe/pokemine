@@ -1,0 +1,112 @@
+species:
+  ==: at.jojokobi.pokemine.pokemon.PokemonSpecies
+  baseValues:
+    ==: at.jojokobi.pokemine.pokemon.PokemonValueSet
+    specialDefense: 80
+    defense: 80
+    attack: 110
+    health: 90
+    specialAttack: 100
+    speed: 95
+  color: Brown
+  description: It's fur looks wonderful. It's very quick and agile.
+  minLikeEquality: 0.45
+  maxDislikeEquality: 0.1
+  flySpeed: 1.4E-45
+  spawns:
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 1
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - SUNFLOWER_PLAINS
+      - PLAINS
+      - FOREST
+  levelSpeed: slow
+  catchRate: 75
+  climbSpeed: 1.4E-45
+  jumpSpeed: 0.5
+  surfSpeed: 1.4E-45
+  eggCycles: 20
+  wildLevel: 55
+  legendary: false
+  lavaSurfSpeed: 0.7
+  loot:
+    ==: at.jojokobi.mcutil.loot.LootInventory
+    items:
+    - ==: at.jojokobi.mcutil.loot.LootItem
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 1968
+        type: BONE
+      chance: 0.5
+      minCount: 1
+      maxCount: 3
+    - ==: at.jojokobi.mcutil.loot.LootItem
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 1968
+        type: FEATHER
+      chance: 0.3
+      minCount: 1
+      maxCount: 5
+    - ==: at.jojokobi.mcutil.loot.LootItem
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 1968
+        type: COOKED_MUTTON
+      chance: 0.3
+      minCount: 1
+      maxCount: 2
+  evolutions: []
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: arcanine
+  walkSpeed: 1.5
+  types:
+  - Fire
+  maleChance: 0.75
+  eggGroups:
+  - field
+  formOf: null
+  index: 59
+  weight: 155.0
+  ep: 194
+  winEvs:
+    ==: at.jojokobi.pokemine.pokemon.PokemonValueSet
+    specialDefense: 0
+    defense: 0
+    attack: 2
+    health: 0
+    specialAttack: 0
+    speed: 0
+  size: 1.9
+  initialFriendship: 70
+  moves:
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: thunder_fang
+    level: 1
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: bite
+    level: 1
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: fire_fang
+    level: 1
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: extreme_speed
+    level: 34
+  name: Arcanine
+  category: Legendary

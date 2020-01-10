@@ -1,0 +1,24 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 15
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: flare_blitz
+  learningMethod: NONE
+  accuracy: 1.0
+  maxPp: 24
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.DamageProcedure
+    recoil: 1.4E-45
+    power:
+      ==: at.jojokobi.pokemine.moves.procedures.suppliers.MovePowerSupplier
+  type: Fire
+  priority: 0
+  animation: inferno
+  minLevel: 0
+  criticalRate: 1
+  damageClass: physical
+  price: 0
+  name: Flare Blitz
+  power: 120

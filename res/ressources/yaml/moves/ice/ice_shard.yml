@@ -1,0 +1,27 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 30
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: ice_shard
+  initializeProcedure: null
+  learningMethod: NONE
+  accuracy: 1.0
+  maxPp: 48
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.DamageProcedure
+    performer: false
+    recoil: 1.4E-45
+    power:
+      ==: at.jojokobi.pokemine.moves.procedures.suppliers.MovePowerSupplier
+  type: Ice
+  priority: 1
+  animation: snowball
+  minLevel: 0
+  criticalRate: 1
+  preExecuteProcedure: null
+  damageClass: physical
+  price: 0
+  name: Ice Shard
+  power: 40

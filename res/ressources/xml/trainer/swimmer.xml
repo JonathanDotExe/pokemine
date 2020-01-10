@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<trainer_rank xmlns="https://jojokobi.lima-city.de/pokemine/trainer_rank" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/trainer_rank trainer.xsd">
+	<name>Swimmer</name>
+	<identifier>swimmer</identifier>
+	<id>1</id>
+	<spawnable>true</spawnable>
+	<prize>24</prize>
+	<types>
+		<type>water</type>
+		<type>ice</type>
+	</types>
+	<names>
+		<name>Carsten</name>
+		<name>Max</name>
+		<name>Ronald</name>
+		<name>Kevin</name>
+		<name>Justin</name>
+		<name>Dorian</name>
+		<name>Luke</name>
+		<name>Michael</name>
+		<name>Julian</name>
+	</names>
+	<used_pokemon>
+	</used_pokemon>
+	<start_texts>
+		<text>My pokémon are the fastest swimmers!</text>
+	</start_texts>
+	<win_texts>
+		<text>Now you're wet!</text>
+	</win_texts>
+	<lose_texts>
+		<text>I need more practise!</text>
+	</lose_texts>
+</trainer_rank>

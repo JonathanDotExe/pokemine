@@ -1,0 +1,24 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 15
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: night_shade
+  learningMethod: NONE
+  accuracy: 1.0
+  maxPp: 24
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.DamageHPProcedure
+    hp:
+      ==: at.jojokobi.pokemine.moves.procedures.suppliers.LevelSupplier
+      performer: true
+  type: Ghost
+  priority: 0
+  animation: psybeam
+  minLevel: 0
+  criticalRate: 1
+  damageClass: special
+  price: 0
+  name: Night Shade
+  power: 0

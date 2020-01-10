@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/moves https://jojokobi.lima-city.de/pokemine/moves/move">
+	<name>Heat Wave</name>
+	<identifier>heat_wave</identifier>
+	<type>fire</type>
+	<damage_class>special</damage_class>
+	
+	<learning_method>move_tutor</learning_method>
+	<price>3000</price>
+	<min_level>25</min_level>
+	
+	<power>95</power>
+	<accuracy>0.9</accuracy>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<animation>inferno</animation>
+	<effects>
+		move.damage();
+		move.setStatus(defender,burn,0.1);
+	</effects>
+</move>

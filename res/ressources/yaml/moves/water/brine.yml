@@ -1,0 +1,42 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 10
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: brine
+  initializeProcedure: null
+  learningMethod: TM
+  accuracy: 1.0
+  maxPp: 16
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.DamageProcedure
+    performer: false
+    recoil: 1.4E-45
+    power:
+      ==: at.jojokobi.pokemine.moves.procedures.suppliers.ConditionalNumberSupplier
+      condition:
+        ==: at.jojokobi.pokemine.moves.procedures.conditions.NumberSmallerThanCondition
+        number1:
+          ==: at.jojokobi.pokemine.moves.procedures.suppliers.HealthPercentSupplier
+          performer: false
+        number2:
+          ==: at.jojokobi.pokemine.moves.procedures.suppliers.FixedNumberSupplier
+          number: 0.5
+      number1:
+        ==: at.jojokobi.pokemine.moves.procedures.suppliers.MultiplierSupplier
+        multiplier: 2.0
+        decorating:
+          ==: at.jojokobi.pokemine.moves.procedures.suppliers.MovePowerSupplier
+      number2:
+        ==: at.jojokobi.pokemine.moves.procedures.suppliers.MovePowerSupplier
+  type: Water
+  priority: 0
+  animation: squirt
+  minLevel: 18
+  criticalRate: 1
+  preExecuteProcedure: null
+  damageClass: special
+  price: 2000
+  name: Brine
+  power: 65

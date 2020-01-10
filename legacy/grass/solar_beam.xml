@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/moves https://jojokobi.lima-city.de/pokemine/moves/move">
+	<name>Solar Beam</name>
+	<identifier>solar_beam</identifier>
+	<type>grass</type>
+	<damage_class>special</damage_class>
+	<learning_method>tm</learning_method>
+	<price>4000</price>
+	<min_level>30</min_level>
+	<power>120</power>
+	<accuracy>1.0</accuracy>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<animation>solar</animation>
+	<pre_execute>
+		if (round == 0) {
+			init.setAnimation ("positive_status");
+			init.setAccuracy (1.1);
+		}
+	</pre_execute>
+	<effects>
+		if (round == 0) {
+			move.repeat(false);
+		}
+		else {
+			move.damage();
+		}
+	</effects>
+</move>

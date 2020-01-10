@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/moves https://jojokobi.lima-city.de/pokemine/moves/move">
+	<name>Outrage</name>
+	<identifier>outrage</identifier>
+	<type>dragon</type>
+	<damage_class>physical</damage_class>
+	<learning_method>move_tutor</learning_method>
+	<price>4000</price>
+	<min_level>20</min_level>
+	<power>120</power>
+	<accuracy>1.0</accuracy>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<animation>hit</animation>
+	<effects><![CDATA[
+		move.damage();
+		if (round < 1 || (round == 1 && Math.random() > 0.5)) {
+			move.repeat(false);
+		}
+		else {
+			move.addStatus(performer,confusion);
+		}
+	]]></effects>
+</move>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:trrk="https://jojokobi.lima-city.de/pokemine/trainer"
+	targetNamespace="https://jojokobi.lima-city.de/pokemine/trainer"
+	elementFormDefault="qualified" xmlns:Q1="https://jojokobi.lima-city.de/pokemine/pokemon_species">
+	
+    <import schemaLocation="../pokemon/pokemon_species.xsd" namespace="https://jojokobi.lima-city.de/pokemine/pokemon_species"></import>
+    <complexType name="trainer_rank">
+    	<sequence>
+    		<element name="name" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="identifier" type="string" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="id" type="int" minOccurs="1" maxOccurs="1"></element>
+    		<element name="spawnable" type="boolean" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+            <element name="prize" type="int" minOccurs="1" maxOccurs="1"></element>
+            <element name="types" type="Q1:types" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+
+    		<element name="names" type="trrk:names" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="used_pokemon" type="trrk:used_pokemon"
+    			minOccurs="1" maxOccurs="1">
+    		</element>
+    		<element name="start_texts" type="trrk:texts" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="win_texts" type="trrk:texts" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+    		<element name="lose_texts" type="trrk:texts" minOccurs="1"
+    			maxOccurs="1">
+    		</element>
+
+    		<element name="badge" type="Q1:type" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <element name="trainer_rank" type="trrk:trainer_rank"></element>
+
+    <complexType name="names">
+    	<sequence>
+    		<element name="name" type="string" minOccurs="1" maxOccurs="unbounded"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="texts">
+    	<sequence>
+    		<element name="text" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="used_pokemon">
+    	<sequence>
+    		<element name="pokemon" type="string" minOccurs="0" maxOccurs="unbounded"></element>
+    	</sequence>
+    </complexType>
+</schema>
+	

@@ -1,0 +1,232 @@
+species:
+  ==: at.jojokobi.pokemine.pokemon.PokemonSpecies
+  baseValues:
+    ==: at.jojokobi.pokemine.pokemon.PokemonValueSet
+    specialDefense: 45
+    defense: 160
+    attack: 45
+    health: 35
+    specialAttack: 30
+    speed: 70
+  color: grey
+  description: Some say this pokemon is harder than rock.
+  minLikeEquality: 0.6
+  maxDislikeEquality: 0.2
+  flySpeed: 0.0
+  spawns:
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 4
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - MOUNTAINS
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 4
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - WOODED_MOUNTAINS
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 5
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - GRAVELLY_MOUNTAINS
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 5
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - MODIFIED_GRAVELLY_MOUNTAINS
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 3
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - SAVANNA_PLATEAU
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 4
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - SHATTERED_SAVANNA_PLATEAU
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 4
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - SHATTERED_SAVANNA
+  levelSpeed: middle_fast
+  catchRate: 45
+  climbSpeed: 0.25
+  jumpSpeed: 0.5
+  surfSpeed: 0.0
+  eggCycles: 25
+  wildLevel: 20
+  legendary: false
+  lavaSurfSpeed: 0.0
+  loot:
+    ==: at.jojokobi.mcutil.loot.LootInventory
+    items:
+    - ==: at.jojokobi.mcutil.loot.LootItem
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 1968
+        type: COBBLESTONE
+      chance: 0.5
+      minCount: 1
+      maxCount: 4
+    - ==: at.jojokobi.mcutil.loot.LootItem
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 1968
+        type: DIRT
+      chance: 0.5
+      minCount: 1
+      maxCount: 4
+    - ==: at.jojokobi.mcutil.loot.LootItem
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 1968
+        type: GRAVEL
+      chance: 0.5
+      minCount: 1
+      maxCount: 4
+    - ==: at.jojokobi.mcutil.loot.LootItem
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 1968
+        type: IRON_ORE
+      chance: 0.25
+      minCount: 1
+      maxCount: 2
+  evolutions:
+  - ==: at.jojokobi.pokemine.pokemon.evolution.EvolutionCause
+    species:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: steelix
+    conditions:
+    - ==: at.jojokobi.pokemine.pokemon.evolution.TradeCondition
+    - ==: at.jojokobi.pokemine.pokemon.evolution.HeldItemCondition
+      material: IRON_BLOCK
+    - ==: at.jojokobi.pokemine.pokemon.evolution.LevelCondition
+      level: 1
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: onix
+  walkSpeed: 0.75
+  types:
+  - Rock
+  - Ground
+  maleChance: 0.5
+  eggGroups:
+  - mineral
+  formOf: null
+  index: 95
+  weight: 210.0
+  ep: 77
+  winEvs:
+    ==: at.jojokobi.pokemine.pokemon.PokemonValueSet
+    specialDefense: 0
+    defense: 1
+    attack: 0
+    health: 0
+    specialAttack: 0
+    speed: 0
+  size: 8.8
+  initialFriendship: 70
+  moves:
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: tackle
+    level: 1
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: curse
+    level: 1
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: rock_throw
+    level: 7
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: rock_tomb
+    level: 10
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: slam
+    level: 28
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: screech
+    level: 31
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: rock_slide
+    level: 34
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: stone_edge
+    level: 46
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: earthquake
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: bulldoze
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: iron_head
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: ancient_power
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: take_down
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: dragon_tail
+    level: 101
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: twister
+    level: 101
+  name: Onix
+  category: Rock Snake

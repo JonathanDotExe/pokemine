@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/moves https://jojokobi.lima-city.de/pokemine/moves/move">
+	<name>Leaf Storm</name>
+	<identifier>leaf_storm</identifier>
+	<type>grass</type>
+	<damage_class>special</damage_class>
+	<learning_method>none</learning_method>
+	<price>0</price>
+	<min_level>0</min_level>
+	<power>130</power>
+	<accuracy>0.9</accuracy>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<animation>leaf</animation>
+	<effects>
+		move.damage();
+		move.addValue(performer,-2,special_attack);
+	</effects>
+</move>

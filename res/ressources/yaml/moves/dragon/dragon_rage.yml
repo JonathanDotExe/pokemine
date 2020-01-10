@@ -1,0 +1,27 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 10
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: dragon_rage
+  initializeProcedure: null
+  learningMethod: NONE
+  accuracy: 1.0
+  maxPp: 16
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.DamageHPProcedure
+    performer: false
+    hp:
+      ==: at.jojokobi.pokemine.moves.procedures.suppliers.FixedNumberSupplier
+      number: 40.0
+  type: Dragon
+  priority: 0
+  animation: psybeam
+  minLevel: 0
+  criticalRate: 1
+  preExecuteProcedure: null
+  damageClass: special
+  price: 0
+  name: Dragon Rage
+  power: 40

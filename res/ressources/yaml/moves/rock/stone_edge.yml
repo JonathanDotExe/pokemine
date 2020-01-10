@@ -1,0 +1,27 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 5
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: stone_edge
+  initializeProcedure: null
+  learningMethod: TM
+  accuracy: 0.8
+  maxPp: 8
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.DamageProcedure
+    performer: false
+    recoil: 1.4E-45
+    power:
+      ==: at.jojokobi.pokemine.moves.procedures.suppliers.MovePowerSupplier
+  type: Rock
+  priority: 0
+  animation: break
+  minLevel: 30
+  criticalRate: 2
+  preExecuteProcedure: null
+  damageClass: physical
+  price: 4000
+  name: Stone Edge
+  power: 100

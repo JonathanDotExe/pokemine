@@ -1,0 +1,28 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 10
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: guard_swap
+  initializeProcedure: null
+  learningMethod: NONE
+  accuracy: 1.1
+  maxPp: 16
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.ListProcedure
+    procedures:
+    - ==: at.jojokobi.pokemine.moves.procedures.SwapStatusValueProcedure
+      statusValue: DEFENSE
+    - ==: at.jojokobi.pokemine.moves.procedures.SwapStatusValueProcedure
+      statusValue: SPECIAL_DEFENSE
+  type: Psychic
+  priority: 0
+  animation: psybeam
+  minLevel: 0
+  criticalRate: 1
+  preExecuteProcedure: null
+  damageClass: status
+  price: 0
+  name: Guard Swap
+  power: 0

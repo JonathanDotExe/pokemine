@@ -1,0 +1,21 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 10
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: outrage
+  learningMethod: MOVE_TUTOR
+  accuracy: 1.0
+  maxPp: 16
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.ThrashProcedure
+  type: Dragon
+  priority: 0
+  animation: hit
+  minLevel: 20
+  criticalRate: 1
+  damageClass: physical
+  price: 4000
+  name: Outrage
+  power: 120

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine https://jojokobi.lima-city.de/pokemine/moves">
+	<name>Baby-Doll Eyes</name>
+	<identifier>baby_doll_eyes</identifier>
+	<type>fairy</type>
+	<damage_class>status</damage_class>
+	<learning_method>none</learning_method>
+	<price>0</price>
+	<min_level>0</min_level>
+	<power>0</power>
+	<accuracy>1.0</accuracy>
+	<pp>30</pp>
+	<maxpp>48</maxpp>
+	<animation>positive_status</animation>
+	<priority>1</priority>
+	<effects>
+		move.addValue(defender,-1,attack);
+	</effects>
+</move>

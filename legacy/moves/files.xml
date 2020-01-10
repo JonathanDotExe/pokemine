@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<files xmlns="https://jojokobi.lima-city.de/pokemine/moves"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine https://jojokobi.lima-city.de/pokemine/files">
+	<file>normal/wrap.xml</file>
+	<file>normal/double_slap.xml</file>
+	<file>normal/barrage.xml</file>
+	<file>psychic/stored_power.xml</file>
+	<file>grass/bullet_seed.xml</file>
+	<file>normal/pound.xml</file>
+	<file>normal/tackle.xml</file>
+	<file>normal/scratch.xml</file>
+	<file>dragon/twister.xml</file>
+	<file>dark/pursuit.xml</file>
+	<file>ghost/lick.xml</file>
+	<file>ice/ice_shard.xml</file>
+	<file>fighting/double_kick.xml</file>
+	<file>water/watergun.xml</file>
+	<file>grass/vinewhip.xml</file>
+	<file>electric/thundershock.xml</file>
+	<file>fire/ember.xml</file>
+	<file>fairy/disarming_voice.xml</file>
+	<file>normal/quick_attack.xml</file>
+	<file>ice/ice_shard.xml</file>
+	<file>rock/rock_throw.xml</file>
+	<file>psychic/confusion.xml</file>
+	<file>fighting/karate_chop.xml</file>
+	<file>grass/razor_leaf.xml</file>
+	<file>rock/rock_tomb.xml</file>
+	<file>dark/bite.xml</file>
+	<file>normal/swift.xml</file>
+	<file>fire/flame_wheel.xml</file>
+	<file>dark/feint_attack.xml</file>
+	<file>dark/assurance.xml</file>
+	<file>ghost/shaddow_punch.xml</file>
+	<file>water/brine.xml</file>
+	<file>dragon/dragon_tail.xml</file>
+	<file>bug/bug_bite.xml</file>
+	<file>flying/wing_attack.xml</file>
+	<file>normal/covet.xml</file>
+	<file>ground/bulldoze.xml</file>
+	<file>water/waterwave.xml</file>
+	<file>rock/ancient_power.xml</file>
+	<file>fighting/low_sweep.xml</file>
+	<file>electric/thunder_fang.xml</file>
+	<file>ice/ice_fang.xml</file>
+	<file>fire/fire_fang.xml</file>
+	<file>normal/slash.xml</file>
+	<file>psychic/psycho_cut.xml</file>
+	<file>normal/slam.xml</file>
+	<file>steel/iron_head.xml</file>
+	<file>dark/sucker_punch.xml</file>
+	<file>fighting/wake_up_slap.xml</file>
+	<file>fighting/vital_throw.xml</file>
+	<file>fighting/brick_break.xml</file>
+	<file>rock/rock_slide.xml</file>
+	<file>electric/discharge.xml</file>
+	<file>dragon/dual_chop.xml</file>
+	<file>fire/flame_burst.xml</file>
+	<file>dark/crunch.xml</file>
+	<file>grass/seed_bomb.xml</file>
+	<file>ghost/shaddow_ball.xml</file>
+	<file>fighting/aura_sphere.xml</file>
+	<file>psychic/psystrike.xml</file>
+	<file>normal/bodyslam.xml</file>
+	<file>fire/flamethrower.xml</file>
+	<file>normal/take_down.xml</file>
+	<file>psychic/psychic.xml</file>
+	<file>dragon/dragon_hammer.xml</file>
+	<file>ice/ice_beam.xml</file>
+	<file>water/aqua_tail.xml</file>
+	<file>steel/meteor_mash.xml</file>
+	<file>fairy/moonblast.xml</file>
+	<file>fire/heat_wave.xml</file>
+	<file>ground/earthquake.xml</file>
+	<file>normal/egg_bomb.xml</file>
+	<file>psychic/psystrike.xml</file>
+	<file>fighting/cross_chop.xml</file>
+	<file>fighting/dynamic_punch.xml</file>
+	<file>rock/stone_edge.xml</file>
+	<file>psychic/dream_eater.xml</file>
+	<file>dragon/dragon_rush.xml</file>
+	<file>water/hydropump.xml</file>
+	<file>grass/solar_beam.xml</file>
+	<file>grass/wood_hammer.xml</file>
+	<file>dragon/outrage.xml</file>
+	<file>electric/thunder.xml</file>
+	<file>fire/flare_blitz.xml</file>
+	<file>grass/leaf_storm.xml</file>
+	<file>normal/giga_impact.xml</file>
+	<file>normal/hyper_beam.xml</file>
+
+
+	<file>ice/sheer_cold.xml</file>
+
+
+	<file>fighting/seismic_toss.xml</file>
+	<file>psychic/psywave.xml</file>
+	<file>ghost/night_shade.xml</file>
+	<file>dragon/dragon_rage.xml</file>
+	<file>fighting/counter.xml</file>
+	<file>psychic/mirror_coat.xml</file>
+	<file>fighting/reversal.xml</file>
+	<file>ground/magnitude.xml</file>
+
+
+	<file>normal/tail_whip.xml</file>
+	<file>fairy/baby_doll_eyes.xml</file>
+	<file>normal/leer.xml</file>
+	<file>normal/growl.xml</file>
+	<file>normal/scary_face.xml</file>
+	<file>bug/string_shot.xml</file>
+	<file>normal/screech.xml</file>
+
+
+	<file>psychic/guard_swap.xml</file>
+	<file>psychic/power_swap.xml</file>
+
+	<file>normal/defense_curl.xml</file>
+	<file>normal/growth.xml</file>
+	<file>psychic/cosmic_power.xml</file>
+	<file>steel/iron_defense.xml</file>
+	<file>ghost/curse.xml</file>
+	<file>normal/minimize.xml</file>
+	<file>psychic/amnesia.xml</file>
+	<file>psychic/agility.xml</file>
+	<file>dragon/dragon_dance.xml</file>
+
+
+	<file>normal/sing.xml</file>
+	<file>psychic/hypnosis.xml</file>
+	<file>normal/yawn.xml</file>
+	<file>electric/thunder_wave.xml</file>
+	<file>poison/poison_powder.xml</file>
+	<file>grass/sleep_powder.xml</file>
+	<file>grass/stun_spore.xml</file>
+
+
+	<file>normal/mean_look.xml</file>
+	<file>normal/supersonic.xml</file>
+	<file>ghost/confuse_ray.xml</file>
+	<file>grass/leech_seed.xml</file>
+
+
+	<file>normal/slack_off.xml</file>
+	<file>fairy/moonlight.xml</file>
+	<file>normal/recover.xml</file>
+
+
+	<file>normal/safeguard.xml</file>
+	<file>ghost/destiny_bond.xml</file>
+</files>

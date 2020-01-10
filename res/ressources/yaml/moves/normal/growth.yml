@@ -1,0 +1,32 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 20
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: growth
+  initializeProcedure: null
+  learningMethod: NONE
+  accuracy: 1.1
+  maxPp: 32
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.ListProcedure
+    procedures:
+    - ==: at.jojokobi.pokemine.moves.procedures.AddValueProcedure
+      stat: ATTACK
+      performer: true
+      value: 1
+    - ==: at.jojokobi.pokemine.moves.procedures.AddValueProcedure
+      stat: SPECIAL_ATTACK
+      performer: true
+      value: 1
+  type: Normal
+  priority: 0
+  animation: posititve_status
+  minLevel: 0
+  criticalRate: 1
+  preExecuteProcedure: null
+  damageClass: status
+  price: 0
+  name: Growth
+  power: 0

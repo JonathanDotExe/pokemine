@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/moves https://jojokobi.lima-city.de/pokemine/moves/move">
+	<name>Water Wave</name>
+	<identifier>waterwave</identifier>
+	<type>water</type>
+	<damage_class>special</damage_class>
+	<learning_method>tm</learning_method>
+	<price>1500</price>
+	<min_level>10</min_level>
+	<power>60</power>
+	<accuracy>1.0</accuracy>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<animation>squirt</animation>
+	<effects>
+		move.damage();
+		move.addStatus(defender,confusion,0.2);
+	</effects>
+</move>

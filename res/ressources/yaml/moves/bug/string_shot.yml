@@ -1,0 +1,26 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 40
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: string_shot
+  initializeProcedure: null
+  learningMethod: MOVE_TUTOR
+  accuracy: 0.95
+  maxPp: 64
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.AddValueProcedure
+    stat: SPEED
+    performer: false
+    value: -2
+  type: Bug
+  priority: 0
+  animation: dust
+  minLevel: 0
+  criticalRate: 1
+  preExecuteProcedure: null
+  damageClass: status
+  price: 1000
+  name: String Shot
+  power: 0

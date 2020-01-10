@@ -1,0 +1,35 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 15
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: flamethrower
+  initializeProcedure: null
+  learningMethod: TM
+  accuracy: 1.0
+  maxPp: 24
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.ListProcedure
+    procedures:
+    - ==: at.jojokobi.pokemine.moves.procedures.DamageProcedure
+      performer: false
+      recoil: 1.4E-45
+      power:
+        ==: at.jojokobi.pokemine.moves.procedures.suppliers.MovePowerSupplier
+    - ==: at.jojokobi.pokemine.moves.procedures.ChanceProcedure
+      chance: 0.1
+      procedure:
+        ==: at.jojokobi.pokemine.moves.procedures.AddPrimaryStatusProcedure
+        performer: false
+        statusChange: at.jojokobi.pokemine.pokemon.status.Burn
+  type: Fire
+  priority: 0
+  animation: inferno
+  minLevel: 25
+  criticalRate: 1
+  preExecuteProcedure: null
+  damageClass: special
+  price: 3000
+  name: Flamethrower
+  power: 90

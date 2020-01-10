@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/moves https://jojokobi.lima-city.de/pokemine/moves/move">
+	<name>Flame Wheel</name>
+	<identifier>flame_wheel</identifier>
+	<type>fire</type>
+	<damage_class>physical</damage_class>
+	<learning_method>none</learning_method>
+	<price>0</price>
+	<min_level>0</min_level>
+	<power>60</power>
+	<accuracy>1.0</accuracy>
+	<pp>25</pp>
+	<maxpp>40</maxpp>
+	<animation>flame</animation>
+	<pre_execute>
+		if (performer.hasStatus(freeze)) {
+			move.setStatus(performer, "");
+		}
+	</pre_execute>
+	<effects>
+		move.damage();
+		move.setStatus(defender,burn,0.1);
+	</effects>
+</move>

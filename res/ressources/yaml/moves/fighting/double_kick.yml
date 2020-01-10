@@ -1,0 +1,34 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 30
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: double_kick
+  initializeProcedure: null
+  learningMethod: NONE
+  accuracy: 1.0
+  maxPp: 48
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.ListProcedure
+    procedures:
+    - ==: at.jojokobi.pokemine.moves.procedures.DamageProcedure
+      performer: false
+      recoil: 1.4E-45
+      power:
+        ==: at.jojokobi.pokemine.moves.procedures.suppliers.MovePowerSupplier
+    - ==: at.jojokobi.pokemine.moves.procedures.DamageProcedure
+      performer: false
+      recoil: 1.4E-45
+      power:
+        ==: at.jojokobi.pokemine.moves.procedures.suppliers.MovePowerSupplier
+  type: Fighting
+  priority: 0
+  animation: hit
+  minLevel: 0
+  criticalRate: 1
+  preExecuteProcedure: null
+  damageClass: physical
+  price: 0
+  name: Double Kick
+  power: 30

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<files xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine https://jojokobi.lima-city.de/pokemine/files">
+	<file>bulbasaur.xml</file>
+	<file>ivysaur.xml</file>
+	<file>venusaur.xml</file>
+	<file>charmander.xml</file>
+	<file>charmeleon.xml</file>
+	<file>charizard.xml</file>
+	<file>squirtle.xml</file>
+	<file>wartortle.xml</file>
+	<file>blastoise.xml</file>
+	<file>caterpie.xml</file>
+	<file>pikachu.xml</file>
+	<file>clefairy.xml</file>
+	<file>growlithe.xml</file>
+	<file>machop.xml</file>
+	<file>machoke.xml</file>
+	<file>geodude.xml</file>
+	<file>graveler.xml</file>
+	<file>golem.xml</file>
+	<file>slowpoke.xml</file>
+	<file>slowbro.xml</file>
+	<file>ghastly.xml</file>
+	<file>haunter.xml</file>
+	<file>gengar.xml</file>
+	<file>onix.xml</file>
+	<file>exeggcute.xml</file>
+	<file>exeggutor.xml</file>
+	<file>alolan_exeggutor.xml</file>
+	<file>lapras.xml</file>
+	<file>eevee.xml</file>
+	<file>jolteon.xml</file>
+	<file>aerodactyl.xml</file>
+	<file>snorlax.xml</file>
+	<file>dratini.xml</file>
+	<file>mewtwo.xml</file>
+	<file>umbreon.xml</file>
+	<file>wobbuffet.xml</file>
+	<file>steelix.xml</file>
+	<file>missingno.xml</file>
+</files>

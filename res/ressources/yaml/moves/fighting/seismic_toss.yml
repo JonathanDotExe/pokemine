@@ -1,0 +1,24 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 20
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: seismic_toss
+  learningMethod: TM
+  accuracy: 1.0
+  maxPp: 32
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.DamageHPProcedure
+    hp:
+      ==: at.jojokobi.pokemine.moves.procedures.suppliers.LevelSupplier
+      performer: true
+  type: Fighting
+  priority: 0
+  animation: hit
+  minLevel: 10
+  criticalRate: 1
+  damageClass: physical
+  price: 1500
+  name: Seismic Toss
+  power: 0

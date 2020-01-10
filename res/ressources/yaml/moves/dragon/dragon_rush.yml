@@ -1,0 +1,35 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 10
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: dragon_rush
+  initializeProcedure: null
+  learningMethod: NONE
+  accuracy: 0.75
+  maxPp: 16
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.ListProcedure
+    procedures:
+    - ==: at.jojokobi.pokemine.moves.procedures.DamageProcedure
+      performer: false
+      recoil: 1.4E-45
+      power:
+        ==: at.jojokobi.pokemine.moves.procedures.suppliers.MovePowerSupplier
+    - ==: at.jojokobi.pokemine.moves.procedures.ChanceProcedure
+      chance: 0.2
+      procedure:
+        ==: at.jojokobi.pokemine.moves.procedures.AddSecondaryStatusProcedure
+        performer: false
+        statusChange: at.jojokobi.pokemine.pokemon.status.Flinched
+  type: Dragon
+  priority: 0
+  animation: hit
+  minLevel: 0
+  criticalRate: 1
+  preExecuteProcedure: null
+  damageClass: physical
+  price: 0
+  name: Dragon Rush
+  power: 100

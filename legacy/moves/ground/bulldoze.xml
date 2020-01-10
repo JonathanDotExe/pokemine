@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/moves https://jojokobi.lima-city.de/pokemine/moves/move">
+	<name>Bulldoze</name>
+	<identifier>bulldoze</identifier>
+	<type>ground</type>
+	<damage_class>physical</damage_class>
+	<learning_method>tm</learning_method>
+	<price>1000</price>
+	<min_level>10</min_level>
+	<power>60</power>
+	<accuracy>1.0</accuracy>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<animation>break</animation>
+	<effects>
+		move.damage();
+		move.addValue(defender,-1,speed);
+	</effects>
+	<effects_old>
+		<damage></damage>
+		<add_speed target="defender" value="-1" chance="1.0"/>
+	</effects_old>
+</move>

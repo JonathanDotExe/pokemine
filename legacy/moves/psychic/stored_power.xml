@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/moves https://jojokobi.lima-city.de/pokemine/moves/move">
+	<name>Stored Power</name>
+	<identifier>stored_power</identifier>
+	<type>psychic</type>
+	<damage_class>special</damage_class>
+	<learning_method>none</learning_method>
+	<price>0</price>
+	<min_level>0</min_level>
+	<power>20</power>
+	<accuracy>1.0</accuracy>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<animation>psybeam</animation>
+	<effects>
+		var multiplier = 1;
+		if (performer.getAttackLevel() > 0) {
+			multiplier += performer.getAttackLevel();
+		}
+		if (performer.getDefenseLevel() > 0) {
+			multiplier += performer.getDefenseLevel();
+		}
+		if (performer.getSpecialAttackLevel() > 0) {
+			multiplier += performer.getSpecialAttackLevel();
+		}
+		if (performer.getSpecialDefenseLevel() > 0) {
+			multiplier += performer.getSpecialDefenseLevel();
+		}
+		if (performer.getSpeedLevel() > 0) {
+			multiplier += performer.getSpeedLevel();
+		}
+		if (performer.getAccuracyLevel() > 0) {
+			multiplier += performer.getAccuracyLevel();
+		}
+		if (performer.getEvasionLevel() > 0) {
+			multiplier += performer.getEvasionLevel();
+		}
+		move.message(multiplier);
+		move.damage(defender,multiplier*power);
+	</effects>
+</move>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/moves https://jojokobi.lima-city.de/pokemine/moves/move">
+	<name>Wrap</name>
+	<identifier>wrap</identifier>
+	<type>normal</type>
+	<damage_class>physical</damage_class>
+	<learning_method>none</learning_method>
+	<price>0</price>
+	<min_level>0</min_level>
+	<power>15</power>
+	<accuracy>0.9</accuracy>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<animation>dust</animation>
+	<effects>
+		move.damage();
+		move.addStatus(defender,wrapped);
+	</effects>
+</move>

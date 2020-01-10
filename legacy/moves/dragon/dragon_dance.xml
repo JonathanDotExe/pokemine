@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine https://jojokobi.lima-city.de/pokemine/moves">
+	<name>Dragon Dance</name>
+	<identifier>dragon_dance</identifier>
+	<type>dragon</type>
+	<damage_class>status</damage_class>
+	<learning_method>none</learning_method>
+	<price>0</price>
+	<min_level>0</min_level>
+	<power>0</power>
+	<accuracy>1.1</accuracy>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<animation>posititve_status</animation>
+	<effects>
+		move.addValue(performer,1,attack);
+		move.addValue(performer,1,speed);
+	</effects>
+	<effects_old>
+		<add_attack target="performer" value="1" chance="1.0"/>
+		<add_special_attack target="performer" value="1" chance="1.0"/>
+	</effects_old>
+</move>

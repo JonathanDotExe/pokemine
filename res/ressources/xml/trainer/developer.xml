@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trainer_rank xmlns="https://jojokobi.lima-city.de/pokemine/trainer_rank" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaLocation="https://jojokobi.lima-city.de/pokemine/trainer_rank trainer_rank.xsd">
+	<name>Developer</name>
+	<identifier>developer</identifier>
+	<id>1</id>
+	<spawnable>false</spawnable>
+	<prize>80</prize>
+	<types>
+	</types>
+	<names>
+		<name>jojokobi</name>
+	</names>
+	<used_pokemon>
+		<pokemon>blastoise</pokemon>
+		<pokemon>snorlax</pokemon>
+		<pokemon>jolteon</pokemon>
+		<pokemon>aerodactyl</pokemon>
+		<pokemon>wobbuffet</pokemon>
+		<pokemon>golem</pokemon>
+		<pokemon>gengar</pokemon>
+	</used_pokemon>
+	<start_texts>
+		<text>I choose you!</text>
+		<text>Well then! Let's battle!</text>
+		<text>We're going to make it! Let's gooooo!</text>
+	</start_texts>
+	<win_texts>
+		<text>That's what i expected!</text>
+		<text>You did a good job!</text>
+		<text>Yeah, I won!</text>
+	</win_texts>
+	<lose_texts>
+		<text>Ok, let's go to the Pokécenter!</text>
+		<text>I think I need to nerf you pkokémon!</text>
+	</lose_texts>
+</trainer_rank>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/moves https://jojokobi.lima-city.de/pokemine/moves/move">
+	<name>Thunder Fang</name>
+	<identifier>thunder_fang</identifier>
+	<type>electric</type>
+	<damage_class>physical</damage_class>
+	<learning_method>none</learning_method>
+	<price>0</price>
+	<min_level>0</min_level>
+	<power>65</power>
+	<accuracy>0.95</accuracy>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<animation>hit</animation>
+	<effects>
+		move.damage();
+		move.setStatus(defender,paralysis,0.1);
+		move.addStatus(defender,flinch,0.1);
+	</effects>
+	<effects_old>
+		<damage></damage>
+		<paralysis target="defender" chance="0.1"></paralysis>
+	</effects_old>
+</move>

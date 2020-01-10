@@ -1,0 +1,33 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 15
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: rock_tomb
+  initializeProcedure: null
+  learningMethod: TM
+  accuracy: 0.95
+  maxPp: 24
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.ListProcedure
+    procedures:
+    - ==: at.jojokobi.pokemine.moves.procedures.DamageProcedure
+      performer: false
+      recoil: 1.4E-45
+      power:
+        ==: at.jojokobi.pokemine.moves.procedures.suppliers.MovePowerSupplier
+    - ==: at.jojokobi.pokemine.moves.procedures.AddValueProcedure
+      stat: SPEED
+      performer: false
+      value: -1
+  type: Rock
+  priority: 0
+  animation: break
+  minLevel: 12
+  criticalRate: 1
+  preExecuteProcedure: null
+  damageClass: physical
+  price: 1200
+  name: Rock Tomb
+  power: 60

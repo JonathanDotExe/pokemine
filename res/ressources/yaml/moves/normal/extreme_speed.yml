@@ -1,0 +1,24 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 5
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: extreme_speed
+  learningMethod: NONE
+  accuracy: 1.0
+  maxPp: 8
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.DamageProcedure
+    recoil: 0.0
+    power:
+      ==: at.jojokobi.pokemine.moves.procedures.suppliers.MovePowerSupplier
+  type: Normal
+  priority: 2
+  animation: hit
+  minLevel: 0
+  criticalRate: 1
+  damageClass: physical
+  price: 0
+  name: Extreme Speed
+  power: 80

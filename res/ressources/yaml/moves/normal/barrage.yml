@@ -1,0 +1,23 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 20
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: barrage
+  initializeProcedure: null
+  learningMethod: NONE
+  accuracy: 0.85
+  maxPp: 32
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.FuryAttackProcedure
+  type: Normal
+  priority: 0
+  animation: snowball
+  minLevel: 0
+  criticalRate: 1
+  preExecuteProcedure: null
+  damageClass: physical
+  price: 0
+  name: Barrage
+  power: 15

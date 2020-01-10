@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/moves https://jojokobi.lima-city.de/pokemine/moves/move">
+	<name>Thunder Wave</name>
+	<identifier>thunder_wave</identifier>
+	<type>electric</type>
+	<damage_class>status</damage_class>
+	<learning_method>tm</learning_method>
+	<price>1500</price>
+	<min_level>10</min_level>
+	<power>0</power>
+	<accuracy>0.9</accuracy>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<animation>thunder</animation>
+	<effects>
+		move.setStatus(defender,paralysis);
+	</effects>
+	<effects_old>
+		<paralysis target="defender" chance="1.0"/>
+	</effects_old>
+</move>

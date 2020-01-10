@@ -1,0 +1,22 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 20
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: mirror_coat
+  learningMethod: NONE
+  accuracy: 1.0
+  maxPp: 32
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.CounterProcedure
+    damageClass: special
+  type: Psychic
+  priority: -5
+  animation: psybeam
+  minLevel: 0
+  criticalRate: 1
+  damageClass: special
+  price: 0
+  name: Mirror Coat
+  power: 0

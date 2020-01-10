@@ -1,0 +1,28 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 10
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: psyshock
+  initializeProcedure: null
+  learningMethod: TM
+  accuracy: 1.0
+  maxPp: 16
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.DamageProcedure
+    performer: false
+    recoil: 1.4E-45
+    power:
+      ==: at.jojokobi.pokemine.moves.procedures.suppliers.MovePowerSupplier
+    defenseDamageClass: physical
+  type: Psychic
+  priority: 0
+  animation: psybeam
+  minLevel: 25
+  criticalRate: 1
+  preExecuteProcedure: null
+  damageClass: special
+  price: 4000
+  name: Psyshock
+  power: 80

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine https://jojokobi.lima-city.de/pokemine/moves">
+	<name>Stone Edge</name>
+	<identifier>stone_edge</identifier>
+	<type>rock</type>
+	<damage_class>physical</damage_class>
+	<learning_method>tm</learning_method>
+	<price>4000</price>
+	<min_level>30</min_level>
+	<power>100</power>
+	<accuracy>0.8</accuracy>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<critical_rate>2</critical_rate>
+	<animation>break</animation>
+</move>

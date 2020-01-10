@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine https://jojokobi.lima-city.de/pokemine/moves">
+	<name>Defense Curl</name>
+	<identifier>defense_curl</identifier>
+	<type>normal</type>
+	<damage_class>status</damage_class>
+	<learning_method>tm</learning_method>
+	<price>1000</price>
+	<min_level>0</min_level>
+	<power>0</power>
+	<accuracy>1.1</accuracy>
+	<pp>40</pp>
+	<maxpp>64</maxpp>
+	<animation>positive_status</animation>
+	<effects>
+		move.addValue(performer,1,defense);
+	</effects>
+</move>

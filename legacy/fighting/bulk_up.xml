@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/moves https://jojokobi.lima-city.de/pokemine/moves/move">
+	<name>Bulk Up</name>
+	<identifier>bulk_up</identifier>
+	<type>fighting</type>
+	<damage_class>status</damage_class>
+	<learning_method>tm</learning_method>
+	<price>1500</price>
+	<min_level>150</min_level>
+	<power>0</power>
+	<accuracy>1.1</accuracy>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<animation>positive_status</animation>
+	<effects>
+		move.addValue(performer,1,attack);
+		move.addValue(performer,1,defense);
+	</effects>
+</move>

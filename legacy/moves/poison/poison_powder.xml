@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/moves https://jojokobi.lima-city.de/pokemine/moves/move">
+	<name>Poison Powder</name>
+	<identifier>poison_powder</identifier>
+	<type>poison</type>
+	<damage_class>status</damage_class>
+	<power>0</power>
+	<accuracy>0.75</accuracy>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<animation>leaf</animation>
+	<effects>
+		move.setStatus(defender,poison);
+	</effects>
+	<effects_old>
+		<poison target="defender" chance="1.0"/>
+	</effects_old>
+</move>

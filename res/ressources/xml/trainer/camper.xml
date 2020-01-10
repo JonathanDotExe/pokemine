@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<trainer_rank xmlns="https://jojokobi.lima-city.de/pokemine/trainer_rank" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/trainer_rank trainer.xsd">
+	<name>Camper</name>
+	<identifier>camper</identifier>
+	<id>1</id>
+	<spawnable>true</spawnable>
+	<prize>16</prize>
+	<types>
+		<type>ground</type>
+		<type>rock</type>
+		<type>grass</type>
+	</types>
+	<names>
+		<name>Carsten</name>
+		<name>Max</name>
+		<name>Ronald</name>
+		<name>Kevin</name>
+		<name>Justin</name>
+		<name>Dorian</name>
+		<name>Luke</name>
+		<name>Michael</name>
+		<name>Julian</name>
+	</names>
+	<used_pokemon>
+	</used_pokemon>
+	<start_texts>
+		<text>You are interupting me!</text>
+		<text>Everybody loves pokemon battles at campfires!</text>
+	</start_texts>
+	<win_texts>
+		<text>Haha got you!</text>
+	</win_texts>
+	<lose_texts>
+		<text>I need more practise!</text>
+		<text>I lost once more!</text>
+	</lose_texts>
+</trainer_rank>

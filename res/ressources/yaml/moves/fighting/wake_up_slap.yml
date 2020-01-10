@@ -1,0 +1,47 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 10
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: wake_up_slap
+  initializeProcedure: null
+  learningMethod: NONE
+  accuracy: 1.0
+  maxPp: 16
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.ConditionalProcedure
+    condition:
+      ==: at.jojokobi.pokemine.moves.procedures.conditions.HasPrimaryStatusCondition
+      performer: false
+      statusChange: at.jojokobi.pokemine.pokemon.status.Sleep
+    elseProcedure:
+      ==: at.jojokobi.pokemine.moves.procedures.DamageProcedure
+      performer: false
+      recoil: 1.4E-45
+      power:
+        ==: at.jojokobi.pokemine.moves.procedures.suppliers.MovePowerSupplier
+    ifProcedure:
+      ==: at.jojokobi.pokemine.moves.procedures.ListProcedure
+      procedures:
+      - ==: at.jojokobi.pokemine.moves.procedures.DamageProcedure
+        performer: false
+        recoil: 1.4E-45
+        power:
+          ==: at.jojokobi.pokemine.moves.procedures.suppliers.MultiplierSupplier
+          multiplier: 2.0
+          decorating:
+            ==: at.jojokobi.pokemine.moves.procedures.suppliers.MovePowerSupplier
+      - ==: at.jojokobi.pokemine.moves.procedures.RemovePrimaryStatusProcedure
+        performer: false
+        statusChange: at.jojokobi.pokemine.pokemon.status.Sleep
+  type: Fighting
+  priority: 0
+  animation: hit
+  minLevel: 0
+  criticalRate: 1
+  preExecuteProcedure: null
+  damageClass: physical
+  price: 0
+  name: Wake-Up Slap
+  power: 70

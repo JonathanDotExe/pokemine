@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine https://jojokobi.lima-city.de/pokemine/moves">
+	<name>Iron Defense</name>
+	<identifier>iron_defense</identifier>
+	<type>steel</type>
+	<damage_class>status</damage_class>
+	<learning_method>move_tutor</learning_method>
+	<price>1500</price>
+	<min_level>15</min_level>
+	<power>0</power>
+	<accuracy>1.1</accuracy>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<animation>positive_status</animation>
+	<effects>
+		move.addValue(performer,2,defense);
+	</effects>
+	<effects_old>
+		<add_defense target="performer" value="2" chance="1.0"/>
+	</effects_old>
+</move>

@@ -1,0 +1,26 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 30
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: agility
+  initializeProcedure: null
+  learningMethod: NONE
+  accuracy: 1.1
+  maxPp: 38
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.AddValueProcedure
+    stat: SPEED
+    performer: true
+    value: 2
+  type: Psychic
+  priority: 0
+  animation: positive_status
+  minLevel: 0
+  criticalRate: 1
+  preExecuteProcedure: null
+  damageClass: status
+  price: 0
+  name: Agility
+  power: 0

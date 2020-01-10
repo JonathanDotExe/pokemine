@@ -1,0 +1,27 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 10
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: swift
+  initializeProcedure: null
+  learningMethod: TM
+  accuracy: 1.1
+  maxPp: 16
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.DamageProcedure
+    performer: false
+    recoil: 1.4E-45
+    power:
+      ==: at.jojokobi.pokemine.moves.procedures.suppliers.MovePowerSupplier
+  type: Normal
+  priority: 0
+  animation: icebeam
+  minLevel: 12
+  criticalRate: 1
+  preExecuteProcedure: null
+  damageClass: special
+  price: 2000
+  name: Swift
+  power: 70

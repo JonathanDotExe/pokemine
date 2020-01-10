@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<move xmlns="https://jojokobi.lima-city.de/pokemine/moves" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jojokobi.lima-city.de/pokemine/moves https://jojokobi.lima-city.de/pokemine/moves/move">
+	<name>Sucker Punch</name>
+	<identifier>sucker_punch</identifier>
+	<type>dark</type>
+	<damage_class>physical</damage_class>
+	<learning_method>move_tutor</learning_method>
+	<price>2000</price>
+	<min_level>15</min_level>
+	<power>70</power>
+	<accuracy>1.0</accuracy>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<priority>1</priority>
+	<animation>hit</animation>
+	<initialize>
+		if (!defender.willDamage()) {
+			init.setFail(true);
+		}
+	</initialize>
+</move>
