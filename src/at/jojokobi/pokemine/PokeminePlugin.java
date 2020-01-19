@@ -130,7 +130,7 @@ import at.jojokobi.pokemine.trainer.NPCTrainer;
 import at.jojokobi.pokemine.trainer.PlacedPokemonHandler;
 import at.jojokobi.pokemine.trainer.PlayerTrainer;
 import at.jojokobi.pokemine.trainer.PlayerTrainerHandler;
-import at.jojokobi.pokemine.trainer.TrainerRank;
+import at.jojokobi.pokemine.trainer.SimpleTeamGenerator;
 import at.jojokobi.pokemine.trainer.TrainerRankHandler;
 import at.jojokobi.pokemine.trainer.TrainerRankLoader;
 import at.jojokobi.pokemine.trainer.entity.NPCTrainerEntity;
@@ -222,6 +222,7 @@ public class PokeminePlugin extends JavaPlugin {
 				Poison.class,
 				Sleep.class,
 				NPCTrainer.class,
+				SimpleTeamGenerator.class,
 				PlayerTrainer.class,
 				PlacedPokemon.class,
 				
@@ -383,9 +384,7 @@ public class PokeminePlugin extends JavaPlugin {
 		entityHandler.addLegacySaveFolder(new EntityHandler.LegacySaveFolder("pokemine" + File.separator + "trainers") {
 			@Override
 			public CustomEntity<?> getStandardInstance(World world) {
-				return new NPCTrainerEntity(new NPCTrainer(new TrainerRank(PokeminePlugin.POKEMINE_NAMESPACE, "trainer"),
-						(byte) 50,
-						PokemonHandler.getInstance()),
+				return new NPCTrainerEntity(null,
 						new Location(world, 0, 255, 0),
 						entityHandler);
 			}

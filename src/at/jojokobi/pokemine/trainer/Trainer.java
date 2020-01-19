@@ -20,6 +20,7 @@ import at.jojokobi.mcutil.NamespacedEntry;
 import at.jojokobi.mcutil.SerializableMap;
 import at.jojokobi.mcutil.gui.InventoryGUIHandler;
 import at.jojokobi.pokemine.PokeminePlugin;
+import at.jojokobi.pokemine.battle.Battle;
 import at.jojokobi.pokemine.gui.MoveLearnGUI;
 import at.jojokobi.pokemine.pokemon.PlacedPokemon;
 import at.jojokobi.pokemine.pokemon.Pokemon;
@@ -104,6 +105,14 @@ public abstract class Trainer implements ConfigurationSerializable{
 	
 	public void givePokemon (Pokemon pokemon) {
 		givePokemon(pokemon, generatePokemonID());
+	}
+	
+	public void prepareForBattle (Battle battle) {
+		
+	}
+	
+	public void endBattle (Battle battle, boolean won) {
+		
 	}
 	
 	public void removePokemon (Pokemon pokemon) {

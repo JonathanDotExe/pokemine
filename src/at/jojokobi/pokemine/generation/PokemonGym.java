@@ -24,9 +24,10 @@ import at.jojokobi.mcutil.generation.population.StructureInstance;
 import at.jojokobi.mcutil.music.Music;
 import at.jojokobi.mcutil.music.MusicPlayer;
 import at.jojokobi.pokemine.PokeminePlugin;
-import at.jojokobi.pokemine.pokemon.PokemonHandler;
 import at.jojokobi.pokemine.pokemon.PokemonType;
 import at.jojokobi.pokemine.trainer.NPCTrainer;
+import at.jojokobi.pokemine.trainer.SimpleTeamGenerator;
+import at.jojokobi.pokemine.trainer.Trainer;
 import at.jojokobi.pokemine.trainer.TrainerRank;
 import at.jojokobi.pokemine.trainer.TrainerRankHandler;
 import at.jojokobi.pokemine.trainer.entity.NPCTrainerEntity;
@@ -113,7 +114,7 @@ public class PokemonGym extends Structure implements Listener{
 			place.setY(loc.getY() + 2);
 			place.setZ(loc.getZ() + getLength() - 2);
 			place.setPitch(270);
-			NPCTrainer trainer = new NPCTrainer(ranks.get(random.nextInt(ranks.size())), level, PokemonHandler.getInstance(), 5, random);
+			NPCTrainer trainer = new NPCTrainer(ranks.get(random.nextInt(ranks.size())), new SimpleTeamGenerator(level,  5, random.nextLong()));
 			NPCTrainerEntity entity = new NPCTrainerEntity(trainer, place, plugin.getEntityHandler());
 			entity.setSave(true);
 			entity.setDespawnTicks(-1);
@@ -139,7 +140,7 @@ public class PokemonGym extends Structure implements Listener{
 								new Location(loc.getWorld(), loc.getX() + getWidth() - 3, loc.getY() + 1, loc.getZ() + 2, 0, 270),
 								new Location(loc.getWorld(), loc.getX() + getWidth() - 3, loc.getY() + 1, loc.getZ() + getLength() - 2, 0, 270)};
 			for (int i = 0; i < places.length; i++) {
-				NPCTrainer trainer = new NPCTrainer(trainerRanks.get(random.nextInt(trainerRanks.size())), (byte) (level - 3), PokemonHandler.getInstance(), random);
+				NPCTrainer trainer = new NPCTrainer(trainerRanks.get(random.nextInt(trainerRanks.size())), new SimpleTeamGenerator((byte) (level - 3),  random.nextInt(Trainer.PARTY_SIZE) + 1, random.nextLong()));
 				NPCTrainerEntity entity = new NPCTrainerEntity(trainer, places[i], plugin.getEntityHandler());
 				entity.setSave(true);
 				entity.setBehaviorType(TrainerBehaviorType.STATIONARY_TRAINER);

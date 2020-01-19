@@ -21,6 +21,8 @@ import at.jojokobi.pokemine.pokemon.PokemonHandler;
 import at.jojokobi.pokemine.pokemon.PokemonSpecies;
 import at.jojokobi.pokemine.pokemon.entity.PokemonEntity;
 import at.jojokobi.pokemine.trainer.NPCTrainer;
+import at.jojokobi.pokemine.trainer.SimpleTeamGenerator;
+import at.jojokobi.pokemine.trainer.Trainer;
 import at.jojokobi.pokemine.trainer.TrainerRank;
 import at.jojokobi.pokemine.trainer.TrainerRankHandler;
 import at.jojokobi.pokemine.trainer.TrainerUtil;
@@ -88,13 +90,14 @@ public class PokemonSpawner {
 							}
 							if (ranks.size() > 0) {
 								Random random = new Random();
-								NPCTrainer trainer = new NPCTrainer(ranks.get(random.nextInt(ranks.size())), (byte) 50, PokemonHandler.getInstance());
+								NPCTrainer trainer = new NPCTrainer(ranks.get(random.nextInt(ranks.size())), new SimpleTeamGenerator((byte) 50, random.nextInt(Trainer.PARTY_SIZE) + 1, random.nextLong()));
+								trainer.createTeam();
 								NPCTrainerEntity entity = new NPCTrainerEntity(trainer, place, plugin.getEntityHandler());
 								plugin.getEntityHandler().addEntity(entity);
-								byte level = (byte) (TrainerUtil.averageTrainerLevel(entity.getEntity(), plugin.getPlayerTrainerHandler()) + 5);
+								byte level = (byte) (TrainerUtil.averageTrainerLevel(entity.getEntity(), plugin.getPlayerTrainerHandler()) + 3);
 								for (Pokemon pokemon : trainer.getParty()) {
 									if (pokemon != null) {
-										pokemon.setLevel((byte) (level - random.nextInt(10)));
+										pokemon.setLevel((byte) (level - random.nextInt(6)));
 										pokemon.setMoves(MoveUtil.generateRandomMoveset(pokemon));
 									}
 								}

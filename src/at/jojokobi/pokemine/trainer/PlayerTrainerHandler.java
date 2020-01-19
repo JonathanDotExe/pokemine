@@ -110,6 +110,7 @@ public class PlayerTrainerHandler implements Listener{
 	@EventHandler
 	public void onInventoryClick(InventoryClickEvent event) {
 		if (event.getClickedInventory() == event.getWhoClicked().getInventory()) {
+			//Show player GUI
 			if (event.getWhoClicked() instanceof Player) {
 				Player player = (Player) event.getWhoClicked();
 				if (event.getClick() == ClickType.DOUBLE_CLICK) {
@@ -124,6 +125,7 @@ public class PlayerTrainerHandler implements Listener{
 	
 	@EventHandler(priority = EventPriority.LOWEST)
 	public void onPlayerJoin (PlayerJoinEvent event) {
+		//Load
 		Player player = event.getPlayer();
 		Trainer trainer = loadTrainerWithGUI(player);
 		trainers.add(trainer);
@@ -132,6 +134,7 @@ public class PlayerTrainerHandler implements Listener{
 	
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onPlayerQuit (PlayerQuitEvent event) {
+		//Save
 		Player player = event.getPlayer();
 		Trainer trainer = getTrainer(player);
 		saveTrainer(trainer, savefolder, PokemonHandler.getInstance());

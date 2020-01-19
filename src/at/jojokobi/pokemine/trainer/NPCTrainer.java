@@ -1,35 +1,50 @@
 package at.jojokobi.pokemine.trainer;
 
 import java.util.Map;
-import java.util.Random;
 
 import org.bukkit.entity.Entity;
 
+import at.jojokobi.mcutil.TypedMap;
+import at.jojokobi.pokemine.battle.Battle;
 import at.jojokobi.pokemine.pokemon.Pokemon;
-import at.jojokobi.pokemine.pokemon.PokemonHandler;
 
 public class NPCTrainer extends Trainer {
+	
+	private TeamGenerator generator;
 	
 	private NPCTrainer() {
 		
 	}
 
-	public NPCTrainer(TrainerRank rank, byte level, PokemonHandler handler, int count, Random random) {
+	public NPCTrainer(TrainerRank rank, TeamGenerator generator) {
 		setRank(rank);
-		setName(rank.getNames()[random.nextInt(rank.getNames().length)]);
-		for (Pokemon pokemon : TrainerUtil.generateParty(level, this, handler, count, random)) {
-			if (pokemon != null) {
-				givePokemon(pokemon);
-			}
+		this.generator = generator;
+	}
+	
+	@Override
+	public void prepareForBattle(Battle battle) {
+		super.prepareForBattle(battle);
+		createTeam();
+		for (Pokemon pokemon : getParty()) {
+			pokemon.heal();
 		}
 	}
 	
-	public NPCTrainer(TrainerRank rank, byte level, PokemonHandler handler, Random random) {
-		this(rank, level, handler, random.nextInt(Trainer.PARTY_SIZE - 1) + 1, random);
+	public void createTeam () {
+		if (generator != null) {
+			for (Pokemon pokemon : generator.create(getRank())) {
+				givePokemon(pokemon);
+			}
+			generator = null;
+		}
 	}
 	
-	public NPCTrainer(TrainerRank rank, byte level, PokemonHandler handler) {
-		this(rank, level, handler, new Random());
+	@Override
+	public void endBattle(Battle battle, boolean won) {
+		super.endBattle(battle, won);
+		for (Pokemon pokemon : getParty()) {
+			pokemon.heal();
+		}
 	}
 
 	@Override
@@ -50,6 +65,8 @@ public class NPCTrainer extends Trainer {
 	public static NPCTrainer deserialize (Map<String, Object> map) {
 		NPCTrainer trainer = new NPCTrainer();
 		trainer.load(map);
+		TypedMap m = new TypedMap(map);
+		trainer.generator = m.get("generator", TeamGenerator.class, null);
 		return trainer;
 	}
 	

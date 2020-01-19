@@ -81,6 +81,7 @@ public class NPCTrainerEntity extends NPCEntity {
 		if (player.getEliteFourDefeatLevel() == Math.max(0, trainer.getEliteFourLevel() - 1) && battleHandler.getTrainersBattle(player) == null && player.getNextUsablePokemon() != null && battleHandler.getTrainersBattle(getTrainer()) == null && getTrainer().getNextUsablePokemon() != null) {
 			//Look at player
 			NMSEntityUtil.rotateVehicle(getEntity(), event.getPlayer().getLocation().toVector().subtract(getEntity().getLocation().toVector()));
+			trainer.prepareForBattle(null);
 			//Start battle
 			Battle battle = new Battle(battleHandler, player.getNextUsablePokemon(), trainer.getNextUsablePokemon());
 			//Spawn Pokemon

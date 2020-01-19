@@ -142,7 +142,7 @@ public class Pokemon implements ConfigurationSerializable {
 	}
 
 	public boolean isWild() {
-		return owner instanceof WildPokemonTrainer;
+		return owner == null && owner instanceof WildPokemonTrainer;
 	}
 
 	public void heal() {

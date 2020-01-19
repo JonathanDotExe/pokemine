@@ -19,6 +19,7 @@ import at.jojokobi.pokemine.pokemon.Pokemon;
 import at.jojokobi.pokemine.pokemon.PokemonHandler;
 import at.jojokobi.pokemine.pokemon.PokemonType;
 import at.jojokobi.pokemine.trainer.NPCTrainer;
+import at.jojokobi.pokemine.trainer.SimpleTeamGenerator;
 import at.jojokobi.pokemine.trainer.Trainer;
 import at.jojokobi.pokemine.trainer.TrainerRank;
 import at.jojokobi.pokemine.trainer.TrainerRankHandler;
@@ -118,7 +119,7 @@ public class EliteFourGym extends Structure{
 			int index = random.nextInt(types.size());
 			PokemonType type = types.get(index);
 			types.remove(index);
-			NPCTrainer trainer = new NPCTrainer(TrainerRankHandler.getInstance().getRanksWithBadge(type).get(0), (byte) (level - 3), PokemonHandler.getInstance(), 5, random);
+			NPCTrainer trainer = new NPCTrainer(TrainerRankHandler.getInstance().getRanksWithBadge(type).get(0), new SimpleTeamGenerator((byte) (level - 3),  5, random.nextLong()));
 			trainer.setEliteFourLevel(i + 1);
 			//Evolve team
 			for (Pokemon pokemon : trainer.getParty()) {
@@ -139,7 +140,7 @@ public class EliteFourGym extends Structure{
 			place.setY(loc.getY() + 2);
 			place.setZ(loc.getZ() + getLength() - 2);
 			place.setPitch(270);
-			NPCTrainer trainer = new NPCTrainer(champRank, level, PokemonHandler.getInstance(), Trainer.PARTY_SIZE, random);
+			NPCTrainer trainer = new NPCTrainer(champRank, new SimpleTeamGenerator(level,  Trainer.PARTY_SIZE, random.nextLong()));
 			trainer.setEliteFourLevel(Trainer.CHAMP_LEVEL);
 			//Evolve team
 			for (Pokemon pokemon : trainer.getParty()) {

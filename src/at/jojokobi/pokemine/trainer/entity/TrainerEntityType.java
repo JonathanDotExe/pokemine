@@ -5,9 +5,6 @@ import org.bukkit.Location;
 import at.jojokobi.mcutil.entity.CustomEntityType;
 import at.jojokobi.mcutil.entity.EntityHandler;
 import at.jojokobi.pokemine.PokeminePlugin;
-import at.jojokobi.pokemine.pokemon.PokemonHandler;
-import at.jojokobi.pokemine.trainer.NPCTrainer;
-import at.jojokobi.pokemine.trainer.TrainerRank;
 
 public final class TrainerEntityType implements CustomEntityType<NPCTrainerEntity>{
 	
@@ -38,9 +35,7 @@ public final class TrainerEntityType implements CustomEntityType<NPCTrainerEntit
 
 	@Override
 	public NPCTrainerEntity createInstance(Location loc, EntityHandler handler) {
-		return new NPCTrainerEntity(new NPCTrainer(new TrainerRank(PokeminePlugin.POKEMINE_NAMESPACE, "trainer"),
-				(byte) 50,
-				PokemonHandler.getInstance()),
+		return new NPCTrainerEntity(null,
 				loc,
 				handler);
 	}
