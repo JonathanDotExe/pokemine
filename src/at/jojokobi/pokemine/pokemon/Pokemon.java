@@ -142,7 +142,7 @@ public class Pokemon implements ConfigurationSerializable {
 	}
 
 	public boolean isWild() {
-		return owner == null && owner instanceof WildPokemonTrainer;
+		return owner == null || owner instanceof WildPokemonTrainer;
 	}
 
 	public void heal() {
@@ -1139,7 +1139,6 @@ public class Pokemon implements ConfigurationSerializable {
 			pokemon.characterByte = tMap.getByte(POKEMON_PERSONALITY_BYTE_ELEMENT);
 		}
 	
-		
 		return pokemon;
 	}
 
