@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.bukkit.Sound;
@@ -38,7 +39,7 @@ public class Battle {
 	public static final Music WIN_THEME = new Music(WIN_THEME_NAME, 25);
 	
 	private BattleHandler handler;
-	private PokemonContainer[] pokemon;
+	private Map<BattleAttendant, PokemonContainer[]> trainers;
 	
 	private List<BattleAction> actionQueue = new ArrayList<>();
 	private Set<Pokemon> epPokemon = new HashSet<>();
@@ -48,16 +49,14 @@ public class Battle {
 	
 	private int timer = 0;
 
-	public Battle(BattleHandler handler, Pokemon... pokemon) {
+	public Battle(BattleHandler handler, Map<BattleAttendant, BattleAttendant[]> trainers) {
 		super();
 		this.handler = handler;
-		this.pokemon = new PokemonContainer[pokemon.length];
-		for (int i = 0; i < pokemon.length; i++) {
-			this.pokemon[i] = new PokemonContainer(pokemon[i]);
-		}
+		this.trainers = trainers;
 	}
 
 	public void loop() {
+		//Switch GUIs
 		if (!switchGuis.isEmpty()) {
 			if (switchGuis.stream().allMatch((gui) -> gui.getNewPokemon() != null)) {
 				for (DeathSwitchGUI gui : switchGuis) {
@@ -80,9 +79,9 @@ public class Battle {
 				requestBattleActions();
 				timer = 0;
 			}
-			if (Arrays.stream(pokemon).allMatch((PokemonContainer pokemon) -> pokemon.hasNextAction(this))) {
+			if (Arrays.stream(getPokemonContainers()).allMatch((PokemonContainer pokemon) -> pokemon.hasNextAction(this))) {
 				//Get next Actions
-				for (PokemonContainer poke : pokemon) {
+				for (PokemonContainer poke : getPokemonContainers()) {
 					actionQueue.add(poke.getNextAction(this));
 				}
 				for (BattleAction action : actionQueue) {
@@ -168,6 +167,7 @@ public class Battle {
 	}
 	
 	private void switchFaintedPokemon () {
+		PokemonContainer[] pokemon = getPokemonContainers();
 		for (int i = 0; i < pokemon.length; i++) {
 			if (pokemon[i].getPokemon().getHealth() <= 0) {
 				String text = pokemon[i].getPokemon().getName() + " fainted!";
@@ -176,38 +176,7 @@ public class Battle {
 				giveEpToPokemon(pokemon[i].getPokemon());
 				//Battle ends
 				if (nextPokemon == null) {
-					//Give the winner badges
-					if (pokemon[i].getPokemon().getOwner().getRank().getBadge() != null) {
-						for (Pokemon poke : getPokemon()) {
-							if (poke.getOwner() != pokemon[i].getPokemon().getOwner()) {
-								poke.getOwner().recieveBadge(pokemon[i].getPokemon().getOwner().getRank().getBadge(), pokemon[i].getPokemon().getOwner().getLevel());
-							}
-						}
-					}
-					//Give money to the winner
-					for (Pokemon poke : getPokemon()) {
-						if (poke.getOwner() != pokemon[i].getPokemon().getOwner()) {
-							poke.getOwner().addMoney(MathUtil.calcPrizeMoney(pokemon[i].getPokemon().getOwner()));
-						}
-					}
-					//Win/Lose message
-					for (Trainer trainer : getTrainers()) {
-						if (pokemon[i].getPokemon().getOwner() == trainer) {
-						}
-						else if (! (trainer instanceof WildPokemonTrainer)) {
-							sendBattleMessage("<" + trainer.getName() + "> " + trainer.getRank().getRandomWinMessage());
-						}
-					}
-					//Set champ defeated
-					for (Pokemon poke : getPokemon()) {
-						if (poke.getOwner() != pokemon[i].getPokemon().getOwner()) {
-							if (pokemon[i].getPokemon().getOwner().isChamp()) {
-								poke.getOwner().setDefeatedChamp(true);
-							}
-							else {
-								poke.getOwner().setEliteFourDefeatLevel(pokemon[i].getPokemon().getOwner().getEliteFourLevel());							}
-						}
-					}
+					onBattleWin(getOwner(pokemon[i].getPokemon()));
 					end();
 				}
 				else {
@@ -234,6 +203,50 @@ public class Battle {
 				sendBattleTitle(text, "");
 			}
 		}
+	}
+	
+	private void onBattleWin (BattleAttendant loser) {
+		for (BattleAttendant attendant : trainers.keySet()) {
+			attendant.endBattle(this, loser);
+			if (attendant != loser) {
+				sendBattleMessage("<" + attendant.getName() + "> " + attendant.getLooseMessage());
+			}
+			else {
+				sendBattleMessage("<" + attendant.getName() + "> " + attendant.getWinMessage());
+			}
+		}
+		//Give the winner badges
+//		if (pokemon[i].getPokemon().getOwner().getRank().getBadge() != null) {
+//			for (Pokemon poke : getPokemon()) {
+//				if (poke.getOwner() != pokemon[i].getPokemon().getOwner()) {
+//					poke.getOwner().recieveBadge(pokemon[i].getPokemon().getOwner().getRank().getBadge(), pokemon[i].getPokemon().getOwner().getLevel());
+//				}
+//			}
+//		}
+//		//Give money to the winner
+//		for (Pokemon poke : getPokemon()) {
+//			if (poke.getOwner() != pokemon[i].getPokemon().getOwner()) {
+//				poke.getOwner().addMoney(MathUtil.calcPrizeMoney(pokemon[i].getPokemon().getOwner()));
+//			}
+//		}
+//		//Win/Lose message
+//		for (Trainer trainer : getTrainers()) {
+//			if (pokemon[i].getPokemon().getOwner() == trainer) {
+//			}
+//			else if (! (trainer instanceof WildPokemonTrainer)) {
+//				sendBattleMessage("<" + trainer.getName() + "> " + trainer.getRank().getRandomWinMessage());
+//			}
+//		}
+//		//Set champ defeated
+//		for (Pokemon poke : getPokemon()) {
+//			if (poke.getOwner() != pokemon[i].getPokemon().getOwner()) {
+//				if (pokemon[i].getPokemon().getOwner().isChamp()) {
+//					poke.getOwner().setDefeatedChamp(true);
+//				}
+//				else {
+//					poke.getOwner().setEliteFourDefeatLevel(pokemon[i].getPokemon().getOwner().getEliteFourLevel());							}
+//			}
+//		}
 	}
 	
 	private void updateEpList () {
@@ -487,14 +500,13 @@ public class Battle {
 		return deleted;
 	}
 	
-	public List<Trainer> getTrainers () {
-		ArrayList<Trainer> trainers = new ArrayList<>();
-		for (Pokemon poke : getPokemon()) {
-			if (!trainers.contains(poke.getOwner())) {
-				trainers.add(poke.getOwner());
+	private BattleAttendant getOwner (Pokemon pokemon) {
+		for (BattleAttendant attendant : trainers.keySet()) {
+			if (Arrays.stream(trainers.get(attendant)).anyMatch(p -> p.getPokemon() == pokemon)) {
+				return attendant;
 			}
 		}
-		return trainers;
+		return null;
 	}
 	
 //
