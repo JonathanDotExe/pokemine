@@ -62,12 +62,23 @@ public class NPCTrainer extends Trainer {
 		return false;
 	}
 	
+	@Override
+	public Map<String, Object> serialize() {
+		Map<String, Object> map = super.serialize();
+		map.put("generator", generator);
+		return map;
+	}
+	
 	public static NPCTrainer deserialize (Map<String, Object> map) {
 		NPCTrainer trainer = new NPCTrainer();
 		trainer.load(map);
 		TypedMap m = new TypedMap(map);
 		trainer.generator = m.get("generator", TeamGenerator.class, null);
 		return trainer;
+	}
+
+	public TeamGenerator getGenerator() {
+		return generator;
 	}
 	
 }

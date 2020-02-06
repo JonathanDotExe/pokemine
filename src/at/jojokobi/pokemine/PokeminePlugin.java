@@ -46,6 +46,7 @@ import at.jojokobi.pokemine.items.UltraBall;
 import at.jojokobi.pokemine.items.WritableTM;
 import at.jojokobi.pokemine.items.AbstractPokeball;
 import at.jojokobi.pokemine.items.ExpShare;
+import at.jojokobi.pokemine.items.FireStone;
 import at.jojokobi.pokemine.items.FullHeal;
 import at.jojokobi.pokemine.items.GreatBall;
 import at.jojokobi.pokemine.moves.Move;
@@ -184,6 +185,7 @@ public class PokeminePlugin extends JavaPlugin {
 	private FullHeal fullHeal;
 	private ExpShare expShare;
 	private LeafStone leafStone;
+	private FireStone fireStone;
 	
 	public static void registerSerializables () {
 //		ConfigurationSerialization.registerClass(MoveInstance.class, "PokemineMoveInstance");
@@ -445,6 +447,8 @@ public class PokeminePlugin extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(expShare, this);
 		leafStone = new LeafStone(this);
 		getServer().getPluginManager().registerEvents(leafStone, this);
+		fireStone = new FireStone(this);
+		getServer().getPluginManager().registerEvents(fireStone, this);
 		
 		// Generation
 		GenerationHandler genHandler = util.getGenerationHandler();

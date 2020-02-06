@@ -3,6 +3,7 @@ package at.jojokobi.pokemine.generation;
 import java.util.Arrays;
 import java.util.List;
 
+import org.bukkit.Chunk;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
@@ -30,10 +31,15 @@ public class PokemonCenter extends Structure implements Listener{
 	public PokeminePlugin plugin;
 	
 	public PokemonCenter(PokeminePlugin plugin) {
-		super(10,10,8,200,1);
+		super(10,10,8,600,1);
 		setxModifier(16165);
 		setzModifier(981);
 		this.plugin = plugin;
+	}
+	
+	@Override
+	public boolean canGenerate(Chunk chunk, long seed) {
+		return super.canGenerate(chunk, seed) || chunk.getWorld().getSpawnLocation().getBlock().getChunk() == chunk;
 	}
 
 	@Override

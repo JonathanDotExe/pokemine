@@ -44,7 +44,7 @@ public class PokemonGym extends Structure implements Listener{
 	private PokeminePlugin plugin;
 	
 	public PokemonGym(PokeminePlugin plugin) {
-		super(16, 16, 10, 350, 1);
+		super(16, 16, 10, 1000, 1);
 		this.plugin = plugin;
 		setxModifier(9848);
 		setzModifier(8456);

@@ -11,8 +11,7 @@ species:
   color: brown
   description: It is very loyal and always tries to defend it's owner.
   minLikeEquality: 0.45
-  maxDislikeEquality: 0.1
-  flySpeed: 0.0
+  flySpeed: 1.4E-45
   spawns:
   - ==: at.jojokobi.pokemine.spawning.SpawnChance
     chance: 4
@@ -80,9 +79,9 @@ species:
       - MODIFIED_JUNGLE_EDGE
   levelSpeed: slow
   catchRate: 190
-  climbSpeed: 0.0
+  maxDislikeEquality: 0.1
   jumpSpeed: 0.5
-  surfSpeed: 0.0
+  surfSpeed: 1.4E-45
   eggCycles: 20
   wildLevel: 15
   legendary: false
@@ -93,28 +92,42 @@ species:
     - ==: at.jojokobi.mcutil.loot.LootItem
       item:
         ==: org.bukkit.inventory.ItemStack
-        v: 1968
+        v: 2227
         type: BONE
       chance: 0.5
+      enchant: false
       minCount: 1
       maxCount: 3
     - ==: at.jojokobi.mcutil.loot.LootItem
       item:
         ==: org.bukkit.inventory.ItemStack
-        v: 1968
+        v: 2227
         type: FEATHER
       chance: 0.3
+      enchant: false
       minCount: 1
       maxCount: 3
     - ==: at.jojokobi.mcutil.loot.LootItem
       item:
         ==: org.bukkit.inventory.ItemStack
-        v: 1968
+        v: 2227
         type: COOKED_MUTTON
       chance: 0.2
+      enchant: false
       minCount: 1
       maxCount: 1
-  evolutions: []
+  evolutions:
+  - ==: at.jojokobi.pokemine.pokemon.evolution.EvolutionCause
+    species:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: arcanine
+    conditions:
+    - ==: at.jojokobi.pokemine.pokemon.evolution.CustomItemCondition
+      item:
+        ==: at.jojokobi.mcutil.NamespacedEntry
+        namespace: pokemine
+        key: firestone
   identifier:
     ==: at.jojokobi.mcutil.NamespacedEntry
     namespace: pokemine
@@ -231,4 +244,5 @@ species:
       key: safeguard
     level: 101
   name: Growlithe
+  climbSpeed: 1.4E-45
   category: Lizard

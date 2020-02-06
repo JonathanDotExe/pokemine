@@ -30,13 +30,11 @@ public class HitAnimation extends BattleAnimation{
 			Vector velocity = getPerformer().getLocation().getDirection();
 			velocity.multiply(-1);
 			velocity.normalize();
-			velocity.setY(0.5);
 			getPerformer().setVelocity(velocity);
 			
 			Vector velocity2 = getDefender().getLocation().getDirection();
 			velocity2.multiply(0.2);
 			velocity2.normalize();
-			velocity2.setY(0.2);
 			getDefender().setVelocity(velocity2);
 		}
 		super.tick();

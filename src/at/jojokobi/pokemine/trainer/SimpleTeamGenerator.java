@@ -51,4 +51,9 @@ public class SimpleTeamGenerator implements TeamGenerator, ConfigurationSerializ
 		return pokemon;
 	}
 
+	@Override
+	public int getLevel() {
+		return level;
+	}
+
 }

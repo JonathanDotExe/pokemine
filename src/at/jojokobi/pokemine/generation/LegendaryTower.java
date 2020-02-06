@@ -46,7 +46,7 @@ public class LegendaryTower extends Structure {
 	private EntityHandler entityHandler;
 
 	public LegendaryTower(EntityHandler entityHandler) {
-		super(16, 16, STAGE_HEIGHT * STAGE_COUNT, 1000, 1);
+		super(16, 16, STAGE_HEIGHT * STAGE_COUNT, 1500, 1);
 //		this.handler = handler;
 		this.entityHandler = entityHandler;
 		

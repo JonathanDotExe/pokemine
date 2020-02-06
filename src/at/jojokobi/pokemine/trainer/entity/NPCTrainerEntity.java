@@ -76,20 +76,25 @@ public class NPCTrainerEntity extends NPCEntity {
 	@Override
 	protected void onInteract(PlayerInteractEntityEvent event) {
 		super.onInteract(event);
+		System.out.println("Interact with player");
 		Trainer player = JavaPlugin.getPlugin(PokeminePlugin.class)/*TODO bad design*/.getPlayerTrainerHandler().getTrainer(event.getPlayer());
 		BattleHandler battleHandler = JavaPlugin.getPlugin(PokeminePlugin.class)/*TODO bad design*/.getBattleHandler();
-		if (player.getEliteFourDefeatLevel() == Math.max(0, trainer.getEliteFourLevel() - 1) && battleHandler.getTrainersBattle(player) == null && player.getNextUsablePokemon() != null && battleHandler.getTrainersBattle(getTrainer()) == null && getTrainer().getNextUsablePokemon() != null) {
-			//Look at player
-			NMSEntityUtil.rotateVehicle(getEntity(), event.getPlayer().getLocation().toVector().subtract(getEntity().getLocation().toVector()));
+		if (player.getEliteFourDefeatLevel() == Math.max(0, trainer.getEliteFourLevel() - 1) && battleHandler.getTrainersBattle(player) == null && player.getNextUsablePokemon() != null && battleHandler.getTrainersBattle(getTrainer()) == null) {
+			System.out.println("Preparing");
 			trainer.prepareForBattle(null);
-			//Start battle
-			Battle battle = new Battle(battleHandler, player.getNextUsablePokemon(), trainer.getNextUsablePokemon());
-			//Spawn Pokemon
-			getHandler().addEntity(new PokemonEntity(event.getPlayer().getLocation(), player.getNextUsablePokemon(), getHandler()));
-			PokemonEntity pokeEntity = new PokemonEntity(getEntity().getLocation().add(getEntity().getLocation().getDirection()), getTrainer().getNextUsablePokemon(), getHandler());
-			getHandler().addEntity(pokeEntity);
-//			trainer.getEntity().setVelocity(new Vector(0, 0, 1));
-			battle.start();
+			if (trainer.getNextUsablePokemon() != null) {
+				System.out.println("Battle");
+				//Look at player
+				NMSEntityUtil.rotateVehicle(getEntity(), event.getPlayer().getLocation().toVector().subtract(getEntity().getLocation().toVector()));
+				//Start battle
+				Battle battle = new Battle(battleHandler, player.getNextUsablePokemon(), trainer.getNextUsablePokemon());
+				//Spawn Pokemon
+				getHandler().addEntity(new PokemonEntity(event.getPlayer().getLocation(), player.getNextUsablePokemon(), getHandler()));
+				PokemonEntity pokeEntity = new PokemonEntity(getEntity().getLocation().add(getEntity().getLocation().getDirection()), getTrainer().getNextUsablePokemon(), getHandler());
+				getHandler().addEntity(pokeEntity);
+	//			trainer.getEntity().setVelocity(new Vector(0, 0, 1));
+				battle.start();
+			}
 		}
 		event.setCancelled(true);
 	}
@@ -164,7 +169,7 @@ public class NPCTrainerEntity extends NPCEntity {
 
 	@Override
 	public String getName() {
-		return trainer.getRank().getName() + " " + trainer.getName() + " Lvl. " + trainer.getLevel();
+		return trainer.getRank().getName() + " " + trainer.getName() + " Lvl. " + (trainer.getGenerator() != null ? trainer.getGenerator().getLevel() : trainer.getLevel());
 	}
 
 	@Override
