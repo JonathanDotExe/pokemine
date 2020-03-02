@@ -1,0 +1,35 @@
+move:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 10
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: sludge_bomb
+  initializeProcedure: null
+  learningMethod: TM
+  accuracy: 1.0
+  maxPp: 16
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.ListProcedure
+    procedures:
+    - ==: at.jojokobi.pokemine.moves.procedures.DamageProcedure
+      performer: false
+      recoil: 1.4E-45
+      power:
+        ==: at.jojokobi.pokemine.moves.procedures.suppliers.MovePowerSupplier
+    - ==: at.jojokobi.pokemine.moves.procedures.ChanceProcedure
+      chance: 0.3
+      procedure:
+        ==: at.jojokobi.pokemine.moves.procedures.AddPrimaryStatusProcedure
+        performer: false
+        statusChange: at.jojokobi.pokemine.pokemon.status.Poison
+  type: Poison
+  priority: 0
+  animation: psybeam
+  minLevel: 25
+  criticalRate: 1
+  preExecuteProcedure: null
+  damageClass: special
+  price: 3000
+  name: Sludge Bomb
+  power: 90

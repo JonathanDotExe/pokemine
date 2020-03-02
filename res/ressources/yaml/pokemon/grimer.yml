@@ -1,0 +1,158 @@
+species:
+  ==: at.jojokobi.pokemine.pokemon.PokemonSpecies
+  baseValues:
+    ==: at.jojokobi.pokemine.pokemon.PokemonValueSet
+    specialDefense: 50
+    defense: 50
+    attack: 80
+    health: 80
+    specialAttack: 40
+    speed: 25
+  color: Purple
+  description: It loves to eat trash. Many people dislike it because of it's smell.
+  minLikeEquality: 0.7
+  flySpeed: 1.4E-45
+  spawns:
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 4
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - SWAMP
+      - JUNGLE
+      - JUNGLE_HILLS
+      - JUNGLE_EDGE
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 2
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - DARK_FOREST
+      - BAMBOO_JUNGLE
+      - BAMBOO_JUNGLE_HILLS
+      - DARK_FOREST_HILLS
+  levelSpeed: middle_fast
+  catchRate: 190
+  maxDislikeEquality: 0.3
+  jumpSpeed: 0.5
+  surfSpeed: 1.4E-45
+  eggCycles: 20
+  wildLevel: 25
+  legendary: false
+  lavaSurfSpeed: 1.4E-45
+  loot:
+    ==: at.jojokobi.mcutil.loot.LootInventory
+    items: []
+  evolutions: []
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: grimer
+  walkSpeed: 1.0
+  types:
+  - Poison
+  maleChance: 0.5
+  eggGroups:
+  - amorph
+  formOf: null
+  index: 1562
+  weight: 30.0
+  ep: 65
+  winEvs:
+    ==: at.jojokobi.pokemine.pokemon.PokemonValueSet
+    specialDefense: 0
+    defense: 0
+    attack: 0
+    health: 1
+    specialAttack: 0
+    speed: 0
+  size: 0.9
+  initialFriendship: 70
+  moves:
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: pound
+    level: 1
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: poison_gas
+    level: 1
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: harden
+    level: 4
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: mud_slap
+    level: 7
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: sludge
+    level: 15
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: mud_bomb
+    level: 18
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: minimize
+    level: 21
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: sludge_bomb
+    level: 29
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: sludge_wave
+    level: 32
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: screech
+    level: 37
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: gunk_shot
+    level: 40
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: acid_armor
+    level: 43
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: belch
+    level: 46
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: memento
+    level: 48
+  name: Grimer
+  climbSpeed: 1.4E-45
+  category: Mud
