@@ -43,12 +43,12 @@ public abstract class AbstractPokeball extends BattleItem {
 	}
 	
 	public void catchPokemonAnimation (PokemonEntity entity, Trainer trainer) {
-		entity.getEntity().setHelmet(createItem());
+		entity.getEntity().getEquipment().setHelmet(createItem());
 		entity.getEntity().setVelocity(new Vector());
 		Bukkit.getScheduler().runTaskLater(getPlugin(), new Runnable() {
 			@Override
 			public void run() {
-				entity.getEntity().setHelmet(entity.getPokemon().toItemStack());
+				entity.getEntity().getEquipment().setHelmet(entity.getPokemon().toItemStack());
 				catchPokemon(entity, trainer);
 			}
 		}, 40L);
@@ -184,7 +184,7 @@ public abstract class AbstractPokeball extends BattleItem {
 	public void startUse(PokemonWrapper user, PokemonWrapper defender, Battle battle) {
 		PokemonEntity entity = getPlugin().getEntityHandler().getEntity(new PokemonCriteria(defender.getPokemon()));
 		if (entity != null) {
-			entity.getEntity().setHelmet(createItem());
+			entity.getEntity().getEquipment().setHelmet(createItem());
 		}
 	}
 	
@@ -192,7 +192,7 @@ public abstract class AbstractPokeball extends BattleItem {
 	public void endUse(PokemonWrapper user, PokemonWrapper defender, Battle battle) {
 		PokemonEntity entity = getPlugin().getEntityHandler().getEntity(new PokemonCriteria(defender.getPokemon()));
 		if (entity != null) {
-			entity.getEntity().setHelmet(defender.getPokemon().toItemStack());
+			entity.getEntity().getEquipment().setHelmet(defender.getPokemon().toItemStack());
 		}
 		if (catchPokemon(entity, user.getPokemon().getOwner())) {
 			battle.sendBattleMessage("Gotcha!");

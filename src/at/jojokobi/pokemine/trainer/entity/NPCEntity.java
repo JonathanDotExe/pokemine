@@ -28,7 +28,7 @@ public abstract class NPCEntity extends CustomEntity<ArmorStand>{
 	protected ArmorStand createEntity(Location place) {
 		ArmorStand stand = (ArmorStand) place.getWorld().spawnEntity(place, EntityType.ARMOR_STAND);
 		stand.setVisible(false);
-		stand.setHelmet(getItem());
+		stand.getEquipment().setHelmet(getItem());
 		stand.setCustomName(getName());
 		stand.setCustomNameVisible(true);
 		stand.setCanPickupItems(false);

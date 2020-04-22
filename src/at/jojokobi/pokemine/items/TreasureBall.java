@@ -36,8 +36,8 @@ public class TreasureBall extends PlaceableItem implements Buyable{
 					for (Entity entity : world.getEntities()) {
 						if (entity instanceof ArmorStand) {
 							ArmorStand stand = (ArmorStand) entity;
-							if (isItem(stand.getHelmet()) && stand.getTicksLived() > 5000) {
-								stand.setHelmet(new ItemStack(Material.AIR));
+							if (isItem(stand.getEquipment().getHelmet()) && stand.getTicksLived() > 5000) {
+								stand.getEquipment().setHelmet(new ItemStack(Material.AIR));
 								stand.remove();
 							}
 						}

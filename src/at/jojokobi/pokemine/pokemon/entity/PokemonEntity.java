@@ -144,7 +144,7 @@ public class PokemonEntity extends CustomEntity<ArmorStand> implements Attacker,
 	protected ArmorStand createEntity(Location place) {
 		ArmorStand stand = (ArmorStand) place.getWorld().spawnEntity(place, EntityType.ARMOR_STAND);
 		stand.setVisible(false);
-		stand.setHelmet(pokemon.toItemStack());
+		stand.getEquipment().setHelmet(pokemon.toItemStack());
 		stand.setCustomName(getArmorStandName());
 		stand.setCustomNameVisible(true);
 		stand.setCanPickupItems(false);
