@@ -485,7 +485,7 @@ public class PokemonSpecies implements Identifiable, ConfigurationSerializable{
 	}
 	
 	public boolean canWalk () {
-		return getWalkSpeed() > 0;
+		return getWalkSpeed() > 0.0001;
 	}
 
 	public void setWalkSpeed(float walkSpeed) {
@@ -497,7 +497,7 @@ public class PokemonSpecies implements Identifiable, ConfigurationSerializable{
 	}
 	
 	public boolean canSurf () {
-		return getSurfSpeed() > 0;
+		return getSurfSpeed() > 0.0001;
 	}
 	
 	public void setSurfSpeed(float surfSpeed) {
@@ -509,7 +509,7 @@ public class PokemonSpecies implements Identifiable, ConfigurationSerializable{
 	}
 	
 	public boolean canFly () {
-		return getFlySpeed() > 0;
+		return getFlySpeed() > 0.0001;
 	}
 
 	public void setFlySpeed(float flySpeed) {
@@ -525,7 +525,7 @@ public class PokemonSpecies implements Identifiable, ConfigurationSerializable{
 	}
 	
 	public boolean canLavaSurf () {
-		return getLavaSurfSpeed() > 0;
+		return getLavaSurfSpeed() > 0.0001;
 	}
 
 	public float getClimbSpeed() {
@@ -537,7 +537,7 @@ public class PokemonSpecies implements Identifiable, ConfigurationSerializable{
 	}
 	
 	public boolean canClimb () {
-		return getClimbSpeed() > 0;
+		return getClimbSpeed() > 0.0001;
 	}
 
 	public float getJumpSpeed() {
@@ -549,7 +549,7 @@ public class PokemonSpecies implements Identifiable, ConfigurationSerializable{
 	}
 	
 	public boolean canJump () {
-		return getJumpSpeed() > 0;
+		return getJumpSpeed() > 0.0001;
 	}
 
 	public int getWinXp() {
