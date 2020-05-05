@@ -17,13 +17,14 @@ public abstract class PokemineItem extends CustomItem {
 	}
 
 	@Override
-	public final void onUse(ItemStack item, Player player) {
+	public final boolean onUse(ItemStack item, Player player) {
 		Trainer trainer = plugin.getPlayerTrainerHandler().getTrainer(player);
 		if (plugin.getBattleHandler().getTrainersBattle(trainer) == null) {
-			onTrainerUse(item, trainer, player);
+			return onTrainerUse(item, trainer, player);
 		}
 		else {
 			trainer.message("You can't you this item during a battle.");
+			return false;
 		}
 	}
 	
@@ -31,6 +32,6 @@ public abstract class PokemineItem extends CustomItem {
 		return plugin;
 	}
 
-	public abstract void onTrainerUse (ItemStack item, Trainer trainer, Player player);
+	public abstract boolean onTrainerUse (ItemStack item, Trainer trainer, Player player);
 
 }

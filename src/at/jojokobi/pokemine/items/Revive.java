@@ -66,7 +66,7 @@ public class Revive extends BattleItem implements Buyable{
 	}
 
 	@Override
-	public void onTrainerUse(ItemStack item, Trainer trainer, Player player) {
+	public boolean onTrainerUse(ItemStack item, Trainer trainer, Player player) {
 		if (getPlugin().getBattleHandler().getTrainersBattle(trainer) == null) {
 			PartySelectionGUI gui = new PartySelectionGUI(player, trainer){
 				@Override
@@ -88,6 +88,7 @@ public class Revive extends BattleItem implements Buyable{
 		else {
 			trainer.message("You can't heal during a battle.");
 		}
+		return true;
 	}
 
 	@Override

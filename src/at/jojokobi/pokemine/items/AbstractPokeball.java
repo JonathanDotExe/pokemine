@@ -108,7 +108,7 @@ public abstract class AbstractPokeball extends BattleItem {
 //	}
 	
 	@Override
-	public void onTrainerUse(ItemStack held, Trainer trainer, Player player) {
+	public boolean onTrainerUse(ItemStack held, Trainer trainer, Player player) {
 		Snowball ball = player.launchProjectile(Snowball.class);
 		ball.getVelocity().multiply(5);
 		ItemStack ballItem = held.clone();
@@ -119,6 +119,7 @@ public abstract class AbstractPokeball extends BattleItem {
 		}
 		pokeball.setItemStack(ballItem);
 		ball.addPassenger(pokeball);
+		return true;
 	}
 	
 //	@EventHandler

@@ -71,7 +71,7 @@ public class TM extends PokemineItem implements Buyable {
 	}
 
 	@Override
-	public void onTrainerUse(ItemStack item, Trainer trainer, Player player) {
+	public boolean onTrainerUse(ItemStack item, Trainer trainer, Player player) {
 		PartySelectionGUI gui = new PartySelectionGUI(player, trainer) {
 			@Override
 			public boolean call(Pokemon pokemon) {
@@ -105,6 +105,7 @@ public class TM extends PokemineItem implements Buyable {
 		};
 		plugin.getGUIHandler().addGUI(gui);
 		gui.show();
+		return true;
 	}
 
 	@Override

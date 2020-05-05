@@ -48,10 +48,11 @@ public class WritableTM extends CustomItem implements Buyable{
 	}
 	
 	@Override
-	public void onUse(ItemStack item, Player player) {
+	public boolean onUse(ItemStack item, Player player) {
 		MoveShopGUI gui = new MoveShopGUI(player, plugin.getPlayerTrainerHandler().getTrainer(player), MoveHandler.getInstance(), item);
 		plugin.getGUIHandler().addGUI(gui);
 		gui.show();
+		return true;
 	}
 	
 	@Override

@@ -106,8 +106,8 @@ public class TreasureBall extends PlaceableItem implements Buyable{
 	}
 
 	@Override
-	public void onUse(ItemStack item, Player player) {
-		
+	public boolean onUse(ItemStack item, Player player) {
+		return false;
 	}
 
 	@Override
