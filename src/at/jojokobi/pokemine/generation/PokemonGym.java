@@ -49,6 +49,11 @@ public class PokemonGym extends Structure implements Listener{
 		setxModifier(9848);
 		setzModifier(8456);
 	}
+	
+	@Override
+	public int calculatePlacementY(int width, int length, Location place) {
+		return super.calculatePlacementY(width, length, place) - 1;
+	}
 
 	@Override
 	public List<StructureInstance<? extends Structure>> generate(Location loc, long seed) {

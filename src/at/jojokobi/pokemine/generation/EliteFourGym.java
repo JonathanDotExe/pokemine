@@ -39,6 +39,11 @@ public class EliteFourGym extends Structure{
 	public boolean canGenerate(Chunk chunk, long seed) {
 		return chunk.getX() == 0 && chunk.getZ() == 0;
 	}
+	
+	@Override
+	public int calculatePlacementY(int width, int length, Location place) {
+		return super.calculatePlacementY(width, length, place) - 1;
+	}
 
 	@Override
 	public List<StructureInstance<? extends Structure>> generate(Location loc, long seed) {

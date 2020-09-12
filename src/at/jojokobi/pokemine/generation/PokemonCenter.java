@@ -41,6 +41,11 @@ public class PokemonCenter extends Structure implements Listener{
 	public boolean canGenerate(Chunk chunk, long seed) {
 		return super.canGenerate(chunk, seed) || chunk.getWorld().getSpawnLocation().getBlock().getChunk() == chunk;
 	}
+	
+	@Override
+	public int calculatePlacementY(int width, int length, Location place) {
+		return super.calculatePlacementY(width, length, place) - 1;
+	}
 
 	@Override
 	public List<StructureInstance<? extends Structure>> generate(Location loc, long seed) {

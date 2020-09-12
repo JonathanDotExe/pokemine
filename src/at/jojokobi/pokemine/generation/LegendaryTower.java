@@ -77,6 +77,11 @@ public class LegendaryTower extends Structure {
 		loot.addItem(new LootItem(0.7, new ItemStack(Material.ROTTEN_FLESH), 1, 7));
 		loot.addItem(new LootItem(0.2, new ItemStack(Material.PAPER), 1, 3));
 	}
+	
+	@Override
+	public int calculatePlacementY(int width, int length, Location place) {
+		return super.calculatePlacementY(width, length, place) - 1;
+	}
 
 	@Override
 	public List<StructureInstance<? extends Structure>> generate(Location loc, long seed) {
