@@ -65,7 +65,7 @@ public class EliteFourGym extends Structure{
 						if (y == getHeight() - 1 && (x == 0 || x == getWidth() - 1 || z == 0 || z == getLength() - 1)) {
 							material = Material.AIR;
 						}
-						else if (x > 0 && x < getWidth() - 1 && z > 0 && z < getLength() - 1 && x % 8 == 0 && z % 8 == 0) {
+						else if (y == getHeight() - 3 && x > 0 && x < getWidth() - 1 && z > 0 && z < getLength() - 1 && ((x % 4 == 0 && z % 4 == 0) || ((x + 2) % 4 == 0 && (z + 2) % 4 == 0))) {
 							material = Material.SEA_LANTERN;
 						}
 						else {

@@ -80,7 +80,7 @@ public class PokemonGym extends Structure implements Listener{
 							material = Material.SEA_LANTERN;
 						}
 						else {
-							material = gym != null ? Material.YELLOW_CONCRETE : Material.YELLOW_GLAZED_TERRACOTTA;
+							material = gym != null ? Material.YELLOW_CONCRETE : Material.YELLOW_TERRACOTTA;
 						}
 					}
 					//Windows

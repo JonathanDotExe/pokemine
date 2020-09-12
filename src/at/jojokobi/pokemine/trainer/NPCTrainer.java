@@ -1,6 +1,7 @@
 package at.jojokobi.pokemine.trainer;
 
 import java.util.Map;
+import java.util.Random;
 
 import org.bukkit.entity.Entity;
 
@@ -17,6 +18,7 @@ public class NPCTrainer extends Trainer {
 	}
 
 	public NPCTrainer(TrainerRank rank, TeamGenerator generator) {
+		setName(rank.getNames()[new Random().nextInt(rank.getNames().length)]);
 		setRank(rank);
 		this.generator = generator;
 	}
