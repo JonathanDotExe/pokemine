@@ -6,11 +6,13 @@ import java.util.Random;
 
 import org.bukkit.Particle;
 import org.bukkit.entity.Entity;
+import org.bukkit.util.Vector;
 
 import at.jojokobi.mcutil.entity.CustomEntity;
 import at.jojokobi.mcutil.entity.ai.EntityTask;
 import at.jojokobi.mcutil.locatables.EntityLocatable;
 import at.jojokobi.mcutil.locatables.Locatable;
+import at.jojokobi.mcutil.locatables.WrapperLocatable;
 
 public class PlayWithFriendsTask implements EntityTask{
 	
@@ -29,11 +31,18 @@ public class PlayWithFriendsTask implements EntityTask{
 
 	@Override
 	public Locatable apply(CustomEntity<?> entity) {
-		if (entity.getEntity().getLocation().distance(target.getLocation()) <= 5) {
-			entity.jump();
+		Vector offset = target.getLocation().subtract(entity.getEntity().getLocation().toVector()).toVector();
+		if (offset.length() <= 5) {
+			if (Math.random() < 0.2) {
+				entity.jump();
+			}
 			if (Math.random() < 0.1) {
 				entity.getEntity().getWorld().spawnParticle(Particle.HEART, entity.getEntity().getLocation().add(Math.random() - 0.5, entity.getEntity().getHeight() + Math.random() - 0.5, Math.random() - 0.5), 2);
 			}
+			if (offset.length() > 0) {
+				offset.normalize();
+			}
+			return new WrapperLocatable(entity.getEntity().getLocation().add(offset));
 		}
 		return target;
 	}
