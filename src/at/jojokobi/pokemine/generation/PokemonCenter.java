@@ -87,9 +87,9 @@ public class PokemonCenter extends Structure implements Listener{
 		place.setX(loc.getX() + (getWidth()/2)-1);
 		place.setZ(loc.getZ());
 		place.setY(loc.getY() + 1);
-		FurnitureGenUtil.generateDoor(place, Material.OAK_DOOR, BlockFace.SOUTH, false, false);
-		place.add(1, 0, 0);
 		FurnitureGenUtil.generateDoor(place, Material.OAK_DOOR, BlockFace.SOUTH, false, true);
+		place.add(1, 0, 0);
+		FurnitureGenUtil.generateDoor(place, Material.OAK_DOOR, BlockFace.SOUTH, false, false);
 		//Table
 		place.setZ(loc.getZ() + getLength() - 3);
 		for (int i = 0; i < getWidth() - 4; i++) {

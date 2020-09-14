@@ -97,9 +97,9 @@ public class EliteFourGym extends Structure{
 		place.setX(loc.getX() + (getWidth()/2)-1);
 		place.setZ(loc.getZ());
 		place.setY(loc.getY() + 1);
-		FurnitureGenUtil.generateDoor(place, Material.OAK_DOOR, BlockFace.SOUTH, false, false);
-		place.add(1, 0, 0);
 		FurnitureGenUtil.generateDoor(place, Material.OAK_DOOR, BlockFace.SOUTH, false, true);
+		place.add(1, 0, 0);
+		FurnitureGenUtil.generateDoor(place, Material.OAK_DOOR, BlockFace.SOUTH, false, false);
 		
 		//Sign
 		place.setX(loc.getX() + (getWidth()/2)-2);
