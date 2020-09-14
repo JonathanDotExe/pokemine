@@ -38,8 +38,10 @@ import at.jojokobi.mcutil.entity.EntityMapData;
 import at.jojokobi.mcutil.entity.Ownable;
 import at.jojokobi.mcutil.entity.ai.AttackTask;
 import at.jojokobi.mcutil.entity.ai.FollowOwnerTask;
+import at.jojokobi.mcutil.entity.ai.InteractEntityTask;
 import at.jojokobi.mcutil.entity.ai.RandomAroundPlaceTask;
 import at.jojokobi.mcutil.entity.ai.RandomTask;
+import at.jojokobi.mcutil.entity.ai.RandomTimeCondition;
 import at.jojokobi.mcutil.entity.ai.ReturnToSpawnTask;
 import at.jojokobi.mcutil.entity.ai.RidingTask;
 import at.jojokobi.pokemine.PokeminePlugin;
@@ -109,6 +111,7 @@ public class PokemonEntity extends CustomEntity<ArmorStand> implements Attacker,
 				}
 			}));
 			addEntityTask(new FollowOwnerTask());
+			addEntityTask(new InteractEntityTask(new RandomTimeCondition(4, 4 * 5, 4 * 5, 4 * 20), 5));
 			addEntityTask(new RandomTask());
 			break;
 		case STATIONARY_AGGRESSIVE_POKEMON:
@@ -131,6 +134,7 @@ public class PokemonEntity extends CustomEntity<ArmorStand> implements Attacker,
 					return entity instanceof PokemonEntity && other instanceof PokemonEntity && !JavaPlugin.getPlugin(PokeminePlugin.class)/*TODO bad design*/.getBattleHandler().isBattling(((PokemonEntity) entity).getPokemon()) && !JavaPlugin.getPlugin(PokeminePlugin.class)/*TODO bad design*/.getBattleHandler().isBattling(((PokemonEntity) other).getPokemon()) && ((PokemonEntity) entity).getPokemon().dislikes(((PokemonEntity) other).getPokemon());
 				}
 			}));
+			addEntityTask(new InteractEntityTask(new RandomTimeCondition(4, 4 * 5, 4 * 5, 4 * 20), 5));
 			addEntityTask(new RandomAroundPlaceTask(e -> e.getSpawnPoint(), 5, 10, 4));
 			addEntityTask(new ReturnToSpawnTask());
 			break;
