@@ -47,6 +47,11 @@ public class Pokemon implements ConfigurationSerializable {
 
 	public static final String POKEMON_MOVES_ELEMENT = "moves";
 	public static final String POKEMON_TO_LEARN_ELEMENT = "toLearn";
+	
+	public static final String POKEMON_AFFECTION_ELEMENT = "affection";
+	public static final String POKEMON_FOOD_LEVEL_ELEMENT = "foodLevel";
+	public static final String POKEMON_PET_LEVEL_ELEMENT = "petLevel";
+	
 
 	public static final int MAX_LEVEL = 100;
 	public static final int MIN_LEVEL = 1;
@@ -109,6 +114,15 @@ public class Pokemon implements ConfigurationSerializable {
 	// Moves
 	private MoveInstance[] moves;
 	private List<Move> toLearn = new ArrayList<>();
+	
+	//Affection
+	private int affection = 0;
+	private int petLevel = 0;
+	private int foodLevel = 0;
+	private long petWait = 0;
+	private long foodWait = 0;
+	private int foodCount = 0;
+	private int petCount = 0;
 
 	public Pokemon(PokemonSpecies species) {
 		this(species, MathUtil.calcPokemonLevel(species));
@@ -722,7 +736,7 @@ public class Pokemon implements ConfigurationSerializable {
 
 	private void addFriedship(int friendship) {
 		setFriendship(getFriendship() + friendship);
-	}
+	}	
 
 //	@Deprecated
 //	public boolean isBattling() {
@@ -733,6 +747,46 @@ public class Pokemon implements ConfigurationSerializable {
 //	public void setBattling(boolean battling) {
 //		this.battling = battling;
 //	}
+
+	public int getAffection() {
+		return affection;
+	}
+
+	public void setAffection(int affection) {
+		this.affection = affection;
+	}
+
+	public int getPetLevel() {
+		return petLevel;
+	}
+
+	public void setPetLevel(int petLevel) {
+		this.petLevel = petLevel;
+	}
+
+	public int getFoodLevel() {
+		return foodLevel;
+	}
+
+	public void setFoodLevel(int foodLevel) {
+		this.foodLevel = foodLevel;
+	}
+
+	public long getPetWait() {
+		return petWait;
+	}
+
+	public void setPetWait(long petWait) {
+		this.petWait = petWait;
+	}
+
+	public long getFoodWait() {
+		return foodWait;
+	}
+
+	public void setFoodWait(long foodWait) {
+		this.foodWait = foodWait;
+	}
 
 	public PrimStatChange getPrimStatChange() {
 		return primStatChange;
@@ -917,7 +971,39 @@ public class Pokemon implements ConfigurationSerializable {
 	public Move getSelectedTerrainMove() {
 		return getMoves()[getSelectedMoveIndex()] != null ? getMoves()[getSelectedMoveIndex()].getMove() : null;
 	}
-
+	
+	private void checkAffectionLevelUp() {
+		if (affection < 5 && petLevel >= (affection + 1) * 5 && foodLevel >= (affection + 1) * 5) {
+			setAffection(affection + 1);
+			setFoodLevel(0);
+			setPetLevel(0);
+		}
+	}
+	
+	public void feed(long time) {
+		if (foodWait < time) {
+			foodCount++;
+			setFoodLevel(foodLevel + 1);
+			if (foodCount >= 2) {
+				foodCount = 0;
+				foodWait = 1000 * 60 * 5;
+			}
+			checkAffectionLevelUp();
+		}
+	}
+	
+	public void pet(long time) {
+		if (petWait < time) {
+			petCount++;
+			setPetLevel(petLevel + 1);
+			if (petCount >= 3) {
+				petCount = 0;
+				petWait = 1000 * 60 * 5;
+			}
+			checkAffectionLevelUp();
+		}
+	}
+	
 	public void selectStrongestMove() {
 		int index = 0;
 		int power = 0;
@@ -945,6 +1031,7 @@ public class Pokemon implements ConfigurationSerializable {
 		lore.add("Special Defense " + getTotalSpecialDefense());
 		lore.add("Speed " + getTotalSpeed());
 		lore.add("Friendship " + getFriendship());
+		lore.add("Affection " + getAffection());
 		lore.add("Distance " + getWalkedDistance());
 		lore.add("Personality " + Byte.toUnsignedInt(characterByte));
 		lore.add("");
@@ -984,6 +1071,8 @@ public class Pokemon implements ConfigurationSerializable {
 //		return rootGui;
 		toLearn.addAll(moves);
 	}
+	
+	
 
 	/**
 	 * 
@@ -1030,6 +1119,10 @@ public class Pokemon implements ConfigurationSerializable {
 			toLearn.add(move.toNamespacedEntry());
 		}
 		map.put(POKEMON_PERSONALITY_BYTE_ELEMENT, characterByte);
+		
+		map.put(POKEMON_AFFECTION_ELEMENT, affection);
+		map.put(POKEMON_FOOD_LEVEL_ELEMENT, foodLevel);
+		map.put(POKEMON_PET_LEVEL_ELEMENT, petLevel);
 
 		return map;
 	}
@@ -1138,8 +1231,28 @@ public class Pokemon implements ConfigurationSerializable {
 		if (map.containsKey(POKEMON_PERSONALITY_BYTE_ELEMENT)) {
 			pokemon.characterByte = tMap.getByte(POKEMON_PERSONALITY_BYTE_ELEMENT);
 		}
+		//Affection
+		try {
+			pokemon.setAffection(Integer.parseInt(map.get(POKEMON_AFFECTION_ELEMENT) + ""));
+		} catch (NumberFormatException e) {
+			
+		}
+		//Food Level
+		try {
+			pokemon.setFoodLevel(Integer.parseInt(map.get(POKEMON_FOOD_LEVEL_ELEMENT) + ""));
+		} catch (NumberFormatException e) {
+			
+		}
+		//Pet Level
+		try {
+			pokemon.setPetLevel(Integer.parseInt(map.get(POKEMON_PET_LEVEL_ELEMENT) + ""));
+		} catch (NumberFormatException e) {
+			
+		}
 	
 		return pokemon;
 	}
+	
+	
 
 }
