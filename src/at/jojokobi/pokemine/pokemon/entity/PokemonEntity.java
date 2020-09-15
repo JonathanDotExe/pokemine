@@ -111,7 +111,7 @@ public class PokemonEntity extends CustomEntity<ArmorStand> implements Attacker,
 				}
 			}));
 			addEntityTask(new FollowOwnerTask());
-			addEntityTask(new InteractEntityTask(new RandomTimeCondition(4, 4 * 5, 4 * 5, 4 * 20), 5));
+			addEntityTask(new InteractEntityTask(new RandomTimeCondition(1 * 4, 5 * 4, 5 * 4, 30 * 4), 5));
 			addEntityTask(new RandomTask());
 			break;
 		case STATIONARY_AGGRESSIVE_POKEMON:
@@ -134,8 +134,8 @@ public class PokemonEntity extends CustomEntity<ArmorStand> implements Attacker,
 					return entity instanceof PokemonEntity && other instanceof PokemonEntity && !JavaPlugin.getPlugin(PokeminePlugin.class)/*TODO bad design*/.getBattleHandler().isBattling(((PokemonEntity) entity).getPokemon()) && !JavaPlugin.getPlugin(PokeminePlugin.class)/*TODO bad design*/.getBattleHandler().isBattling(((PokemonEntity) other).getPokemon()) && ((PokemonEntity) entity).getPokemon().dislikes(((PokemonEntity) other).getPokemon());
 				}
 			}));
-			addEntityTask(new InteractEntityTask(new RandomTimeCondition(4, 4 * 5, 4 * 5, 4 * 20), 5));
-			addEntityTask(new RandomAroundPlaceTask(e -> e.getSpawnPoint(), 5, 10, 4));
+			addEntityTask(new InteractEntityTask(new RandomTimeCondition(1 * 4, 5 * 4, 5 * 4, 30 * 4), 5));
+			addEntityTask(new RandomAroundPlaceTask(e -> e.getSpawnPoint(), 8, 10, 4, true, false));
 			addEntityTask(new ReturnToSpawnTask());
 			break;
 		}
@@ -394,15 +394,24 @@ public class PokemonEntity extends CustomEntity<ArmorStand> implements Attacker,
 		if (!JavaPlugin.getPlugin(PokeminePlugin.class)/*TODO bad design*/.getBattleHandler().isBattling(pokemon)) {
 			if (e instanceof EntityDamageByEntityEvent) {
 				EntityDamageByEntityEvent event = (EntityDamageByEntityEvent) e;
-				//Ride Hat
 				if (getPokemon().getOwner() != null && event.getDamager() == getPokemon().getOwner().getEntity()) {
-					if (getEntity().getVehicle() != null) {		
-						getEntity().getVehicle().eject();
-						getPokemon().getOwner().message("Your " + getPokemon().getName() + " left your head!");
+					//Ride Hat
+					if (event.getDamager() instanceof Player && ((Player) event.getDamager()).isSneaking()) {
+						if (getEntity().getVehicle() != null) {		
+							getEntity().getVehicle().eject();
+							getPokemon().getOwner().message("Your " + getPokemon().getName() + " left your head!");
+						}
+						else {
+							event.getDamager().addPassenger(getEntity());
+							getPokemon().getOwner().message("Your " + getPokemon().getName() + " is now sitting on your head!");
+						}
 					}
+					//Pet
 					else {
-						event.getDamager().addPassenger(getEntity());
-						getPokemon().getOwner().message("Your " + getPokemon().getName() + " is now sitting on your head!");
+						jump();
+						for (int i = 0; i < 5; i++) {
+							getEntity().getWorld().spawnParticle(Particle.HEART, getEntity().getLocation().add(Math.random() - 0.5, Math.random() - 0.5 + 1, Math.random() - 0.5), 1);
+						}
 					}
 				}
 				else {
