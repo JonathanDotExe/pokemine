@@ -9,10 +9,12 @@ import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Particle;
+import org.bukkit.Sound;
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Creeper;
 import org.bukkit.entity.Damageable;
 import org.bukkit.entity.EntityType;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Mob;
 import org.bukkit.entity.Monster;
 import org.bukkit.entity.PigZombie;
@@ -406,11 +408,30 @@ public class PokemonEntity extends CustomEntity<ArmorStand> implements Attacker,
 							getPokemon().getOwner().message("Your " + getPokemon().getName() + " is now sitting on your head!");
 						}
 					}
-					//Pet
 					else {
-						jump();
-						for (int i = 0; i < 5; i++) {
-							getEntity().getWorld().spawnParticle(Particle.HEART, getEntity().getLocation().add(Math.random() - 0.5, Math.random() - 0.5 + 1, Math.random() - 0.5), 1);
+						ItemStack held = event.getDamager() instanceof LivingEntity ? ((LivingEntity) event.getDamager()).getEquipment().getItemInMainHand() : null;
+						//Feed
+						if (held != null && (held.getType() == Material.APPLE || held.getType() == Material.COOKIE || held.getType() == Material.SWEET_BERRIES || held.getType() == Material.MELON_SLICE || held.getType() == Material.CARROT)) {
+							held.setAmount(held.getAmount() - 1);
+							getEntity().getWorld().spawnParticle(Particle.ITEM_CRACK, getEntity().getLocation().add(0, 1, 0), 5, held);
+							getEntity().getWorld().playSound(getEntity().getLocation(), Sound.ENTITY_GENERIC_EAT, 1, 1);
+							if (pokemon.feed(System.currentTimeMillis())) {
+								for (int i = 0; i < 5; i++) {
+									getEntity().getWorld().spawnParticle(Particle.VILLAGER_HAPPY, getEntity().getLocation().add(Math.random() - 0.5, Math.random() - 0.5 + 1, Math.random() - 0.5), 1);
+								}
+							}
+						}
+						//Pet
+						else {
+							jump();
+							for (int i = 0; i < 5; i++) {
+								getEntity().getWorld().spawnParticle(Particle.HEART, getEntity().getLocation().add(Math.random() - 0.5, Math.random() - 0.5 + 1, Math.random() - 0.5), 1);
+							}
+							if (pokemon.pet(System.currentTimeMillis())) {
+								for (int i = 0; i < 5; i++) {
+									getEntity().getWorld().spawnParticle(Particle.VILLAGER_HAPPY, getEntity().getLocation().add(Math.random() - 0.5, Math.random() - 0.5 + 1, Math.random() - 0.5), 1);
+								}
+							}
 						}
 					}
 				}

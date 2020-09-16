@@ -980,28 +980,32 @@ public class Pokemon implements ConfigurationSerializable {
 		}
 	}
 	
-	public void feed(long time) {
+	public boolean feed(long time) {
 		if (foodWait < time) {
 			foodCount++;
 			setFoodLevel(foodLevel + 1);
 			if (foodCount >= 2) {
 				foodCount = 0;
-				foodWait = 1000 * 60 * 5;
+				foodWait = time + 1000 * 60 * 5;
 			}
 			checkAffectionLevelUp();
+			return true;
 		}
+		return false;
 	}
 	
-	public void pet(long time) {
+	public boolean pet(long time) {
 		if (petWait < time) {
 			petCount++;
 			setPetLevel(petLevel + 1);
 			if (petCount >= 3) {
 				petCount = 0;
-				petWait = 1000 * 60 * 5;
+				petWait = time + 1000 * 60 * 5;
 			}
 			checkAffectionLevelUp();
+			return true;
 		}
+		return false;
 	}
 	
 	public void selectStrongestMove() {
@@ -1032,6 +1036,8 @@ public class Pokemon implements ConfigurationSerializable {
 		lore.add("Speed " + getTotalSpeed());
 		lore.add("Friendship " + getFriendship());
 		lore.add("Affection " + getAffection());
+		lore.add("Food Level " + getFoodLevel());
+		lore.add("Pet Level " + getPetLevel());
 		lore.add("Distance " + getWalkedDistance());
 		lore.add("Personality " + Byte.toUnsignedInt(characterByte));
 		lore.add("");
