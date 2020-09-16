@@ -659,11 +659,11 @@ public class Pokemon implements ConfigurationSerializable {
 			attack = move.getDamageClass() == DamageClass.PHYSICAL ? getSpecies().getAttack()
 					: getSpecies().getSpecialAttack();
 		}
-		return power * attack / 1500;
+		return power * attack / (2000 - 200 * affection);
 	}
 
 	public double getMobDefense() {
-		return 5 * ((getSpecies().getDefense() + getSpecies().getSpecialDefense()) / 2) / 255;
+		return (3 + affection) * ((getSpecies().getDefense() + getSpecies().getSpecialDefense()) / 2) / 255;
 	}
 
 	public void takeMobDamage(double damage) {
