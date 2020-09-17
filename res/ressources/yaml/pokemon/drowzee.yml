@@ -1,0 +1,201 @@
+species:
+  ==: at.jojokobi.pokemine.pokemon.PokemonSpecies
+  baseValues:
+    ==: at.jojokobi.pokemine.pokemon.PokemonValueSet
+    specialDefense: 90
+    defense: 45
+    attack: 48
+    health: 60
+    specialAttack: 43
+    speed: 42
+  color: Yellow
+  description: Drowzee likes to break into peoplea homes and eat their dreams with
+    his nose
+  minLikeEquality: 0.6
+  flySpeed: 1.4E-45
+  spawns:
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 5
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - SWAMP_HILLS
+      - SWAMP
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 4
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.RainSpawnCondition
+      rain: true
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - PLAINS
+      - FOREST
+      - BIRCH_FOREST
+      - BIRCH_FOREST_HILLS
+      - DARK_FOREST
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 3
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.RainSpawnCondition
+      rain: false
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - PLAINS
+      - FOREST
+      - BIRCH_FOREST
+      - BIRCH_FOREST_HILLS
+      - DARK_FOREST
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 4
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - TAIGA
+      - SNOWY_TUNDRA
+      - SNOWY_TAIGA
+      - SNOWY_TAIGA_HILLS
+      - GIANT_TREE_TAIGA
+      - GIANT_TREE_TAIGA_HILLS
+      - 'null'
+  - ==: at.jojokobi.pokemine.spawning.SpawnChance
+    chance: 2
+    conditions:
+    - ==: at.jojokobi.pokemine.spawning.BiomeSpawnCondition
+      biomes:
+      - MOUNTAIN_EDGE
+      - MOUNTAINS
+      - WOODED_HILLS
+  levelSpeed: middle_fast
+  catchRate: 190
+  maxDislikeEquality: 1.4E-45
+  jumpSpeed: 0.5
+  surfSpeed: 1.4E-45
+  eggCycles: 20
+  wildLevel: 21
+  legendary: false
+  lavaSurfSpeed: 1.4E-45
+  loot:
+    ==: at.jojokobi.mcutil.loot.LootInventory
+    items:
+    - ==: at.jojokobi.mcutil.loot.LootItem
+      item:
+        ==: org.bukkit.inventory.ItemStack
+        v: 2227
+        type: PORKCHOP
+      chance: 4.9E-324
+      enchant: false
+      minCount: 1
+      maxCount: 2
+  evolutions: []
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: drowzee
+  walkSpeed: 0.6
+  types:
+  - Psychic
+  maleChance: 0.5
+  eggGroups:
+  - Human-Like
+  formOf: null
+  index: 96
+  weight: 32.0
+  ep: 66
+  winEvs:
+    ==: at.jojokobi.pokemine.pokemon.PokemonValueSet
+    specialDefense: 1
+    defense: 0
+    attack: 0
+    health: 0
+    specialAttack: 0
+    speed: 0
+  size: 1.0
+  initialFriendship: 70
+  moves:
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: pound
+    level: 1
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: hypnosis
+    level: 1
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: confusion
+    level: 9
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: headbutt
+    level: 13
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: poison_gas
+    level: 17
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: meditate
+    level: 21
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: psybeam
+    level: 25
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: headbutt
+    level: 29
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: wake_up_slap
+    level: 29
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: zen_headbutt
+    level: 41
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: swagger
+    level: 45
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: psychic
+    level: 49
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: nasty_plot
+    level: 53
+  - ==: at.jojokobi.pokemine.moves.MoveLearnCondition
+    move:
+      ==: at.jojokobi.mcutil.NamespacedEntry
+      namespace: pokemine
+      key: psyshock
+    level: 57
+  name: Drowzee
+  climbSpeed: 1.4E-45
+  category: Hypnosis
