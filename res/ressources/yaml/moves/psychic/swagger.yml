@@ -1,0 +1,31 @@
+species:
+  ==: at.jojokobi.pokemine.moves.Move
+  pp: 15
+  identifier:
+    ==: at.jojokobi.mcutil.NamespacedEntry
+    namespace: pokemine
+    key: swagger
+  initializeProcedure: null
+  learningMethod: TM
+  accuracy: 0.85
+  maxPp: 24
+  procedure:
+    ==: at.jojokobi.pokemine.moves.procedures.ListProcedure
+    procedures:
+    - ==: at.jojokobi.pokemine.moves.procedures.AddValueProcedure
+      stat: ATTACK
+      performer: false
+      value: 2
+    - ==: at.jojokobi.pokemine.moves.procedures.AddSecondaryStatusProcedure
+      performer: false
+      statusChange: at.jojokobi.pokemine.pokemon.status.Confusion
+  type: Normal
+  priority: 0
+  animation: positive_status
+  minLevel: 25
+  criticalRate: 1
+  preExecuteProcedure: null
+  damageClass: status
+  price: 3000
+  name: Swagger
+  power: 0
