@@ -56,7 +56,6 @@ species:
       - SNOWY_TAIGA_HILLS
       - GIANT_TREE_TAIGA
       - GIANT_TREE_TAIGA_HILLS
-      - 'null'
   - ==: at.jojokobi.pokemine.spawning.SpawnChance
     chance: 2
     conditions:
