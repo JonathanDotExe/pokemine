@@ -1,4 +1,4 @@
-species:
+move:
   ==: at.jojokobi.pokemine.moves.Move
   pp: 15
   identifier:
@@ -18,7 +18,7 @@ species:
       power:
         ==: at.jojokobi.pokemine.moves.procedures.suppliers.MovePowerSupplier
     - ==: at.jojokobi.pokemine.moves.procedures.ChanceProcedure
-      chance: 0.3
+      chance: 0.3s
       procedure:
         ==: at.jojokobi.pokemine.moves.procedures.AddSecondaryStatusProcedure
         performer: false

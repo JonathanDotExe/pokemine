@@ -1,4 +1,4 @@
-species:
+move:
   ==: at.jojokobi.pokemine.moves.Move
   pp: 15
   identifier:
