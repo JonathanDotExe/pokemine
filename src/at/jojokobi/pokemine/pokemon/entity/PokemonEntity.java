@@ -91,7 +91,7 @@ public class PokemonEntity extends CustomEntity<ArmorStand> implements Attacker,
 	@Override
 	protected void spawn() {
 		super.spawn();
-		ability = pokemon.getSpecies().getEntityAbility().create();
+		ability = pokemon.getSpecies().getEntityAbility() == null ? null : pokemon.getSpecies().getEntityAbility().create();
 //		if (getAi() == null) {
 //			if (pokemon.getSpecies().isLegendary()) {
 //				setAi(StationaryPokemonAI.INSTANCE);
