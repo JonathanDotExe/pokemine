@@ -87,6 +87,7 @@ public class PokemonSpecies implements Identifiable, ConfigurationSerializable{
 	public static final String POKEMON_WIN_EP_ELEMENT = "ep";
 	
 	public static final String POKEMON_SPAWNS_ELEMENT = "spawns";
+	public static final String POKEMON_ENTITY_ABILITY_ELEMENT = "entityAbility";
 //	public static final String POKEMON_SPAWN_ELEMENT = "spawn";
 //	public static final String POKEMON_BIOME_ELEMENT = "biome";
 //	public static final String POKEMON_CHANCE_ELEMENT = "chance";
@@ -112,7 +113,7 @@ public class PokemonSpecies implements Identifiable, ConfigurationSerializable{
 	private NamespacedEntry formOf = null;
 	private float minLikeEquality = 0;
 	private float maxDislikeEquality = 0;
-	private PokemonEntityAbilityType entityAbility = PokemonEntityAbilityType.HEAL_PLAYER;
+	private PokemonEntityAbilityType entityAbility = null;
 	
 	//Base Values
 //	private int health = 33;
@@ -200,6 +201,7 @@ public class PokemonSpecies implements Identifiable, ConfigurationSerializable{
 		map.put(POKEMON_WIN_EVS_ELEMENT, winEvs);
 		
 		map.put(POKEMON_SPAWNS_ELEMENT, spawns);
+		map.put(POKEMON_ENTITY_ABILITY_ELEMENT, entityAbility + "");
 		
 		return map;
 	}
@@ -246,6 +248,7 @@ public class PokemonSpecies implements Identifiable, ConfigurationSerializable{
 		species.setWinEvs(tMap.get(POKEMON_WIN_EVS_ELEMENT, PokemonValueSet.class, new PokemonValueSet ()));
 		
 		species.setSpawns(tMap.getList(POKEMON_SPAWNS_ELEMENT, ISpawnChance.class));
+		species.setEntityAbility(tMap.getEnum(POKEMON_ENTITY_ABILITY_ELEMENT, PokemonEntityAbilityType.class, null));
 		
 		return species;
 	}
