@@ -3,6 +3,8 @@ package at.jojokobi.pokemine.pokemon.entity.ability;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bukkit.Particle;
+import org.bukkit.Sound;
 import org.bukkit.entity.Entity;
 
 import at.jojokobi.mcutil.entity.ai.EntityTask;
@@ -22,6 +24,8 @@ public class HealPokemonAbility implements PokemonEntityAbility {
 				PokemonEntity other = entity.getHandler().getCustomEntityForEntity(e, PokemonEntity.class);
 				if (other != null && other.getPokemon().getOwner() == entity.getPokemon().getOwner()) {
 					other.getPokemon().setHealth(other.getPokemon().getHealth() + other.getPokemon().getMaxHealth() * Math.round(0.1f + 0.1f * entity.getPokemon().getAffection()/5.0f));
+					entity.getEntity().getWorld().spawnParticle(Particle.HEART, entity.getEntity().getLocation().add(Math.random() - 0.5, Math.random() - 0.5 + 1, Math.random() - 0.5), 1);
+					e.getWorld().spawnParticle(Particle.HEART, e.getLocation().add(Math.random() - 0.5, Math.random() - 0.5 + 1, Math.random() - 0.5), 1);
 				}
 			}
 			//Revive
@@ -35,6 +39,11 @@ public class HealPokemonAbility implements PokemonEntityAbility {
 						placed.getLocation().getY() > y && placed.getLocation().getY() < y + 2 * radius &&
 						placed.getLocation().getZ() > z && placed.getLocation().getZ() < z + 2 * radius) {
 					other.setHealth(Math.max(other.getMaxHealth()/10, 1));
+					for (int i = 0; i < 5; i++) {
+						entity.getEntity().getWorld().spawnParticle(Particle.VILLAGER_HAPPY, entity.getEntity().getLocation().add(Math.random() - 0.5, Math.random() - 0.5 + 1, Math.random() - 0.5), 1);
+						placed.getLocation().getWorld().spawnParticle(Particle.VILLAGER_HAPPY, placed.getLocation().add(Math.random() - 0.5, Math.random() - 0.5 + 1, Math.random() - 0.5), 1);
+					}
+					entity.getEntity().getWorld().playSound(entity.getEntity().getLocation(), Sound.ITEM_TOTEM_USE, 1, 1);
 				}
 			}
 		}

@@ -241,3 +241,4 @@ species:
     level: 101
   name: Slowpoke
   category: Dopey
+  entityAbility: SLOW_MONSTER

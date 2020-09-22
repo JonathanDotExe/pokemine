@@ -299,3 +299,4 @@ species:
     level: 101
   name: Snorlax
   category: Daydreamer
+  entityAbility: SLOW_MONSTER

@@ -240,3 +240,4 @@ species:
     level: 101
   name: Slowbro
   category: Symbiotic
+  entityAbility: HEAL_PLAYER

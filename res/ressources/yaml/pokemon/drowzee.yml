@@ -198,3 +198,4 @@ species:
   name: Drowzee
   climbSpeed: 1.4E-45
   category: Hypnosis
+  entityAbility: SLOW_MONSTER

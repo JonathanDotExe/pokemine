@@ -211,3 +211,4 @@ species:
     level: 101
   name: Haunter
   category: Gas
+  entityAbility: SLOW_MONSTER

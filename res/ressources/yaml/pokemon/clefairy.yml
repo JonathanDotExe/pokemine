@@ -252,3 +252,4 @@ species:
     level: 101
   name: Clefairy
   category: Fairy
+  entityAbility: HEAL_PLAYER

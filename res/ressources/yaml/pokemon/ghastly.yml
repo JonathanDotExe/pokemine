@@ -204,3 +204,4 @@ species:
     level: 101
   name: Ghastly
   category: Gas
+  entityAbility: SLOW_MONSTER

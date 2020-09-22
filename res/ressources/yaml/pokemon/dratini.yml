@@ -196,3 +196,4 @@ species:
     level: 101
   name: Dratini
   category: Dragon
+  entityAbility: HEAL_POKEMON
