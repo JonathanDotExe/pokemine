@@ -51,6 +51,7 @@ import at.jojokobi.pokemine.battle.animation.BattleAnimation;
 import at.jojokobi.pokemine.moves.MoveHandler;
 import at.jojokobi.pokemine.pokemon.Pokemon;
 import at.jojokobi.pokemine.pokemon.PokemonHandler;
+import at.jojokobi.pokemine.pokemon.entity.ability.PokemonEntityAbility;
 import at.jojokobi.pokemine.trainer.PlayerTrainerHandler;
 import at.jojokobi.pokemine.trainer.WildPokemonTrainer;
 
@@ -67,6 +68,7 @@ public class PokemonEntity extends CustomEntity<ArmorStand> implements Attacker,
 
 	private Pokemon pokemon;
 	private PokemonBehaviorType behaviorType = PokemonBehaviorType.NORMAL_POKEMON;
+	private PokemonEntityAbility ability;
 
 	public PokemonEntity(Location place, Pokemon pokemon, EntityHandler handler) {
 		super(place, handler, PokemonEntityType.getInstance());
@@ -89,6 +91,7 @@ public class PokemonEntity extends CustomEntity<ArmorStand> implements Attacker,
 	@Override
 	protected void spawn() {
 		super.spawn();
+		ability = pokemon.getSpecies().getEntityAbility().create();
 //		if (getAi() == null) {
 //			if (pokemon.getSpecies().isLegendary()) {
 //				setAi(StationaryPokemonAI.INSTANCE);
@@ -112,15 +115,24 @@ public class PokemonEntity extends CustomEntity<ArmorStand> implements Attacker,
 					return entity instanceof PokemonEntity && other instanceof PokemonEntity && !JavaPlugin.getPlugin(PokeminePlugin.class)/*TODO bad design*/.getBattleHandler().isBattling(((PokemonEntity) entity).getPokemon()) && !JavaPlugin.getPlugin(PokeminePlugin.class)/*TODO bad design*/.getBattleHandler().isBattling(((PokemonEntity) other).getPokemon()) && ((PokemonEntity) entity).getPokemon().dislikes(((PokemonEntity) other).getPokemon());
 				}
 			}));
+			if (ability != null) {
+				ability.createTasks(this).forEach(t -> addEntityTask(t));
+			}
 			addEntityTask(new FollowOwnerTask());
 			addEntityTask(new InteractEntityTask(new RandomTimeCondition(1 * 4, 5 * 4, 5 * 4, 30 * 4), 5));
 			addEntityTask(new RandomTask());
 			break;
 		case STATIONARY_AGGRESSIVE_POKEMON:
 			addEntityTask(new AttackTask(e -> e instanceof Player, 10));
+			if (ability != null) {
+				ability.createTasks(this).forEach(t -> addEntityTask(t));
+			}
 			addEntityTask(new ReturnToSpawnTask());
 			break;
 		case STATIONARY_POKEMON:
+			if (ability != null) {
+				ability.createTasks(this).forEach(t -> addEntityTask(t));
+			}
 			addEntityTask(new ReturnToSpawnTask());
 			break;
 		case PLACED_POKEMON:
@@ -136,6 +148,9 @@ public class PokemonEntity extends CustomEntity<ArmorStand> implements Attacker,
 					return entity instanceof PokemonEntity && other instanceof PokemonEntity && !JavaPlugin.getPlugin(PokeminePlugin.class)/*TODO bad design*/.getBattleHandler().isBattling(((PokemonEntity) entity).getPokemon()) && !JavaPlugin.getPlugin(PokeminePlugin.class)/*TODO bad design*/.getBattleHandler().isBattling(((PokemonEntity) other).getPokemon()) && ((PokemonEntity) entity).getPokemon().dislikes(((PokemonEntity) other).getPokemon());
 				}
 			}));
+			if (ability != null) {
+				ability.createTasks(this).forEach(t -> addEntityTask(t));
+			}
 			addEntityTask(new InteractEntityTask(new RandomTimeCondition(1 * 4, 5 * 4, 5 * 4, 30 * 4), 5));
 			addEntityTask(new RandomAroundPlaceTask(e -> e.getSpawnPoint(), 8, 10, 4, true, false));
 			addEntityTask(new ReturnToSpawnTask());
@@ -171,6 +186,9 @@ public class PokemonEntity extends CustomEntity<ArmorStand> implements Attacker,
 		super.loop();
 		if (getEntity().isVisible()) {
 			getEntity().setVisible(false);
+		}
+		if (ability != null) {
+			ability.entityTick(this);
 		}
 
 		// Apply AI

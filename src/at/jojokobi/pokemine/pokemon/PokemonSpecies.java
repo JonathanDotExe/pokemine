@@ -20,6 +20,7 @@ import at.jojokobi.mcutil.loot.LootInventory;
 import at.jojokobi.pokemine.PokeminePlugin;
 import at.jojokobi.pokemine.moves.Move;
 import at.jojokobi.pokemine.moves.MoveLearnCondition;
+import at.jojokobi.pokemine.pokemon.entity.ability.PokemonEntityAbilityType;
 import at.jojokobi.pokemine.pokemon.evolution.EvolutionCause;
 import at.jojokobi.pokemine.spawning.EnvironmentSituation;
 import at.jojokobi.pokemine.spawning.ISpawnChance;
@@ -111,6 +112,7 @@ public class PokemonSpecies implements Identifiable, ConfigurationSerializable{
 	private NamespacedEntry formOf = null;
 	private float minLikeEquality = 0;
 	private float maxDislikeEquality = 0;
+	private PokemonEntityAbilityType entityAbility = PokemonEntityAbilityType.HEAL_PLAYER;
 	
 	//Base Values
 //	private int health = 33;
@@ -690,6 +692,14 @@ public class PokemonSpecies implements Identifiable, ConfigurationSerializable{
 
 	public void setMaxDislikeEquality(float maxDislikeEquality) {
 		this.maxDislikeEquality = maxDislikeEquality;
+	}
+
+	public PokemonEntityAbilityType getEntityAbility() {
+		return entityAbility;
+	}
+
+	public void setEntityAbility(PokemonEntityAbilityType entityAbility) {
+		this.entityAbility = entityAbility;
 	}
 
 	public ItemStack toItemStack () {

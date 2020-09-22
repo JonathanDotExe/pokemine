@@ -3,6 +3,7 @@ package at.jojokobi.pokemine.pokemon.entity.ability;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bukkit.Particle;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
@@ -22,6 +23,8 @@ public class HealPlayerAbility implements PokemonEntityAbility {
 				if (e instanceof Player || (e instanceof Tameable && ((Tameable) e).isTamed())) {
 					LivingEntity l = (LivingEntity) e;
 					l.setHealth(l.getHealth() + entity.getPokemon().getAffection());
+					entity.getEntity().getWorld().spawnParticle(Particle.HEART, entity.getEntity().getLocation().add(Math.random() - 0.5, Math.random() - 0.5 + 1, Math.random() - 0.5), 1);
+					e.getWorld().spawnParticle(Particle.HEART, e.getLocation().add(Math.random() - 0.5, Math.random() - 0.5 + 1, Math.random() - 0.5), 1);
 				}
 			}
 		}
