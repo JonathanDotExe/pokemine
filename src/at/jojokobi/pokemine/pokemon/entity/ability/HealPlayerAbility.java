@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.bukkit.Particle;
+import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
@@ -22,7 +23,7 @@ public class HealPlayerAbility implements PokemonEntityAbility {
 			for (Entity e : entity.getEntity().getNearbyEntities(radius, radius, radius)) {
 				if (e instanceof Player || (e instanceof Tameable && ((Tameable) e).isTamed())) {
 					LivingEntity l = (LivingEntity) e;
-					l.setHealth(l.getHealth() + entity.getPokemon().getAffection());
+					l.setHealth(Math.min(l.getHealth() + entity.getPokemon().getAffection(), l.getAttribute(Attribute.GENERIC_MAX_HEALTH).getValue()));
 					entity.getEntity().getWorld().spawnParticle(Particle.HEART, entity.getEntity().getLocation().add(Math.random() - 0.5, Math.random() - 0.5 + 1, Math.random() - 0.5), 1);
 					e.getWorld().spawnParticle(Particle.HEART, e.getLocation().add(Math.random() - 0.5, Math.random() - 0.5 + 1, Math.random() - 0.5), 1);
 				}
