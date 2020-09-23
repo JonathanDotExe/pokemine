@@ -23,7 +23,7 @@ public class SlowMonsterAbility implements PokemonEntityAbility {
 				if (e instanceof Monster) {
 					((Monster) e).addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 20 * 10, 1));
 					for (int i = 0; i < 5; i++) {
-						e.getLocation().getWorld().spawnParticle(Particle.SMOKE_NORMAL, e.getLocation().add(Math.random() - 0.5, Math.random() - 0.5 + 1, Math.random() - 0.5), 1);
+						e.getLocation().getWorld().spawnParticle(Particle.FALLING_DUST, e.getLocation().add(Math.random() - 0.5, Math.random() - 0.5 + 1, Math.random() - 0.5), 2);
 					}
 				}
 			}

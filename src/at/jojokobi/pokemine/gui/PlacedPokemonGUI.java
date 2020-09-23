@@ -26,6 +26,7 @@ public class PlacedPokemonGUI extends ListGUI {
 	
 	@Override
 	protected void initGUI() {
+		getInventory().clear();
 		//Init Items
 		List<ItemStack> buttons = new ArrayList<>();
 		for (Pokemon pokemon : trainer.getPlacedPokemon()) {
