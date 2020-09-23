@@ -230,3 +230,4 @@ species:
     level: 45
   name: Bulbasaur
   category: Seeds
+  entityAbility: GROWTH_BOOST

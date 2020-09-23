@@ -3,6 +3,7 @@ package at.jojokobi.pokemine.pokemon.entity.ability;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bukkit.Particle;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Monster;
 import org.bukkit.potion.PotionEffect;
@@ -21,6 +22,9 @@ public class SlowMonsterAbility implements PokemonEntityAbility {
 			for (Entity e : entity.getEntity().getNearbyEntities(radius, radius, radius)) {
 				if (e instanceof Monster) {
 					((Monster) e).addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 20 * 10, 1));
+					for (int i = 0; i < 5; i++) {
+						e.getLocation().getWorld().spawnParticle(Particle.SMOKE_NORMAL, e.getLocation().add(Math.random() - 0.5, Math.random() - 0.5 + 1, Math.random() - 0.5), 1);
+					}
 				}
 			}
 		}

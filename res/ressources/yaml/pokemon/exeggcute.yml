@@ -213,3 +213,4 @@ species:
     level: 101
   name: Exeggcute
   category: Egg
+  entityAbility: GROWTH_BOOST

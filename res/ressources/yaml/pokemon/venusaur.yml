@@ -233,3 +233,4 @@ species:
     level: 101
   name: Venusaur
   category: Seeds
+  entityAbility: GROWTH_BOOST

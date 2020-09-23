@@ -238,3 +238,4 @@ species:
     level: 44
   name: Ivysaur
   category: Seeds
+	entityAbility: GROWTH_BOOST

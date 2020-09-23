@@ -205,3 +205,4 @@ species:
     level: 101
   name: Exeggutor
   category: Coconut
+  entityAbility: GROWTH_BOOST
