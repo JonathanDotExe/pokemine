@@ -1,7 +1,7 @@
 package at.jojokobi.pokemine.pokemon.entity.ability;
 
 public enum PokemonEntityAbilityType {
-	HEAL_PLAYER, HEAL_POKEMON, SLOW_MONSTER, GROWTH_BOOST;
+	HEAL_PLAYER, HEAL_POKEMON, SLOW_MONSTER, GROWTH_BOOST, SWIM_BOOST;
 	
 	public String getName() {
 		String name = "None";
@@ -17,6 +17,9 @@ public enum PokemonEntityAbilityType {
 			break;
 		case GROWTH_BOOST:
 			name = "Growth Boost";
+			break;
+		case SWIM_BOOST:
+			name = "Swim Boost";
 			break;
 		}
 		return name;
@@ -36,6 +39,9 @@ public enum PokemonEntityAbilityType {
 			break;
 		case GROWTH_BOOST:
 			ability = new GrowthBoostAbility();
+			break;
+		case SWIM_BOOST:
+			ability = new SwimBoostAbility();
 			break;
 		}
 		return ability;

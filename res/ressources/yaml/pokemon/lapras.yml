@@ -213,3 +213,4 @@ species:
     level: 101
   name: Lapras
   category: Transport
+  eitntyAbility: SWIM_BOOST
