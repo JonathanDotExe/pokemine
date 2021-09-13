@@ -167,7 +167,7 @@ public class PokemonGym extends Structure implements Listener{
 	}*/
 	
 	public static PokemonType getBiomeType (Biome biome, long seed, Location place) {
-		PokemonType type = PokemonType.values()[new Random(TerrainGenUtil.generateValueBasedSeed(seed, place.getBlockX(), place.getBlockY(), place.getBlockZ(), 1)).nextInt(PokemonType.values().length)];
+		PokemonType type = PokemonType.values()[new Random(TerrainGenUtil.generateValueBasedSeed(seed, place.getBlockX(), place.getBlockY(), place.getBlockZ())).nextInt(PokemonType.values().length)];
 		/*		switch (biome) {
 		case SMALLER_EXTREME_HILLS:
 		case JUNGLE_HILLS:
